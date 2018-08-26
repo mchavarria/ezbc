@@ -25,15 +25,21 @@ class BcPublicKey
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=100, nullable=FALSE)
      */
-    private $bcHash;
+    private $bcPublicKey;
 
     /**
      * @ORM\ManyToOne(targetEntity="User", inversedBy="publicKeys")
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=FALSE)
      */
     private $user;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=30, nullable=FALSE)
+     */
+    private $bcType;
 
     /**
      * BcPublicKey constructor.
@@ -61,18 +67,34 @@ class BcPublicKey
     }
 
     /**
-     * @param string $hash
+     * @param string $bcPublicKey
      */
-    public function setBcHash($hash)
+    public function setBcPublicKey($bcPublicKey)
     {
-        $this->bcHash = $hash;
+        $this->bcPublicKey = $bcPublicKey;
     }
 
     /**
      * @return string
      */
-    public function getBcHash()
+    public function getBcPublicKey()
     {
-        return $this->bcHash;
+        return $this->bcPublicKey;
+    }
+
+    /**
+     * @param string $type
+     */
+    public function setBcType($type)
+    {
+        $this->bcType = $type;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBcType()
+    {
+        return $this->bcType;
     }
 }

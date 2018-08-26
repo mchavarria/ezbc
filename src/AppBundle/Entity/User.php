@@ -19,6 +19,23 @@ class User extends BaseUser
     use TimestampableEntityTrait;
 
     /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(type="string", length=30, nullable=FALSE)
+     */
+    private $name;
+
+    /**
+     * @ORM\Column(type="string", length=30, nullable=FALSE)
+     */
+    private $lastName;
+
+    /**
      * @ORM\OneToMany(targetEntity="BcPublicKey", mappedBy="user")
      */
     private $publicKeys;
@@ -34,11 +51,36 @@ class User extends BaseUser
     }
 
     /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @param string $name
      */
-    protected $id;
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $lastname
+     */
+    public function setLastName($lastname)
+    {
+        $this->lastName = $lastname;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
 
     /**
      * @return ArrayCollection

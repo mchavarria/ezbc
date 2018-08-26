@@ -26,9 +26,31 @@ class BcTransaction
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=100, nullable=FALSE)
      */
     private $bcHash;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="BcPublicKey")
+     * @ORM\JoinColumn(name="bc_public_key_id", referencedColumnName="id", nullable=FALSE)
+     */
+    private $bcPublicKey;
+
+    /**
+     * @ORM\Column(type="string", length=30, nullable=FALSE)
+     */
+    private $bcType;
+
+    /**
+     * BcTransaction constructor.
+     * @param BcPublicKey   $bcPublicKey
+     * @param string        $type
+     */
+    public function __construct(BcPublicKey $bcPublicKey, $type)
+    {
+        $this->bcPublicKey = $bcPublicKey;
+        $this->bcType = $type;
+    }
 
     /**
      * @return int
@@ -36,6 +58,22 @@ class BcTransaction
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return BcPublicKey
+     */
+    public function getBcPublicKey()
+    {
+        return $this->bcPublicKey;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBcType()
+    {
+        return $this->bcType;
     }
 
     /**
