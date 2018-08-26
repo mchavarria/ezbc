@@ -5,15 +5,15 @@ namespace AppBundle\Repository;
 use Doctrine\ORM\EntityRepository;
 
 /**
- * Class BcPublicKeyRepository
+ * Class BcTransactionRepository
  */
-class BcPublicKeyRepository extends EntityRepository
+class BcTransactionRepository extends EntityRepository
 {
     public function findAllOrderedByDate()
     {
         return $this->getEntityManager()
             ->createQuery(
-                'SELECT bpk FROM AppBundle:BcPublicKey bpk ORDER BY bpk.id ASC'
+                'SELECT t FROM AppBundle:BcTransaction t ORDER BY p.id ASC'
             )
             ->getResult();
     }

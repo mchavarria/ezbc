@@ -6,13 +6,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * Class BcTransaction
+ * Class BcPublicKey
  * @ORM\Entity
- * @ORM\Table(name="bc_transaction")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\BcTransactionRepository")
- * @Gedmo\SoftDeleteable(fieldName="deletedDate", timeAware=false)
+ * @ORM\Table(name="user_public_key")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\BcPublicKeyRepository")
  */
-class BcTransaction
+class BcPublicKey
 {
     use BlameableEntityTrait;
     use SoftDeleteableEntityTrait;
@@ -31,11 +30,34 @@ class BcTransaction
     private $bcHash;
 
     /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="publicKeys")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $user;
+
+    /**
+     * BcPublicKey constructor.
+     * @param User $user
+     */
+    public function __construct(User $user)
+    {
+        $this->user = $user;
+    }
+
+    /**
      * @return int
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 
     /**
