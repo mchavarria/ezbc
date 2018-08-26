@@ -7,6 +7,11 @@ imports:
 #        result_cache_driver: apc
 #        query_cache_driver: apc
 
+# Doctrine Configuration
+doctrine:
+    dbal:
+        url: "%env(DATABASE_URL)%"
+
 monolog:
     handlers:
         main:
@@ -14,8 +19,8 @@ monolog:
             action_level: error
             handler: nested
         nested:
-            type: stream
-            path: '%kernel.logs_dir%/%kernel.environment%.log'
+            type:  stream
+            path:  "php://stderr"
             level: debug
         console:
             type: console

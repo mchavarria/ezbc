@@ -28,7 +28,7 @@ class User extends BaseUser
     /**
      * @ORM\Column(type="string", length=30, nullable=FALSE)
      */
-    private $name;
+    private $firstName;
 
     /**
      * @ORM\Column(type="string", length=30, nullable=FALSE)
@@ -51,19 +51,19 @@ class User extends BaseUser
     }
 
     /**
-     * @param string $name
+     * @param string $firstName
      */
-    public function setName($name)
+    public function setFirstName($firstName)
     {
-        $this->name = $name;
+        $this->firstName = $firstName;
     }
 
     /**
      * @return string
      */
-    public function getName()
+    public function getFirstName()
     {
-        return $this->name;
+        return $this->firstName;
     }
 
     /**
