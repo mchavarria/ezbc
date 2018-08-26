@@ -1,3 +1,6 @@
+/.idea
+/.idea/*
+.idea/workspace.xml
 /.web-server-pid
 /app/config/parameters.yml
 /build/
