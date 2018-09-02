@@ -1,13 +1,107 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}{{ 'ez.bc'|trans }}{% endblock %}</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="{{ asset('plugins/landing/bootstrap3/css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('plugins/landing/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('plugins/landing/animate/animate.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/landing/style.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/landing/style-responsive.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/landing/theme/default.css') }}" id="theme" rel="stylesheet" />
+    <!-- ================== END BASE CSS STYLE ================== -->
+    {% block stylesheets %}
+    {% endblock %}
+
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="{{ asset('plugins/landing/pace/pace.min.js') }}"></script>
+    <!-- ================== END BASE JS ================== -->
+</head>
+<body data-spy="scroll" data-target="#header-navbar" data-offset="51">
+<!-- begin #page-container -->
+<div id="page-container" class="fade">
+    <!-- begin #header -->
+    {% include 'landing/header.html.twig' %}
+    <!-- end #header -->
+
+    <!-- begin #home -->
+    {% include 'landing/home.html.twig' %}
+    <!-- end #home -->
+
+    <!-- begin #about -->
+    {% include 'landing/about.html.twig' %}
+    <!-- end #about -->
+
+    <!-- begin #milestone -->
+    {% include 'landing/milestone.html.twig' %}
+    <!-- end #milestone -->
+
+    <!-- begin #team -->
+    {% include 'landing/team.html.twig' %}
+    <!-- end #team -->
+
+    <!-- begin #quote -->
+    {% include 'landing/slogan.html.twig' %}
+    <!-- end #quote -->
+
+    <!-- beign #service -->
+    {% include 'landing/services.html.twig' %}
+    <!-- end #about -->
+
+    <!-- beign #action-box -->
+    {% include 'landing/live_preview.html.twig' %}
+    <!-- end #action-box -->
+
+    <!-- begin #work -->
+    {% include 'landing/work.html.twig' %}
+    <!-- end #work -->
+
+    <!-- begin #client -->
+    {% include 'landing/client.html.twig' %}
+    <!-- end #client -->
+
+    <!-- begin #pricing -->
+    {% include 'landing/pricing.html.twig' %}
+    <!-- end #pricing -->
+
+    <!-- begin #contact -->
+    {% include 'landing/contact_us.html.twig' %}
+    <!-- end #contact -->
+
+    <!-- begin #footer -->
+    {% include 'landing/footer.html.twig' %}
+    <!-- end #footer -->
+</div>
+<!-- end #page-container -->
+
+<!-- ================== BEGIN BASE JS ================== -->
+<script src="{{ asset('plugins/landing/jquery/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ asset('plugins/landing/bootstrap3/js/bootstrap.min.js') }}"></script>
+<!--[if lt IE 9]>
+<script src="{{ asset('crossbrowserjs/landing/html5shiv.js') }}"></script>
+<script src="{{ asset('crossbrowserjs/landing/respond.min.js') }}"></script>
+<script src="{{ asset('crossbrowserjs/landing/excanvas.min.js') }}"></script>
+<![endif]-->
+<script src="{{ asset('plugins/landing/js-cookie/js.cookie.js') }}"></script>
+<script src="{{ asset('plugins/landing/scrollMonitor/scrollMonitor.js') }}"></script>
+<script src="{{ asset('js/landing/apps.min.js') }}"></script>
+<!-- ================== END BASE JS ================== -->
+
+<script>
+    {% block scripts %}
+    $(document).ready(function() {
+        App.init();
+    });
+    {% endblock %}
+</script>
+</body>
 </html>
