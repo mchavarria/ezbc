@@ -1,13 +1,71 @@
-{% trans_default_domain 'FOSUserBundle' %}
-
-{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-    {{ form_row(form.firstName) }}
-    {{ form_row(form.lastName) }}
-    {{ form_row(form.email) }}
-    {{ form_row(form.username) }}
-    {{ form_row(form.plainPassword.first) }}
-    {{ form_row(form.plainPassword.second) }}
-    <div>
-        <input type="submit" value="{{ 'registration.submit'|trans }}" />
+<div class="right-content">
+    <!-- begin register-header -->
+    <h1 class="register-header">
+        Sign Up
+        <small>Create your Easy Block Chain Account.</small>
+    </h1>
+    <!-- end register-header -->
+    <!-- begin register-content -->
+    <div class="register-content">
+        {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'margin-bottom-0'}}) }}
+            <label class="control-label">Name <span class="text-danger">*</span></label>
+            <div class="row row-space-10">
+                <div class="col-md-6 m-b-15">
+                    {{ form_row(form.firstName) }}
+                    <input type="text" class="form-control" placeholder="First name" required />
+                </div>
+                <div class="col-md-6 m-b-15">
+                    {{ form_row(form.lastName) }}
+                    <input type="text" class="form-control" placeholder="Last name" required />
+                </div>
+            </div>
+            <label class="control-label">Email <span class="text-danger">*</span></label>
+            <div class="row m-b-15">
+                <div class="col-md-12">
+                    {{ form_row(form.email) }}
+                    <input type="text" class="form-control" placeholder="Email address" required />
+                </div>
+            </div>
+            <label class="control-label">Re-enter Email <span class="text-danger">*</span></label>
+            <div class="row m-b-15">
+                <div class="col-md-12">
+                    {{ form_row(form.username) }}
+                    <input type="text" class="form-control" placeholder="Username" required />
+                </div>
+            </div>
+            <label class="control-label">Password <span class="text-danger">*</span></label>
+            <div class="row m-b-15">
+                <div class="col-md-12">
+                    {{ form_row(form.plainPassword.first) }}
+                    <input type="password" class="form-control" placeholder="Password" required />
+                </div>
+            </div>
+            <label class="control-label">Password <span class="text-danger">*</span></label>
+            <div class="row m-b-15">
+                <div class="col-md-12">
+                    {{ form_row(form.plainPassword.second) }}
+                    <input type="password" class="form-control" placeholder="Password" required />
+                </div>
+            </div>
+            <div class="checkbox checkbox-css m-b-30">
+                <div class="checkbox checkbox-css m-b-30">
+                    <input type="checkbox" id="agreement_checkbox" value="">
+                    <label for="agreement_checkbox">
+                        By clicking Sign Up, you agree to our <a href="javascript:;">Terms</a> and that you have read our <a href="javascript:;">Data Policy</a>, including our <a href="javascript:;">Cookie Use</a>.
+                    </label>
+                </div>
+            </div>
+            <div class="register-buttons">
+                <button type="submit" class="btn btn-primary btn-block btn-lg">{{ 'sign.up'|trans }}</button>
+            </div>
+            <div class="m-t-20 m-b-40 p-b-40 text-inverse">
+                Already a member? Click <a href="{{ path('fos_user_security_login') }}">here</a> to login.
+            </div>
+            <hr />
+            <p class="text-center">
+                &copy; Easy Block Chain All Right Reserved 2018
+            </p>
+        {{ form_end(form) }}
     </div>
-{{ form_end(form) }}
+    <!-- end register-content -->
+</div>

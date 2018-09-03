@@ -35,7 +35,17 @@
                 <li><a href="#client" data-click="scroll-to-target">CLIENT</a></li>
                 <li><a href="#pricing" data-click="scroll-to-target">PRICING</a></li>
                 <li><a href="#contact" data-click="scroll-to-target">CONTACT</a></li>
-                <li><a href="{{ path('fos_user_security_login') }}" data-click="scroll-to-target">LOGIN</a></li>
+
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                    <a href="{{ path('fos_user_security_logout') }}">
+                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                    </a>
+                    <li><a href="{{ path('fos_user_security_logout') }}">LOG OUT</a></li>
+                {% else %}
+                    <li><a href="{{ path('fos_user_security_login') }}">LOGIN</a></li>
+                    <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                {% endif %}
             </ul>
         </div>
         <!-- end navbar-collapse -->
