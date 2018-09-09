@@ -1,26 +1,14 @@
 <div class="right-content">
     <!-- begin register-header -->
     <h1 class="register-header">
-        Sign Up
-        <small>Create your Easy Block Chain Account.</small>
+        Congratulations You've now an E-Z Block Chain account!
+        <small>Go to the login page to start using block chain.</small>
     </h1>
     <!-- end register-header -->
     <!-- begin register-content -->
     <div class="register-content">
-
-        <div class="checkbox checkbox-css m-b-30">
-            <div class="checkbox checkbox-css m-b-30">
-                <input type="checkbox" id="agreement_checkbox" value="">
-                <label for="agreement_checkbox">
-                    By clicking Sign Up, you agree to our <a href="javascript:;">Terms</a> and that you have read our <a href="javascript:;">Data Policy</a>, including our <a href="javascript:;">Cookie Use</a>.
-                </label>
-            </div>
-        </div>
         <div class="register-buttons">
-            <button type="submit" class="btn btn-primary btn-block btn-lg">{{ 'sign.up'|trans }}</button>
-        </div>
-        <div class="m-t-20 m-b-40 p-b-40 text-inverse">
-            Already a member? Click <a href="{{ path('fos_user_security_login') }}">here</a> to login.
+            <a href="{{ path('fos_user_security_login') }}" class="btn btn-primary btn-block btn-lg">{{ 'log.in'|trans }}</a>
         </div>
         <hr />
         <p class="text-center">
