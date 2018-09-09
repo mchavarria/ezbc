@@ -1,0 +1,28 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}{{ parent() }} :: {{ 'user.edit'|trans }}{% endblock %}
+
+{% block page_header %}
+    Edit User <small>fill out the form.</small>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <!-- begin col-8 -->
+        <div class="col-lg-8">
+            <!-- begin panel -->
+            <div class="panel panel-inverse">
+                <!-- begin panel-heading -->
+                <div class="panel-heading">
+                    <h4 class="panel-title">User Form</h4>
+                </div>
+                <!-- end panel-heading -->
+                <!-- begin panel-body -->
+                {{ include('@App/User/form.html.twig') }}
+                <!-- end panel-body -->
+            </div>
+            <!-- end panel -->
+        </div>
+        <!-- end col-8 -->
+    </div>
+{% endblock %}

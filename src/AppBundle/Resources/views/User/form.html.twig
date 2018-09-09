@@ -1,0 +1,17 @@
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+<div class="panel-body">
+    {{ form_start(form, { 'action': user.id ? path('app_user_edit', { id: user.id }) : path('app_user_new') }) }}
+        <fieldset>
+            <legend class="m-b-15">Legend</legend>
+
+            {{ form_row(form.firstName) }}
+            {{ form_row(form.lastName) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.username) }}
+
+            <button type="submit" class="btn btn-sm btn-primary m-r-5">{{ user.id ? 'user.save'|trans : 'user.create'|trans }}</button>
+            <a href="{{ path('app_user_index')}}" class="btn btn-sm btn-default">{{ 'user.cancel'|trans }}</a>
+        </fieldset>
+    {{ form_end(form) }}
+</div>

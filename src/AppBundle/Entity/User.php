@@ -89,4 +89,12 @@ class User extends BaseUser
     {
         return $this->publicKeys;
     }
+
+    /**
+     * @return string
+     */
+    public function getFullName()
+    {
+        return $this->lastName.' '.$this->firstName;
+    }
 }
