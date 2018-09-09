@@ -11,7 +11,7 @@
             <a href="{{ path('homepage') }}" class="navbar-brand">
                 <span class="brand-logo"></span>
                 <span class="brand-text">
-                    <span class="text-theme">Easy</span> Block Chain
+                    <span class="text-theme">E-Z</span> Block Chain
                 </span>
             </a>
         </div>
@@ -37,14 +37,12 @@
                 <li><a href="#contact" data-click="scroll-to-target">CONTACT</a></li>
 
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-                    <a href="{{ path('fos_user_security_logout') }}">
-                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                    </a>
-                    <li><a href="{{ path('fos_user_security_logout') }}">LOG OUT</a></li>
+                    <li>
+                        {{ 'user.logged_in_as'|trans({'%username%': app.user.username}) }} |
+                        <a href="{{ path('fos_user_security_logout') }}">{{ 'logout'|trans }}</a>
+                    </li>
                 {% else %}
-                    <li><a href="{{ path('fos_user_security_login') }}">LOGIN</a></li>
-                    <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                    <li><a href="{{ path('fos_user_security_login') }}">{{ 'login'|trans }}</a></li>
                 {% endif %}
             </ul>
         </div>
