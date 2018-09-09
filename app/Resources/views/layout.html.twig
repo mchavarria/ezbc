@@ -1,33 +1,110 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-    </head>
-    <body>
-        <div>
-            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-                <a href="{{ path('fos_user_security_logout') }}">
-                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                </a>
-            {% else %}
-                <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-            {% endif %}
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} :: {% block page_title %}{% endblock %}{% endblock %}
+
+{% block custom_stylesheets %}
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="{{ asset('plugins/jquery-ui/jquery-ui.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('plugins/admin/bootstrap/4.1.0/css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('plugins/admin/font-awesome/5.0/css/fontawesome-all.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('plugins/animate/animate.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/admin/style.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/admin/style-responsive.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/admin/theme/default.css') }}" id="theme" rel="stylesheet" />
+    <!-- ================== END BASE CSS STYLE ================== -->
+
+    <!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+    <link href="{{ asset('plugins/jquery-jvectormap/jquery-jvectormap.css') }}" id="theme" rel="stylesheet" />
+    <link href="{{ asset('plugins/bootstrap-datepicker/css/bootstrap-datepicker.css') }}" id="theme" rel="stylesheet" />
+    <link href="{{ asset('plugins/gritter/css/jquery.gritter.css') }}" id="theme" rel="stylesheet" />
+    <!-- ================== END PAGE LEVEL STYLE ================== -->
+
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="{{ asset('plugins/pace/pace.min.js') }}"></script>
+    <!-- ================== END BASE JS ================== -->
+{% endblock %}
+
+{% block custom_scripts %}
+
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="{{ asset('plugins/jquery/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('plugins/admin/bootstrap/4.1.0/js/bootstrap.bundle.min.js') }}"></script>
+    <!--[if lt IE 9]>
+    <script src="{{ asset('crossbrowserjs/html5shiv.js') }}"></script>
+    <script src="{{ asset('crossbrowserjs/respond.min.js') }}"></script>
+    <script src="{{ asset('crossbrowserjs/excanvas.min.js') }}"></script>
+    <![endif]-->
+    <script src="{{ asset('plugins/admin/slimscroll/jquery.slimscroll.min.js') }}"></script>
+    <script src="{{ asset('plugins/js-cookie/js.cookie.js') }}"></script>
+    <script src="{{ asset('js/admin/theme/default.min.js') }}"></script>
+    <script src="{{ asset('js/admin/apps.min.js') }}"></script>
+    <!-- ================== END BASE JS ================== -->
+
+    <!-- ================== BEGIN PAGE LEVEL JS ================== -->
+    <script src="{{ asset('plugins/gritter/js/jquery.gritter.js') }}"></script>
+    <script src="{{ asset('plugins/flot/jquery.flot.min.js') }}"></script>
+    <script src="{{ asset('plugins/flot/jquery.flot.time.min.js') }}"></script>
+    <script src="{{ asset('plugins/flot/jquery.flot.resize.min.js') }}"></script>
+    <script src="{{ asset('plugins/flot/jquery.flot.pie.min.js') }}"></script>
+    <script src="{{ asset('plugins/sparkline/jquery.sparkline.js') }}"></script>
+    <script src="{{ asset('plugins/jquery-jvectormap/jquery-jvectormap.min.js') }}"></script>
+    <script src="{{ asset('plugins/jquery-jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
+    <script src="{{ asset('plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
+    <script src="{{ asset('js/admin/demo/dashboard.js') }}"></script>
+    <!-- ================== END PAGE LEVEL JS ================== -->
+
+    <!-- ================== BEGIN NOTIFICATIONS ================== -->
+    <!-- ================== BEGIN ADD NOTIFICATION ON FLASH CHECK DEMO DASHBOARD ================== -->
+    {#{% if app.request.hasPreviousSession %}#}
+        {#{% for type, messages in app.session.flashbag.all() %}#}
+            {#{% for message in messages %}#}
+                {#<div class="flash-{{ type }}">#}
+                    {#{{ message }}#}
+                {#</div>#}
+            {#{% endfor %}#}
+        {#{% endfor %}#}
+    {#{% endif %}#}
+    <!-- ================== END NOTIFICATIONS ================== -->
+    <script>
+        $(document).ready(function() {
+            App.init();
+        });
+    </script>
+{% endblock %}
+
+{% block page_container %}
+    <!-- begin #page-loader -->
+    <div id="page-loader" class="fade show"><span class="spinner"></span></div>
+    <!-- end #page-loader -->
+    <!-- begin #page-container -->
+    <div id="page-container" class="fade page-sidebar-fixed page-header-fixed">
+        <!-- begin #header -->
+        {{ include('backend/header.html.twig') }}
+        <!-- end #header -->
+
+        <!-- begin #sidebar -->
+        {{ include('backend/sidebar.html.twig') }}
+        <!-- end #sidebar -->
+
+        <div id="content" class="content">
+
+        <!-- begin breadcrumb -->
+        <ol class="breadcrumb pull-right">
+            <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+        <!-- end breadcrumb -->
+        <!-- begin page-header -->
+        <h1 class="page-header">{% block page_header %}{% endblock %}</h1>
+        <!-- end page-header -->
+        {% block content %}
+        {% endblock %}
         </div>
 
-        {% if app.request.hasPreviousSession %}
-            {% for type, messages in app.session.flashbag.all() %}
-                {% for message in messages %}
-                    <div class="flash-{{ type }}">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            {% endfor %}
-        {% endif %}
-
-        <div>
-            {% block content %}
-            {% endblock content %}
-        </div>
-    </body>
-</html>
+        <!-- begin scroll to top btn -->
+        <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+        <!-- end scroll to top btn -->
+    </div>
+    <!-- end #page-container -->
+{% endblock %}
