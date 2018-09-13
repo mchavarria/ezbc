@@ -36,9 +36,9 @@ class User extends BaseUser
     private $lastName;
 
     /**
-     * @ORM\OneToMany(targetEntity="BcPublicKey", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="Wallet", mappedBy="user", orphanRemoval=true)
      */
-    private $publicKeys;
+    private $wallets;
 
     /**
      * User constructor.
@@ -47,7 +47,7 @@ class User extends BaseUser
     {
         parent::__construct();
 
-        $this->publicKeys = new ArrayCollection();
+        $this->wallets = new ArrayCollection();
     }
 
     /**
@@ -85,9 +85,45 @@ class User extends BaseUser
     /**
      * @return ArrayCollection
      */
-    public function getPublicKeys()
+    public function getWallets()
     {
-        return $this->publicKeys;
+        return $this->wallets;
+    }
+
+    /**
+     * Add wallet.
+     *
+     * @param Wallet $wallet
+     *
+     * @return User
+     */
+    public function addWallet(Wallet $wallet)
+    {
+        $this->wallets[] = $wallet;
+
+        return $this;
+    }
+
+    /**
+     * Remove wallet.
+     *
+     * @param Wallet $wallet
+     */
+    public function removeZonePropertyUse(Wallet $wallet)
+    {
+        $this->wallets->removeElement($wallet);
+    }
+
+    /**
+     * Has zone property use.
+     *
+     * @param Wallet $wallet
+     *
+     * @return bool
+     */
+    public function hasZonePropertyUse(Wallet $wallet)
+    {
+        return $this->wallets->contains($wallet);
     }
 
     /**

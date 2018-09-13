@@ -3,23 +3,24 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\User;
-use AppBundle\Form\UserType;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use AppBundle\Entity\Wallet;
+use AppBundle\Form\WalletType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * Class UserController
- * @Route("/app/user")
+ * Class WalletController
+ * @Route("/app/wallet")
  */
-class UserController extends Controller
+class WalletController extends Controller
 {
     /**
-     * @Template("@App/User/index.html.twig")
+     * @Template("@App/Wallet/index.html.twig")
      *
-     * @Route("/index", name="app_user_index")
+     * @Route("/index", name="app_wallet_index")
      *
      * @return array
      */
@@ -29,18 +30,21 @@ class UserController extends Controller
     }
 
     /**
-     * @Route("/new", name="app_user_new")
+     * @Route("/{id}/new", name="app_wallet_new", requirements={"id" = "\d+"}, options={"expose" = true})
      *
-     * @Template("@App/User/new.html.twig")
+     * @Template("@App/Wallet/new.html.twig")
      *
-     * @param Request $request
+     * @param Request $request HTTP request.
+     * @param int     $id      Identifier
      *
      * @return array|Response
      */
-    public function newAction(Request $request)
+    public function newAction(Request $request, $id)
     {
-        $user = new User();
-        $form = $this->createForm(UserType::class, $user);
+        $repository = $this->getDoctrine()->getRepository(User::class);
+        $user = $repository->find($id);
+        $wallet = new Wallet($user);
+        $form = $this->createForm(WalletType::class, $wallet);
 
         $form->handleRequest($request);
 
@@ -50,14 +54,14 @@ class UserController extends Controller
             //$user = $form->getData();
 
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($user);
+            $entityManager->persist($wallet);
             $entityManager->flush();
 
             return $this->redirectToRoute('app_user_index');
         }
 
         $parameters = [
-            'user' => $user,
+            'wallet' => $wallet,
             'form' => $form->createView()
         ];
 
@@ -65,9 +69,9 @@ class UserController extends Controller
     }
 
     /**
-     * @Route("/{id}/edit", name="app_user_edit", requirements={"id" = "\d+"}, options={"expose" = true})
+     * @Route("/{id}/edit", name="app_wallet_edit", requirements={"id" = "\d+"}, options={"expose" = true})
      *
-     * @Template("@App/User/edit.html.twig")
+     * @Template("@App/Wallet/edit.html.twig")
      *
      * @param Request $request HTTP request.
      * @param int     $id      Identifier
@@ -76,24 +80,24 @@ class UserController extends Controller
      */
     public function editAction(Request $request, $id)
     {
-        $repository = $this->getDoctrine()->getRepository(User::class);
-        $user = $repository->find($id);
+        $repository = $this->getDoctrine()->getRepository(Wallet::class);
+        $wallet = $repository->find($id);
 
-        $form = $this->createForm(UserType::class, $user);
+        $form = $this->createForm(WalletType::class, $wallet);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($user);
+            $entityManager->persist($wallet);
             $entityManager->flush();
 
             return $this->redirectToRoute('app_user_index');
         }
 
         $parameters = [
-            'user' => $user,
+            'wallet' => $wallet,
             'form' => $form->createView()
         ];
 

@@ -6,12 +6,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * Class BcPublicKey
+ * Class Wallet
  * @ORM\Entity
- * @ORM\Table(name="user_public_key")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\BcPublicKeyRepository")
+ * @ORM\Table(name="user_wallet")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\WalletRepository")
  */
-class BcPublicKey
+class Wallet
 {
     use BlameableEntityTrait;
     use SoftDeleteableEntityTrait;
@@ -27,10 +27,10 @@ class BcPublicKey
     /**
      * @ORM\Column(type="string", length=100, nullable=FALSE)
      */
-    private $bcPublicKey;
+    private $walletKey;
 
     /**
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="publicKeys")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="wallets")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=FALSE)
      */
     private $user;
@@ -67,19 +67,19 @@ class BcPublicKey
     }
 
     /**
-     * @param string $bcPublicKey
+     * @param string $key
      */
-    public function setBcPublicKey($bcPublicKey)
+    public function setWalletKey($key)
     {
-        $this->bcPublicKey = $bcPublicKey;
+        $this->walletKey = $key;
     }
 
     /**
      * @return string
      */
-    public function getBcPublicKey()
+    public function getWalletKey()
     {
-        return $this->bcPublicKey;
+        return $this->walletKey;
     }
 
     /**

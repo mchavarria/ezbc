@@ -76,6 +76,14 @@ doctrine:
                         class: Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter
                         enabled: true
 
+# Doctrine migrations configuration
+doctrine_migrations:
+    dir_name: "%kernel.root_dir%/DoctrineMigrations"
+    namespace: sfEzbc\Migrations
+    table_name: migration_versions
+    name: EZ Bkch Migrations
+    organize_migrations: false
+
 stof_doctrine_extensions:
     orm:
         default:

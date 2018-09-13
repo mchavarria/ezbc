@@ -31,10 +31,10 @@ class BcTransaction
     private $bcHash;
 
     /**
-     * @ORM\ManyToOne(targetEntity="BcPublicKey")
-     * @ORM\JoinColumn(name="bc_public_key_id", referencedColumnName="id", nullable=FALSE)
+     * @ORM\ManyToOne(targetEntity="Wallet")
+     * @ORM\JoinColumn(name="bc_wallet_key_id", referencedColumnName="id", nullable=FALSE)
      */
-    private $bcPublicKey;
+    private $wallet;
 
     /**
      * @ORM\Column(type="string", length=30, nullable=FALSE)
@@ -43,12 +43,12 @@ class BcTransaction
 
     /**
      * BcTransaction constructor.
-     * @param BcPublicKey   $bcPublicKey
-     * @param string        $type
+     * @param Wallet $wallet
+     * @param string $type
      */
-    public function __construct(BcPublicKey $bcPublicKey, $type)
+    public function __construct(Wallet $wallet, $type)
     {
-        $this->bcPublicKey = $bcPublicKey;
+        $this->wallet = $wallet;
         $this->bcType = $type;
     }
 
@@ -61,11 +61,11 @@ class BcTransaction
     }
 
     /**
-     * @return BcPublicKey
+     * @return Wallet
      */
-    public function getBcPublicKey()
+    public function getWallet()
     {
-        return $this->bcPublicKey;
+        return $this->wallet;
     }
 
     /**

@@ -1,9 +1,9 @@
 {% extends "layout.html.twig" %}
 
-{% block title %}{{ parent() }}{{ 'user.new'|trans }}{% endblock %}
+{% block title %}{{ parent() }} {{ 'wallet.new'|trans }}{% endblock %}
 
 {% block page_header %}
-New User <small>fill out the form.</small>
+    New Wallet <small>fill out the form.</small>
 {% endblock %}
 
 {% block content %}
@@ -14,11 +14,11 @@ New User <small>fill out the form.</small>
             <div class="panel panel-inverse">
                 <!-- begin panel-heading -->
                 <div class="panel-heading">
-                    <h4 class="panel-title">User Form</h4>
+                    <h4 class="panel-title">Wallet Form</h4>
                 </div>
                 <!-- end panel-heading -->
                 <!-- begin panel-body -->
-                {{ include('@App/User/form.html.twig') }}
+                {{ include('@App/Wallet/form.html.twig') }}
                 <!-- end panel-body -->
             </div>
             <!-- end panel -->
