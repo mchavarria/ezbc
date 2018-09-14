@@ -9,6 +9,6 @@ use AppBundle\Lib\Enum;
  */
 class BlockChainTypes extends Enum
 {
-    const BIT_COIN = 'bc';
-    const ETHERIUM = 'eth';
+    const BIT_COIN = 'bitcoin';
+    const ETHERIUM = 'etherium';
 }
