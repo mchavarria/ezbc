@@ -2,12 +2,12 @@
 # Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
 # https://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
 parameters:
-    database_driver:    pdo_pgsql
+    database_driver:    pdo_mysql
     database_host:      localhost
     database_port:      null
-    database_name:      proyezbc
-    database_user:      proyezbc
-    database_password:  proyezbc
+    database_name:      ezbkch
+    database_user:      root
+    database_password:  Elangelm5!
     # You should uncomment this if you want to use pdo_sqlite
     #database_path: '%kernel.project_dir%/var/data/data.sqlite'
 
