@@ -87,7 +87,7 @@
         {{ include('backend/sidebar.html.twig') }}
         <!-- end #sidebar -->
 
-        <div id="content" class="content">
+        <div id="content" class="content {% block content_div_classes %}{% endblock %}">
 
         <!-- begin breadcrumb -->
         <ol class="breadcrumb pull-right">

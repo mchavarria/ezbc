@@ -1,6 +1,6 @@
 {% extends "layout.html.twig" %}
 
-{% block title %}{{ parent() }} :: {{ 'dashboard'|trans }}{% endblock %}
+{% block title %}{{ parent() }} {{ 'dashboard'|trans }}{% endblock %}
 
 {% block page_header %}
     Dashboard <small>most recent activities.</small>
@@ -14,11 +14,11 @@
             <div class="widget widget-stats bg-red">
                 <div class="stats-icon"><i class="fa fa-desktop"></i></div>
                 <div class="stats-info">
-                    <h4>TOTAL VISITORS</h4>
+                    <h4>{{ 'total.transactions'|trans|upper }}</h4>
                     <p>3,291,922</p>
                 </div>
                 <div class="stats-link">
-                    <a href="javascript:;">View Detail <i class="fa fa-arrow-alt-circle-right"></i></a>
+                    <a href="javascript:;">{{ 'view.details'|trans }} <i class="fa fa-arrow-alt-circle-right"></i></a>
                 </div>
             </div>
         </div>
@@ -28,11 +28,11 @@
             <div class="widget widget-stats bg-orange">
                 <div class="stats-icon"><i class="fa fa-link"></i></div>
                 <div class="stats-info">
-                    <h4>BOUNCE RATE</h4>
-                    <p>20.44%</p>
+                    <h4>{{ 'my.wallets'|trans|upper }}</h4>
+                    <p>{{ app.user.wallets|length }}</p>
                 </div>
                 <div class="stats-link">
-                    <a href="javascript:;">View Detail <i class="fa fa-arrow-alt-circle-right"></i></a>
+                    <a href="{{ path('app_wallet_my', { id: app.user.id }) }}">{{ 'view.details'|trans }} <i class="fa fa-arrow-alt-circle-right"></i></a>
                 </div>
             </div>
         </div>

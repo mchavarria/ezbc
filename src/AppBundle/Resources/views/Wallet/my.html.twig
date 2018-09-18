@@ -1,0 +1,71 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}{{ parent() }}{{ 'user.wallets'|trans }}{% endblock %}
+
+{% block page_header %}
+    User Wallets <small>you can manage your wallets from here.</small>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+
+        <!-- begin col-8 -->
+        <div class="col-lg-8">
+            <!-- begin panel -->
+            <div class="panel panel-inverse" data-sortable-id="table-basic-7">
+                <!-- begin panel-heading -->
+                <div class="panel-heading">
+                    <div class="panel-heading-btn"></div>
+                    <h4 class="panel-title">Current Wallets</h4>
+                </div>
+                <!-- end panel-heading -->
+                <!-- begin panel-body -->
+                <div class="panel-body">
+                    <!-- begin table-responsive -->
+                    <div class="table-responsive">
+                        <table class="table table-striped m-b-0">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Block Chain</th>
+                                <th>Wallet Key</th>
+                                <th width="1%"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for wallet in app.user.wallets %}
+                            <tr>
+                                <td class="with-img">
+                                    <img src="{{ asset('img/admin/wallet/'~wallet.bcType~'.jpg') }}" class="img-rounded height-30" />
+                                </td>
+                                <td>{{ wallet.bcType|capitalize }}</td>
+                                <td>{{ wallet.walletKey|slice(0, 60) ~ '...' }}</td>
+                                <td class="with-btn" nowrap>
+                                    <a href="{{ path('app_wallet_edit', { id: wallet.id }) }}" class="btn btn-sm btn-primary width-60 m-r-2">Edit</a>
+                                    <a href="#" class="btn btn-sm btn-white width-60">Delete</a>
+                                </td>
+                            </tr>
+                            {% else %}
+                                <tr>
+                                    <td class="with-img">
+                                        <img src="{{ asset('img/admin/wallet/none.jpg') }}" class="img-rounded height-30" />
+                                    </td>
+                                    <td>---</td>
+                                    <td>{{ 'no.wallets.create.one'|trans }}</td>
+                                    <td class="with-btn" nowrap>
+                                        <a href="{{ path('app_wallet_new', { id: app.user.id }) }}" class="btn btn-sm btn-primary width-60 m-r-2">Create</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- end table-responsive -->
+                </div>
+                <!-- end panel-body -->
+            </div>
+            <!-- end panel -->
+        </div>
+        <!-- end col-8 -->
+    </div>
+{% endblock %}

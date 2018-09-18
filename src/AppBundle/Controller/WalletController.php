@@ -29,6 +29,33 @@ class WalletController extends Controller
         return [];
     }
 
+
+    /**
+     * @Route("/{id}/my", name="app_wallet_my", requirements={"id" = "\d+"}, options={"expose" = true})
+     *
+     * @Template("@App/Wallet/my.html.twig")
+     *
+     * @param int     $id      Identifier
+     *
+     * @return array|Response
+     */
+    public function userWalletAction($id)
+    {
+        $userRepository = $this->getDoctrine()->getRepository(User::class);
+        $user = $userRepository->find($id);
+
+//        $walletRepository = $this->getDoctrine()->getRepository(Wallet::class);
+//        $wallets = $walletRepository->findBy([
+//            'user' => $user->getId()
+//        ]);
+
+        $parameters = [
+            'user' => $user
+        ];
+
+        return $parameters;
+    }
+
     /**
      * @Route("/{id}/new", name="app_wallet_new", requirements={"id" = "\d+"}, options={"expose" = true})
      *
@@ -52,9 +79,10 @@ class WalletController extends Controller
             // $form->getData() holds the submitted values
             // but, the original `$task` variable has also been updated
             //$user = $form->getData();
-
+            $user->addWallet($wallet);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($wallet);
+            $entityManager->persist($user);
             $entityManager->flush();
 
             return $this->redirectToRoute('app_user_index');

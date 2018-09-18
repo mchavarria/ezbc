@@ -9,16 +9,16 @@
                 <div class="info">
                     <b class="caret pull-right"></b>
                     {{ app.user.fullName }}
-                    <small>Front end developer</small>
+                    {#<small>Front end developer</small>#}
                 </div>
             {% endif %}
         </a>
     </li>
     <li>
         <ul class="nav nav-profile">
-            <li><a href="javascript:;"><i class="fa fa-cog"></i> Settings</a></li>
-            <li><a href="javascript:;"><i class="fa fa-pencil-alt"></i> Send Feedback</a></li>
-            <li><a href="javascript:;"><i class="fa fa-question-circle"></i> Helps</a></li>
+            <li><a href="{{ path('app_user_edit', { id: app.user.id }) }}"><i class="fa fa-cog"></i> {{ 'edit.profile'|trans }}</a></li>
+            <li><a href="#"><i class="fa fa-pencil-alt"></i> {{ 'send.feedback'|trans }}</a></li>
+            <li><a href="#"><i class="fa fa-question-circle"></i> {{ 'faq'|trans }}</a></li>
         </ul>
     </li>
 </ul>
