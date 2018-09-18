@@ -1,0 +1,16 @@
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+<div class="panel-body">
+    {{ form_start(form, { 'action': blockChain.id ? path('adm_bc_edit', { id: blockChain.id }) : path('adm_bc_new') }) }}
+        <fieldset>
+            <legend class="m-b-15">Legend</legend>
+
+            {{ form_row(form.name) }}
+            {{ form_row(form.code) }}
+            {{ form_row(form.description) }}
+
+            <button type="submit" class="btn btn-sm btn-primary m-r-5">{{ blockChain.id ? 'block.chain.save'|trans : 'block.chain.create'|trans }}</button>
+            <a href="{{ path('adm_bc_index')}}" class="btn btn-sm btn-default">{{ 'form.cancel'|trans }}</a>
+        </fieldset>
+    {{ form_end(form) }}
+</div>

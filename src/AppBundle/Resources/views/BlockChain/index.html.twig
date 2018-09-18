@@ -1,0 +1,42 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}{{ parent() }}{{ 'block.chain.management'|trans }}{% endblock %}
+
+{% block page_header %}
+    {{ 'block.chains.management'|trans }} <small>{{ 'current.block.chain.in.the.app'|trans }}.</small>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <!-- begin col-8 -->
+        <div class="col-lg-8">
+            <!-- begin #accordion -->
+            <div id="accordion" class="card-accordion">
+                {% for chain in blockChains %}
+                <!-- begin card -->
+                <div class="card">
+                    <div class="card-header bg-black text-white pointer-cursor" data-toggle="collapse" data-target="#chain{{ chain.id }}">
+                        #{{ chain.id }} {{ chain.name|capitalize }}
+                    </div>
+                    <div id="chain{{ chain.id }}" class="collapse show" data-parent="#accordion">
+                        <div class="card-body">
+                            {{ (chain.description) ? chain.description : 'no.description'|trans }}
+                        </div>
+                        <div class="card-footer">
+                            <a href="{{ path('adm_bc_edit', { id: chain.id }) }}" class="btn btn-white btn-sm">{{ 'edit.block.chain'|trans }}</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- end card -->
+                {% endfor %}
+            </div>
+            <!-- end #accordion -->
+        </div>
+        <!-- end col-8 -->
+        <!-- begin col-4 -->
+        <div class="col-lg-4">
+            <a href="{{ path('adm_bc_new') }}" class="btn btn-primary">New Block Chain</a>
+        </div>
+        <!-- end col-4 -->
+    </div>
+{% endblock %}
