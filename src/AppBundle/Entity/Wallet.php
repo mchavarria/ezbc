@@ -36,10 +36,16 @@ class Wallet
     private $user;
 
     /**
-     * @var string
-     * @ORM\Column(type="string", length=30, nullable=FALSE)
+     * @ORM\ManyToOne(targetEntity="BlockChain")
+     * @ORM\JoinColumn(name="bc_id", referencedColumnName="id", nullable=FALSE)
      */
     private $bcType;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=TRUE)
+     */
+    private $description;
 
     /**
      * BcPublicKey constructor.
@@ -83,7 +89,7 @@ class Wallet
     }
 
     /**
-     * @param string $type
+     * @param BlockChain $type
      */
     public function setBcType($type)
     {
@@ -91,10 +97,26 @@ class Wallet
     }
 
     /**
-     * @return string
+     * @return BlockChain
      */
     public function getBcType()
     {
         return $this->bcType;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

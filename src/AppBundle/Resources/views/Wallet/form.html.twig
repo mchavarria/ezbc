@@ -3,10 +3,11 @@
 <div class="panel-body">
     {{ form_start(form, { 'action': wallet.id ? path('app_wallet_edit', { id: wallet.id }) : path('app_wallet_new', { id: wallet.user.id }) }) }}
         <fieldset>
-            <legend class="m-b-15">Associate your wallet.</legend>
+            <legend class="m-b-15">{{ 'associate.your.wallet'|trans }}.</legend>
 
             {{ form_row(form.walletKey) }}
             {{ form_row(form.bcType) }}
+            {{ form_row(form.description) }}
 
             <button type="submit" class="btn btn-sm btn-primary m-r-5">{{ wallet.id ? 'wallet.save'|trans : 'wallet.create'|trans }}</button>
             <a href="{{ path('app_user_index')}}" class="btn btn-sm btn-default">{{ 'wallet.cancel'|trans }}</a>

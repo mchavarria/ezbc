@@ -16,7 +16,7 @@
                 <!-- begin panel-heading -->
                 <div class="panel-heading">
                     <div class="panel-heading-btn"></div>
-                    <h4 class="panel-title">Current Wallets</h4>
+                    <h4 class="panel-title">{{ 'current.wallets'|trans }}</h4>
                 </div>
                 <!-- end panel-heading -->
                 <!-- begin panel-body -->
@@ -27,8 +27,8 @@
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Block Chain</th>
-                                <th>Wallet Key</th>
+                                <th>{{ 'block.chain'|trans }}</th>
+                                <th>{{ 'description'|trans }}</th>
                                 <th width="1%"></th>
                             </tr>
                             </thead>
@@ -39,7 +39,7 @@
                                     <img src="{{ asset('img/admin/wallet/'~wallet.bcType~'.jpg') }}" class="img-rounded height-30" />
                                 </td>
                                 <td>{{ wallet.bcType|capitalize }}</td>
-                                <td>{{ wallet.walletKey|slice(0, 60) ~ '...' }}</td>
+                                <td>{{ (wallet.description) ? wallet.description|slice(0, 60) ~ '...' : 'no.description'|trans }}</td>
                                 <td class="with-btn" nowrap>
                                     <a href="{{ path('app_wallet_edit', { id: wallet.id }) }}" class="btn btn-sm btn-primary width-60 m-r-2">Edit</a>
                                     <a href="#" class="btn btn-sm btn-white width-60">Delete</a>
@@ -67,5 +67,10 @@
             <!-- end panel -->
         </div>
         <!-- end col-8 -->
+        <!-- begin col-4 -->
+        <div class="col-lg-4">
+            <a href="{{ path('app_wallet_new', { id: app.user.id }) }}" class="btn btn-primary">{{ 'new.wallet'|trans }}</a>
+        </div>
+        <!-- end col-4 -->
     </div>
 {% endblock %}

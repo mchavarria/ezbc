@@ -96,4 +96,12 @@ class BlockChain
     {
         return $this->description;
     }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->code;
+    }
 }
