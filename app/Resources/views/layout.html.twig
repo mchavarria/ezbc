@@ -84,7 +84,20 @@
         <!-- end #header -->
 
         <!-- begin #sidebar -->
-        {{ include('backend/sidebar.html.twig') }}
+        <div id="sidebar" class="sidebar">
+            <!-- begin sidebar scrollbar -->
+            <div data-scrollbar="true" data-height="100%">
+
+                <!-- begin sidebar user -->
+                {{ include('backend/sidebar_profile.html.twig') }}
+                <!-- end sidebar user -->
+
+                {% block sidebar %}
+                {% endblock %}
+            </div>
+            <!-- end sidebar scrollbar -->
+        </div>
+        <div class="sidebar-bg"></div>
         <!-- end #sidebar -->
 
         <div id="content" class="content {% block content_div_classes %}{% endblock %}">

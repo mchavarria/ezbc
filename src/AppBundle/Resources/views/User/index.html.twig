@@ -2,6 +2,10 @@
 
 {% block title %}{{ parent() }}{{ 'user.management'|trans }}{% endblock %}
 
+{% block sidebar %}
+    {{ render(controller('AppBundle:Navigation:sidebarComponent', { 'currentItem': 'admin_users' })) }}
+{% endblock %}
+
 {% block page_header %}
     {{ 'user.management'|trans }} <small>{{ 'manage.users.and.roles'|trans }}.</small>
 {% endblock %}
@@ -36,6 +40,7 @@
                                 <th>#</th>
                                 <th>{{ 'user.name'|trans }}</th>
                                 <th>{{ 'user.email'|trans }}</th>
+                                <th>{{ 'user.type'|trans }}</th>
                                 <th width="1%"></th>
                             </tr>
                             </thead>
@@ -45,9 +50,10 @@
                                     <td>{{ user.id }}</td>
                                     <td>{{ user.fullName }}</td>
                                     <td>{{ user.email }}</td>
+                                    <td>{{ user.type }}</td>
                                     <td class="with-btn" nowrap>
                                         <a href="{{ path('app_user_edit', { id: user.id }) }}" class="btn btn-sm btn-primary width-60 m-r-2">{{ 'edit'|trans }}</a>
-                                        <a href="#" class="btn btn-sm btn-white width-60 m-r-2">{{ 'roles'|trans }}</a>
+                                        <a href="#" class="btn btn-sm btn-white m-r-2">{{ 'transactions'|trans }}</a>
                                         <a href="{{ path('app_wallet_my', { id: user.id }) }}" class="btn btn-sm btn-white width-60 m-r-2">{{ 'wallets'|trans }}</a>
                                         <a href="#" class="btn btn-sm btn-danger width-60">{{ 'delete'|trans }}</a>
                                     </td>

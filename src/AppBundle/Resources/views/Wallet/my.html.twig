@@ -2,6 +2,10 @@
 
 {% block title %}{{ parent() }}{{ 'user.wallets'|trans }}{% endblock %}
 
+{% block sidebar %}
+    {{ render(controller('AppBundle:Navigation:sidebarComponent', { 'currentItem': 'wallet' })) }}
+{% endblock %}
+
 {% block page_header %}
     User Wallets <small>you can manage your wallets from here.</small>
 {% endblock %}

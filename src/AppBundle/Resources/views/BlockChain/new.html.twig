@@ -2,6 +2,10 @@
 
 {% block title %}{{ parent() }}{{ 'block.chain.new'|trans }}{% endblock %}
 
+{% block sidebar %}
+    {{ render(controller('AppBundle:Navigation:sidebarComponent', { 'currentItem': 'admin_blockchain' })) }}
+{% endblock %}
+
 {% block page_header %}
     {{ 'block.chain.new'|trans }} <small>{{ 'fill.out.the.form'|trans }}.</small>
 {% endblock %}

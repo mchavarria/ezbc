@@ -2,6 +2,10 @@
 
 {% block title %}{{ parent() }} {{ 'wallet.new'|trans }}{% endblock %}
 
+{% block sidebar %}
+    {{ render(controller('AppBundle:Navigation:sidebarComponent', { 'currentItem': 'wallet' })) }}
+{% endblock %}
+
 {% block page_header %}
     New Wallet <small>fill out the form.</small>
 {% endblock %}

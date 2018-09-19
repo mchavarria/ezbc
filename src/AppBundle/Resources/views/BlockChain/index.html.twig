@@ -2,14 +2,26 @@
 
 {% block title %}{{ parent() }}{{ 'block.chain.management'|trans }}{% endblock %}
 
+{% block sidebar %}
+    {{ render(controller('AppBundle:Navigation:sidebarComponent', { 'currentItem': 'admin_blockchain' })) }}
+{% endblock %}
+
 {% block page_header %}
     {{ 'block.chains.management'|trans }} <small>{{ 'current.block.chain.in.the.app'|trans }}.</small>
 {% endblock %}
 
 {% block content %}
     <div class="row">
-        <!-- begin col-8 -->
-        <div class="col-lg-8">
+        <!-- begin col-12 -->
+        <div class="col-lg-12">
+            <a href="{{ path('adm_bc_new') }}" class="btn btn-primary">New Block Chain</a>
+        </div>
+        <!-- end col-12 -->
+    </div>
+    <br>
+    <div class="row">
+        <!-- begin col-12 -->
+        <div class="col-lg-12">
             <!-- begin #accordion -->
             <div id="accordion" class="card-accordion">
                 {% for chain in blockChains %}
@@ -32,11 +44,6 @@
             </div>
             <!-- end #accordion -->
         </div>
-        <!-- end col-8 -->
-        <!-- begin col-4 -->
-        <div class="col-lg-4">
-            <a href="{{ path('adm_bc_new') }}" class="btn btn-primary">New Block Chain</a>
-        </div>
-        <!-- end col-4 -->
+        <!-- end col-12 -->
     </div>
 {% endblock %}

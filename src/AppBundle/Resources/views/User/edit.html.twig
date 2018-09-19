@@ -2,6 +2,10 @@
 
 {% block title %}{{ parent() }}{{ 'user.edit'|trans }}{% endblock %}
 
+{% block sidebar %}
+    {{ render(controller('AppBundle:Navigation:sidebarComponent', { 'currentItem': 'user' })) }}
+{% endblock %}
+
 {% block page_header %}
     Edit User <small>fill out the form.</small>
 {% endblock %}

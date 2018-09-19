@@ -41,6 +41,11 @@ class User extends BaseUser
     private $wallets;
 
     /**
+     * @ORM\Column(type="string", length=30, nullable=FALSE)
+     */
+    private $type;
+
+    /**
      * User constructor.
      */
     public function __construct()
@@ -109,7 +114,7 @@ class User extends BaseUser
      *
      * @param Wallet $wallet
      */
-    public function removeZonePropertyUse(Wallet $wallet)
+    public function removeWallet(Wallet $wallet)
     {
         $this->wallets->removeElement($wallet);
     }
@@ -121,7 +126,7 @@ class User extends BaseUser
      *
      * @return bool
      */
-    public function hasZonePropertyUse(Wallet $wallet)
+    public function hasWallet(Wallet $wallet)
     {
         return $this->wallets->contains($wallet);
     }
@@ -133,4 +138,39 @@ class User extends BaseUser
     {
         return $this->lastName.' '.$this->firstName;
     }
+
+    /**
+     * @param $type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getRoles()
+    {
+        $roles = $this->roles;
+        $roles[] = 'ROLE_'.strtoupper($this->type);
+
+        // we need to make sure to have at least one role
+        $roles[] = static::ROLE_DEFAULT;
+
+        return array_unique($roles);
+    }
+
 }

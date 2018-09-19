@@ -2,6 +2,10 @@
 
 {% block title %}{{ parent() }} {{ 'dashboard'|trans }}{% endblock %}
 
+{% block sidebar %}
+    {{ render(controller('AppBundle:Navigation:sidebarComponent', { 'currentItem': 'dashboard' })) }}
+{% endblock %}
+
 {% block page_header %}
     Dashboard <small>most recent activities.</small>
 {% endblock %}

@@ -2,9 +2,11 @@
 
 namespace AppBundle\Form;
 
+use AppBundle\Data\UserTypes;
 use AppBundle\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -39,6 +41,15 @@ class UserType extends AbstractType
             'attr' => [
                 'placeholder' => 'Username'
             ]
+        ]);
+        $builder->add('type', ChoiceType::class, [
+            'choices' => [
+                'Admin' => UserTypes::ADMIN_USER,
+                'Free User' => UserTypes::FREE_USER,
+                'Basic User' => UserTypes::BASIC_USER,
+                'Premium User' => UserTypes::PREMIUM_USER,
+            ],
+            'placeholder' => '-- Choose an option --'
         ]);
     }
 
