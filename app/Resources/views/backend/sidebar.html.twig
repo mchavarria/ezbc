@@ -27,11 +27,16 @@
                     <span>{{ 'my.wallets'|trans }}</span>
                 </a>
             </li>
-            <li>
-                <a href="{{ path('adm_bc_index') }}">
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
                     <i class="fa fa-cogs"></i>
-                    <span>{{ 'block.chains'|trans }}</span>
+                    <span>{{ 'menu.admin.options'|trans }}</span>
                 </a>
+                <ul class="sub-menu">
+                    <li><a href="{{ path('adm_bc_index') }}">{{ 'menu.block.chains'|trans }}</a></li>
+                    <li><a href="{{ path('app_user_index') }}">{{ 'menu.users'|trans }}</a></li>
+                </ul>
             </li>
             <!-- begin sidebar minify button -->
             <li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>

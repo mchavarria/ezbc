@@ -25,7 +25,12 @@ class UserController extends Controller
      */
     public function indexAction()
     {
-        return [];
+        $repository = $this->getDoctrine()->getRepository(User::class);
+        $users = $repository->findAll();
+
+        return [
+            'users' => $users
+        ];
     }
 
     /**
