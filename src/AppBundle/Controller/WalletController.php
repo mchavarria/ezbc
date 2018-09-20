@@ -18,7 +18,7 @@ use Unirest;
  */
 class WalletController extends Controller
 {
-    const EXAMPLE_URL = 'https://ez-blockchain-middleware.herokuapp.com/etherium/testnet/getbalance/0x72b7d5dff8509f321a40e28e37f18b3198a26cbe';
+    const EXAMPLE_URL = 'https://ez-blockchain-middleware.herokuapp.com/etherium/testnet/getbalance/';
 
     /**
      * @Template("@App/Wallet/index.html.twig")
@@ -149,7 +149,7 @@ class WalletController extends Controller
         $repository = $this->getDoctrine()->getRepository(Wallet::class);
         $wallet = $repository->find($id);
 
-        $resp = Unirest\Request::get(self::EXAMPLE_URL);
+        $resp = Unirest\Request::get(self::EXAMPLE_URL.$wallet->getWalletKey());
         $info = json_decode(json_encode($resp->body), true);
 
         $parameters = [
