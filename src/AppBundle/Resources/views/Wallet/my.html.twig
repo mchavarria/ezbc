@@ -14,7 +14,7 @@
     <div class="row">
         <!-- begin col-12 -->
         <div class="col-lg-12">
-            <a href="{{ path('app_wallet_new', { id: app.user.id }) }}" class="btn btn-primary">{{ 'new.wallet'|trans }}</a>
+            <a href="{{ path('app_wallet_new', { id: user.id }) }}" class="btn btn-primary">{{ 'new.wallet'|trans }}</a>
         </div>
         <!-- end col-12 -->
     </div>
@@ -44,7 +44,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            {% for wallet in app.user.wallets %}
+                            {% for wallet in user.wallets %}
                             <tr>
                                 <td class="with-img">
                                     <img src="{{ asset('img/admin/wallet/'~wallet.bcType~'.jpg') }}" class="img-rounded height-30" />
@@ -65,7 +65,7 @@
                                     <td>---</td>
                                     <td>{{ 'no.wallets.create.one'|trans }}</td>
                                     <td class="with-btn" nowrap>
-                                        <a href="{{ path('app_wallet_new', { id: app.user.id }) }}" class="btn btn-sm btn-primary width-60 m-r-2">{{ 'wallet.create'|trans }}</a>
+                                        <a href="{{ path('app_wallet_new', { id: user.id }) }}" class="btn btn-sm btn-primary m-r-2">{{ 'wallet.create'|trans }}</a>
                                     </td>
                                 </tr>
                             {% endfor %}

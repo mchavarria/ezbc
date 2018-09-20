@@ -151,10 +151,13 @@ class WalletController extends Controller
 
         $resp = Unirest\Request::get(self::EXAMPLE_URL.$wallet->getWalletKey());
         $info = json_decode(json_encode($resp->body), true);
-
+        //TODO improve code with HTTP response codes.
+        //https://www.restapitutorial.com/httpstatuscodes.html
+        $hasError = !(is_array($info));
         $parameters = [
             'wallet' => $wallet,
-            'info' => $info
+            'info' => $info,
+            'hasError' => $hasError
         ];
 
         return $parameters;

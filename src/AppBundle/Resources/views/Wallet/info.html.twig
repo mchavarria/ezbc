@@ -18,7 +18,9 @@
                 <div class="stats-icon stats-icon-lg"><i class="fa fa-dollar-sign fa-fw"></i></div>
                 <div class="stats-content">
                     <div class="stats-title">{{ 'wallet.balance'|trans }}</div>
-                    <div class="stats-number">{{ info.balance }}</div>
+                    <div class="stats-number">
+                        {{ (hasError) ? info : info.balance }}
+                    </div>
                     <div class="stats-progress progress">
                         <div class="progress-bar" style="width: 20.5%;"></div>
                     </div>
