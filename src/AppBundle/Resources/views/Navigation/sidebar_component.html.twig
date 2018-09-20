@@ -19,6 +19,7 @@
             <i class="fa fa-wallet"></i>
             <span>{{ 'my.wallets'|trans }}</span>
         </a>
+    {% if is_granted('ROLE_ADMIN') %}
     <li class="has-sub {{ isAdmin ? 'active' }}">
         <a href="javascript:;">
             <b class="caret"></b>
@@ -34,6 +35,7 @@
             </li>
         </ul>
     </li>
+    {% endif %}
     <!-- begin sidebar minify button -->
     <li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
     <!-- end sidebar minify button -->
