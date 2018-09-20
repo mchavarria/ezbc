@@ -10,6 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Unirest;
 
 /**
  * Class WalletController
@@ -17,6 +18,8 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class WalletController extends Controller
 {
+    const EXAMPLE_URL = 'https://ez-blockchain-middleware.herokuapp.com/etherium/testnet/getbalance/0x72b7d5dff8509f321a40e28e37f18b3198a26cbe';
+
     /**
      * @Template("@App/Wallet/index.html.twig")
      *
@@ -127,6 +130,31 @@ class WalletController extends Controller
         $parameters = [
             'wallet' => $wallet,
             'form' => $form->createView()
+        ];
+
+        return $parameters;
+    }
+
+    /**
+     * @Route("/{id}/info", name="app_wallet_info", requirements={"id" = "\d+"}, options={"expose" = true})
+     *
+     * @Template("@App/Wallet/info.html.twig")
+     *
+     * @param int     $id      Identifier
+     *
+     * @return array
+     */
+    public function infoAction($id)
+    {
+        $repository = $this->getDoctrine()->getRepository(Wallet::class);
+        $wallet = $repository->find($id);
+
+        $resp = Unirest\Request::get(self::EXAMPLE_URL);
+        $info = json_decode(json_encode($resp->body), true);
+
+        $parameters = [
+            'wallet' => $wallet,
+            'info' => $info
         ];
 
         return $parameters;
