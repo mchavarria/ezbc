@@ -43,7 +43,7 @@ class Wallet
 
     /**
      * @var string
-     * @ORM\Column(type="string", nullable=TRUE)
+     * @ORM\Column(type="string", nullable=FALSE)
      */
     private $bcMode;
 
