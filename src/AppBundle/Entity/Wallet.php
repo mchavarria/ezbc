@@ -45,6 +45,12 @@ class Wallet
      * @var string
      * @ORM\Column(type="string", nullable=TRUE)
      */
+    private $bcMode;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", nullable=TRUE)
+     */
     private $description;
 
     /**
@@ -102,6 +108,22 @@ class Wallet
     public function getBcType()
     {
         return $this->bcType;
+    }
+
+    /**
+     * @param string $mode
+     */
+    public function setBcMode($mode)
+    {
+        $this->bcMode = $mode;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBcMode()
+    {
+        return $this->bcMode;
     }
 
     /**

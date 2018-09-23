@@ -18,7 +18,7 @@ use Unirest;
  */
 class WalletController extends Controller
 {
-    const EXAMPLE_URL = 'https://ez-blockchain-middleware.herokuapp.com/etherium/testnet/getbalance/';
+    const EXAMPLE_URL = 'https://ez-blockchain-middleware.herokuapp.com/%s/%s/getbalance/%s';
 
     /**
      * @Template("@App/Wallet/index.html.twig")
@@ -88,7 +88,13 @@ class WalletController extends Controller
             $entityManager->persist($user);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_user_index');
+            if ($this->isGranted('ROLE_ADMIN', $this->getUser())) {
+                $redirectUrl = $this->redirectToRoute('app_user_index');
+            } else {
+                $redirectUrl = $this->redirectToRoute('backend_dashboard');
+            }
+
+            return $redirectUrl;
         }
 
         $parameters = [
@@ -124,7 +130,13 @@ class WalletController extends Controller
             $entityManager->persist($wallet);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_user_index');
+            if ($this->isGranted('ROLE_ADMIN', $this->getUser())) {
+                $redirectUrl = $this->redirectToRoute('app_user_index');
+            } else {
+                $redirectUrl = $this->redirectToRoute('backend_dashboard');
+            }
+
+            return $redirectUrl;
         }
 
         $parameters = [
@@ -149,7 +161,14 @@ class WalletController extends Controller
         $repository = $this->getDoctrine()->getRepository(Wallet::class);
         $wallet = $repository->find($id);
 
-        $resp = Unirest\Request::get(self::EXAMPLE_URL.$wallet->getWalletKey());
+        $url = self::EXAMPLE_URL;
+        $url = sprintf(
+            $url,
+            $wallet->getBcType(),
+            $wallet->getBcMode(),
+            $wallet->getWalletKey()
+        );
+        $resp = Unirest\Request::get($url);
         $info = json_decode(json_encode($resp->body), true);
         //TODO improve code with HTTP response codes.
         //https://www.restapitutorial.com/httpstatuscodes.html

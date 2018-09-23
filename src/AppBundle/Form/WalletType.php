@@ -2,11 +2,13 @@
 
 namespace AppBundle\Form;
 
+use AppBundle\Data\BcModes;
 use AppBundle\Entity\BlockChain;
 use AppBundle\Entity\Wallet;
 use AppBundle\Repository\BlockChainRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -32,6 +34,7 @@ class WalletType extends AbstractType
             'bcType',
             EntityType::class,
             [
+                'label' => 'Block Chain',
                 'class' => BlockChain::class,
                 'query_builder' => function (BlockChainRepository $bcr) {
                     return $bcr->createQueryBuilder('bc')
@@ -41,6 +44,15 @@ class WalletType extends AbstractType
                 'placeholder' => '-- Choose a Block Chain --'
             ]
         );
+        $builder->add('bcMode', ChoiceType::class, [
+            'label' => 'Block Chain Mode',
+            'choices' => [
+                'Main Net' => BcModes::MAIN_NET,
+                'Test Net' => BcModes::TEST_NET
+            ],
+            'placeholder' => '-- Choose an option --',
+            'required' => true
+        ]);
         $builder->add('description', TextareaType::class, [
             'attr' => [
                 'placeholder' => 'Some description about the Wallet.'

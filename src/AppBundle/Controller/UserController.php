@@ -58,7 +58,13 @@ class UserController extends Controller
             $entityManager->persist($user);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_user_index');
+            if ($this->isGranted('ROLE_ADMIN', $this->getUser())) {
+                $redirectUrl = $this->redirectToRoute('app_user_index');
+            } else {
+                $redirectUrl = $this->redirectToRoute('backend_dashboard');
+            }
+
+            return $redirectUrl;
         }
 
         $parameters = [
@@ -94,7 +100,13 @@ class UserController extends Controller
             $entityManager->persist($user);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_user_index');
+            if ($this->isGranted('ROLE_ADMIN', $this->getUser())) {
+                $redirectUrl = $this->redirectToRoute('app_user_index');
+            } else {
+                $redirectUrl = $this->redirectToRoute('backend_dashboard');
+            }
+
+            return $redirectUrl;
         }
 
         $parameters = [
