@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="login">
+                <source>login</source>
+                <target>LOGIN</target>
+            </trans-unit>
+            <trans-unit id="logout">
+                <source>logout</source>
+                <target>LOG OUT</target>
+            </trans-unit>
+            <trans-unit id="ld.header.about">
+                <source>ld.header.about</source>
+                <target>ABOUT</target>
+            </trans-unit>
+            <trans-unit id="ld.header.team">
+                <source>ld.header.team</source>
+                <target>TEAM</target>
+            </trans-unit>
+            <trans-unit id="ld.header.services">
+                <source>ld.header.services</source>
+                <target>SERVICES</target>
+            </trans-unit>
+            <trans-unit id="ld.header.client">
+                <source>ld.header.client</source>
+                <target>CLIENTS</target>
+            </trans-unit>
+            <trans-unit id="ld.header.pricing">
+                <source>ld.header.pricing</source>
+                <target>PRICING</target>
+            </trans-unit>
+            <trans-unit id="ld.header.contact">
+                <source>ld.header.contact</source>
+                <target>CONTACT US</target>
+            </trans-unit>
+            <trans-unit id="ld.home.welcome">
+                <source>ld.home.welcome</source>
+                <target>Welcome to Easy Blockchain</target>
+            </trans-unit>
+            <trans-unit id="ld.home.welcome.sub">
+                <source>ld.home.welcome.sub</source>
+                <target>The easiest way to Use Easy Blockchain</target>
+            </trans-unit>
+            <trans-unit id="ld.home.know.more">
+                <source>ld.home.know.more</source>
+                <target>Know More</target>
+            </trans-unit>
+            <trans-unit id="ld.home.pricing">
+                <source>ld.home.pricing</source>
+                <target>Pricing</target>
+            </trans-unit>
+            <trans-unit id="ld.home.about.title">
+                <source>ld.home.about.title</source>
+                <target>About Us</target>
+            </trans-unit>
+            <trans-unit id="ld.home.about.description">
+                <source>ld.home.about.description</source>
+                <target>
+                We are Team formed by System Engineers that want to give you
+                an unique service over the Blockchain technology
+                </target>
+            </trans-unit>
+            <trans-unit id="ld.home.our.team.title">
+                <source>ld.home.our.team.title</source>
+                <target>Our Team</target>
+            </trans-unit>
+            <trans-unit id="ld.home.our.team.founder">
+                <source>ld.home.our.team.founder</source>
+                <target>Founder</target>
+            </trans-unit>
+            <trans-unit id="ld.home.services.title">
+                <source>ld.home.services.title</source>
+                <target>Our Services</target>
+            </trans-unit>
+            <trans-unit id="ld.home.testimonials.title">
+                <source>ld.home.testimonials.title</source>
+                <target>Our Client Testimonials</target>
+            </trans-unit>
+            <trans-unit id="ld.home.testimonials.one">
+                <source>ld.home.testimonials.one</source>
+                <target>Great Interoperability and Easy to configure.</target>
+            </trans-unit>
+            <trans-unit id="ld.home.testimonials.two">
+                <source>ld.home.testimonials.two</source>
+                <target>An Unique service with Trending Technology.</target>
+            </trans-unit>
+            <trans-unit id="ld.home.testimonials.dev">
+                <source>ld.home.testimonials.dev</source>
+                <target>Developer</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -28,17 +28,16 @@
                         {#<li><a href="extra_element.html">Extra Element</a></li>#}
                     {#</ul>#}
                 {#</li>#}
-                <li><a href="#about" data-click="scroll-to-target">ABOUT</a></li>
-                <li><a href="#team" data-click="scroll-to-target">TEAM</a></li>
-                <li><a href="#service" data-click="scroll-to-target">SERVICES</a></li>
-                <li><a href="#work" data-click="scroll-to-target">WORK</a></li>
-                <li><a href="#client" data-click="scroll-to-target">CLIENT</a></li>
-                <li><a href="#pricing" data-click="scroll-to-target">PRICING</a></li>
-                <li><a href="#contact" data-click="scroll-to-target">CONTACT</a></li>
+                <li><a href="#about" data-click="scroll-to-target">{{ 'ld.header.about'|trans }}</a></li>
+                <li><a href="#team" data-click="scroll-to-target">{{ 'ld.header.team'|trans }}</a></li>
+                <li><a href="#service" data-click="scroll-to-target">{{ 'ld.header.services'|trans }}</a></li>
+                <li><a href="#client" data-click="scroll-to-target">{{ 'ld.header.client'|trans }}</a></li>
+                <li><a href="#pricing" data-click="scroll-to-target">{{ 'ld.header.pricing'|trans }}</a></li>
+                <li><a href="#contact" data-click="scroll-to-target">{{ 'ld.header.contact'|trans }}</a></li>
 
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                     <li>
-                        {{ 'user.logged_in_as'|trans({'%username%': app.user.username}) }} |
+                        {#{{ 'user.logged_in_as'|trans({'%username%': app.user.username}) }} |#}
                         <a href="{{ path('fos_user_security_logout') }}">{{ 'logout'|trans }}</a>
                     </li>
                 {% else %}

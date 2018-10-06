@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="login">
+                <source>login</source>
+                <target>INGRESAR</target>
+            </trans-unit>
+            <trans-unit id="logout">
+                <source>logout</source>
+                <target>SALIR</target>
+            </trans-unit>
+            <trans-unit id="ld.header.about">
+                <source>ld.header.about</source>
+                <target>NOSOTROS</target>
+            </trans-unit>
+            <trans-unit id="ld.header.team">
+                <source>ld.header.team</source>
+                <target>NUESTRO EQUIPO</target>
+            </trans-unit>
+            <trans-unit id="ld.header.services">
+                <source>ld.header.services</source>
+                <target>SERVICIOS</target>
+            </trans-unit>
+            <trans-unit id="ld.header.client">
+                <source>ld.header.client</source>
+                <target>CLIENTES</target>
+            </trans-unit>
+            <trans-unit id="ld.header.pricing">
+                <source>ld.header.pricing</source>
+                <target>PLANES</target>
+            </trans-unit>
+            <trans-unit id="ld.header.contact">
+                <source>ld.header.contact</source>
+                <target>CONTACTANOS</target>
+            </trans-unit>
+            <trans-unit id="ld.home.welcome">
+                <source>ld.home.welcome</source>
+                <target>Bienvenido a Easy Blockchain</target>
+            </trans-unit>
+            <trans-unit id="ld.home.welcome.sub">
+                <source>ld.home.welcome.sub</source>
+                <target>La forma más simple de usar Blockchain</target>
+            </trans-unit>
+            <trans-unit id="ld.home.know.more">
+                <source>ld.home.know.more</source>
+                <target>Quiero saber más</target>
+            </trans-unit>
+            <trans-unit id="ld.home.pricing">
+                <source>ld.home.pricing</source>
+                <target>Planes</target>
+            </trans-unit>
+            <trans-unit id="ld.home.about.title">
+                <source>ld.home.about.title</source>
+                <target>Sobre nosotros</target>
+            </trans-unit>
+            <trans-unit id="ld.home.about.description">
+                <source>ld.home.about.description</source>
+                <target>
+                Somos un grupo de Ingenieros en Sistemas comprometidos con brindar un servicio
+                único en cuanto al uso de la tecnología Blockchain
+                </target>
+            </trans-unit>
+            <trans-unit id="ld.home.our.team.title">
+                <source>ld.home.our.team.title</source>
+                <target>Nuestro Equipo</target>
+            </trans-unit>
+            <trans-unit id="ld.home.our.team.founder">
+                <source>ld.home.our.team.founder</source>
+                <target>Fundador</target>
+            </trans-unit>
+            <trans-unit id="ld.home.services.title">
+                <source>ld.home.services.title</source>
+                <target>Nuestros Servicios</target>
+            </trans-unit>
+            <trans-unit id="ld.home.testimonials.title">
+                <source>ld.home.testimonials.title</source>
+                <target>Testimonios de nuestros clientes</target>
+            </trans-unit>
+            <trans-unit id="ld.home.testimonials.one">
+                <source>ld.home.testimonials.one</source>
+                <target>Muy buena interoperabilidad y fácil configuración.</target>
+            </trans-unit>
+            <trans-unit id="ld.home.testimonials.two">
+                <source>ld.home.testimonials.two</source>
+                <target>Un servicio diferente, con tecnología innovadora.</target>
+            </trans-unit>
+            <trans-unit id="ld.home.testimonials.dev">
+                <source>ld.home.testimonials.dev</source>
+                <target>Desarrollador</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

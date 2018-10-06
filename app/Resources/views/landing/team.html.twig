@@ -1,11 +1,7 @@
 <div id="team" class="content" data-scrollview="true">
     <!-- begin container -->
     <div class="container">
-        <h2 class="content-title">Our Team</h2>
-        <p class="content-desc">
-            Phasellus suscipit nisi hendrerit metus pharetra dignissim. Nullam nunc ante, viverra quis<br />
-            ex non, porttitor iaculis nisi.
-        </p>
+        <h2 class="content-title">{{ 'ld.home.our.team.title'|trans }}</h2>
         <!-- begin row -->
         <div class="row">
             <!-- begin col-4 -->
@@ -13,33 +9,12 @@
                 <!-- begin team -->
                 <div class="team">
                     <div class="image" data-animation="true" data-animation-type="flipInX">
-                        <img src="{{ asset('img/landing/user/user-1.jpg') }}" alt="Ryan Teller" />
+                        <img src="{{ asset('img/landing/user/user-3.jpg') }}" alt="Mia Donovan" />
                     </div>
                     <div class="info">
-                        <h3 class="name">Ryan Teller</h3>
-                        <div class="title text-theme">FOUNDER</div>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
-                        <div class="social">
-                            <a href="#"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
-                            <a href="#"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
-                            <a href="#"><i class="fa fa-google-plus fa-lg fa-fw"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- end team -->
-            </div>
-            <!-- end col-4 -->
-            <!-- begin col-4 -->
-            <div class="col-md-4 col-sm-4">
-                <!-- begin team -->
-                <div class="team">
-                    <div class="image" data-animation="true" data-animation-type="flipInX">
-                        <img src="{{ asset('img/landing/user/user-2.jpg') }}" alt="Jonny Cash" />
-                    </div>
-                    <div class="info">
-                        <h3 class="name">Johnny Cash</h3>
-                        <div class="title text-theme">WEB DEVELOPER</div>
-                        <p>Donec quam felis, ultricies nec, pellentesque eu sem. Nulla consequat massa quis enim.</p>
+                        <h3 class="name">Guillermo</h3>
+                        <div class="title text-theme">{{ 'ld.home.our.team.founder'|trans }}</div>
+                        {#<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>#}
                         <div class="social">
                             <a href="#"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
                             <a href="#"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
@@ -58,9 +33,30 @@
                         <img src="{{ asset('img/landing/user/user-3.jpg') }}" alt="Mia Donovan" />
                     </div>
                     <div class="info">
-                        <h3 class="name">Mia Donovan</h3>
-                        <div class="title text-theme">WEB DESIGNER</div>
-                        <p>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. </p>
+                        <h3 class="name">Miguel Ángel</h3>
+                        <div class="title text-theme">{{ 'ld.home.our.team.founder'|trans }}</div>
+                        {#<p>Donec quam felis, ultricies nec, pellentesque eu sem. Nulla consequat massa quis enim.</p>#}
+                        <div class="social">
+                            <a href="https://www.facebook.com/mchava"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
+                            <a href="https://twitter.com/mangelchavarria"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
+                            <a href="https://www.linkedin.com/in/miguel-%C3%A1ngel-chavarr%C3%ADa-65698930/"><i class="fa fa-linkedin fa-lg fa-fw"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- end team -->
+            </div>
+            <!-- end col-4 -->
+            <!-- begin col-4 -->
+            <div class="col-md-4 col-sm-4">
+                <!-- begin team -->
+                <div class="team">
+                    <div class="image" data-animation="true" data-animation-type="flipInX">
+                        <img src="{{ asset('img/landing/user/user-3.jpg') }}" alt="Mia Donovan" />
+                    </div>
+                    <div class="info">
+                        <h3 class="name">Luciano</h3>
+                        <div class="title text-theme">{{ 'ld.home.our.team.founder'|trans }}</div>
+                        {#<p>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. </p>#}
                         <div class="social">
                             <a href="#"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
                             <a href="#"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
@@ -70,7 +66,55 @@
                 </div>
                 <!-- end team -->
             </div>
-            <!-- end col-4 -->
+        </div>
+        <!-- end row -->
+        <div class="row">
+            <div class="col-md-2 col-sm-2">
+            </div>
+            <!-- begin col-6 -->
+            <div class="col-md-4 col-sm-4">
+                <!-- begin team -->
+                <div class="team">
+                    <div class="image" data-animation="true" data-animation-type="flipInX">
+                        <img src="{{ asset('img/landing/user/user-3.jpg') }}" alt="Mia Donovan" />
+                    </div>
+                    <div class="info">
+                        <h3 class="name">Rodrigo</h3>
+                        <div class="title text-theme">{{ 'ld.home.our.team.founder'|trans }}</div>
+                        {#<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>#}
+                        <div class="social">
+                            <a href="#"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
+                            <a href="#"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
+                            <a href="#"><i class="fa fa-google-plus fa-lg fa-fw"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- end team -->
+            </div>
+            <!-- end col-6 -->
+            <!-- begin col-6 -->
+            <div class="col-md-4 col-sm-4">
+                <!-- begin team -->
+                <div class="team">
+                    <div class="image" data-animation="true" data-animation-type="flipInX">
+                        <img src="{{ asset('img/landing/user/user-3.jpg') }}" alt="Mia Donovan" />
+                    </div>
+                    <div class="info">
+                        <h3 class="name">Martín</h3>
+                        <div class="title text-theme">{{ 'ld.home.our.team.founder'|trans }}</div>
+                        {#<p>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. </p>#}
+                        <div class="social">
+                            <a href="#"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
+                            <a href="#"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
+                            <a href="#"><i class="fa fa-google-plus fa-lg fa-fw"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- end col-6 -->
+                <!-- end team -->
+            </div>
+            <div class="col-md-2 col-sm-2">
+            </div>
         </div>
         <!-- end row -->
     </div>
