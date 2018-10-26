@@ -1,0 +1,32 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}{{ parent() }}{{ 'api.mng.new.title'|trans }}{% endblock %}
+
+{% block sidebar %}
+    {{ render(controller('AppBundle:Navigation:sidebarComponent', { 'currentItem': 'api_end_point' })) }}
+{% endblock %}
+
+{% block page_header %}
+    {{ 'api.mng.new.header.title'|trans }} <small>{{ 'api.mng.new.header.subtitle'|trans }}.</small>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <!-- begin col-8 -->
+        <div class="col-lg-8">
+            <!-- begin panel -->
+            <div class="panel panel-inverse">
+                <!-- begin panel-heading -->
+                <div class="panel-heading">
+                    <h4 class="panel-title">{{ 'api.mng.new.form.title'|trans }}</h4>
+                </div>
+                <!-- end panel-heading -->
+                <!-- begin panel-body -->
+                {{ include('@App/Api/form.html.twig') }}
+                <!-- end panel-body -->
+            </div>
+            <!-- end panel -->
+        </div>
+        <!-- end col-8 -->
+    </div>
+{% endblock %}

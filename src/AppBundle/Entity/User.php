@@ -41,6 +41,11 @@ class User extends BaseUser
     private $wallets;
 
     /**
+     * @ORM\OneToMany(targetEntity="ApiEndPoint", mappedBy="user", orphanRemoval=true)
+     */
+    private $apiEndPoints;
+
+    /**
      * @ORM\Column(type="string", length=30, nullable=FALSE)
      */
     private $type;
@@ -53,6 +58,7 @@ class User extends BaseUser
         parent::__construct();
 
         $this->wallets = new ArrayCollection();
+        $this->apiEndPoints = new ArrayCollection();
     }
 
     /**
@@ -129,6 +135,50 @@ class User extends BaseUser
     public function hasWallet(Wallet $wallet)
     {
         return $this->wallets->contains($wallet);
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getApiEndPoints()
+    {
+        return $this->apiEndPoints;
+    }
+
+    /**
+     * Add an api end point.
+     *
+     * @param ApiEndPoint $endpoint
+     *
+     * @return User
+     */
+    public function addApiEndPoint(ApiEndPoint $endpoint)
+    {
+        $this->apiEndPoints[] = $endpoint;
+
+        return $this;
+    }
+
+    /**
+     * Remove api end point.
+     *
+     * @param ApiEndPoint $endpoint
+     */
+    public function removeApiEndPoint(ApiEndPoint $endpoint)
+    {
+        $this->apiEndPoints->removeElement($endpoint);
+    }
+
+    /**
+     * Has api end point.
+     *
+     * @param ApiEndPoint $endpoint
+     *
+     * @return bool
+     */
+    public function hasApiEndPoint(ApiEndPoint $endpoint)
+    {
+        return $this->wallets->contains($endpoint);
     }
 
     /**

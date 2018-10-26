@@ -41,15 +41,23 @@ class BcTransaction
      */
     private $bcType;
 
+
+    /**
+     * @ORM\ManyToOne(targetEntity="ApiEndPoint", inversedBy="transactions")
+     * @ORM\JoinColumn(name="api_ep_id", referencedColumnName="id", nullable=FALSE)
+     */
+    private $apiEndPoint;
+
     /**
      * BcTransaction constructor.
-     * @param Wallet $wallet
-     * @param string $type
+     * @param ApiEndPoint $apiEndPoint
      */
-    public function __construct(Wallet $wallet, $type)
+    public function __construct(ApiEndPoint $apiEndPoint)
     {
+        $wallet = $apiEndPoint->getWallet();
+        $this->apiEndPoint = $apiEndPoint;
         $this->wallet = $wallet;
-        $this->bcType = $type;
+        $this->bcType = $wallet->getBcType();
     }
 
     /**
@@ -74,6 +82,14 @@ class BcTransaction
     public function getBcType()
     {
         return $this->bcType;
+    }
+
+    /**
+     * @return ApiEndPoint
+     */
+    public function getApiEndPoint()
+    {
+        return $this->apiEndPoint;
     }
 
     /**

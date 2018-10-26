@@ -1,0 +1,19 @@
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+<div class="panel-body">
+    {{ form_start(form, { 'action': path('app_api_management_new_end_point') }) }}
+        <fieldset>
+            <legend class="m-b-15">{{ 'api.mng.new.form.legend'|trans }}</legend>
+
+            {{ form_row(form.name) }}
+            {{ form_row(form.description) }}
+            {% if is_granted('ROLE_ADMIN') %}
+                {{ form_row(form.user) }}
+                {{ form_row(form.wallet) }}
+            {% endif %}
+
+            <button type="submit" class="btn btn-sm btn-primary m-r-5">{{ 'form.save'|trans }}</button>
+            <a href="{{ path('app_api_management_index')}}" class="btn btn-sm btn-default">{{ 'form.cancel'|trans }}</a>
+        </fieldset>
+    {{ form_end(form) }}
+</div>

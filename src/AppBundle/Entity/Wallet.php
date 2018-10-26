@@ -141,4 +141,14 @@ class Wallet
     {
         return $this->description;
     }
+
+    /**
+     * Used on Form as label
+     *
+     * @return string
+     */
+    public function getFormLabel()
+    {
+        return '#'.$this->id .' - '.$this->bcType.' '.$this->bcMode;
+    }
 }
