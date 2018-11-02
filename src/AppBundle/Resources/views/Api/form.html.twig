@@ -1,7 +1,7 @@
 {% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 <div class="panel-body">
-    {{ form_start(form, { 'action': path('app_api_management_new_end_point') }) }}
+    {{ form_start(form, { 'action': (aep.id is not null) ? path('app_api_management_edit_end_point', { id: aep.id }) : path('app_api_management_new_end_point') }) }}
         <fieldset>
             <legend class="m-b-15">{{ 'api.mng.new.form.legend'|trans }}</legend>
 

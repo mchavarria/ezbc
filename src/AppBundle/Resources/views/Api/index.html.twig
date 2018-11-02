@@ -52,6 +52,9 @@
                                     <td>{{ endPoint.description }}</td>
                                     <td>{{ endPoint.createdDate|date('Y-m-d') }}</td>
                                     <td class="with-btn" nowrap>
+                                        {% if is_granted('ROLE_ADMIN') %}
+                                            <a href="{{ path('app_api_management_edit_end_point', { id: endPoint.id }) }}" class="btn btn-sm btn-green m-r-2">{{ 'api.mng.idx.edit'|trans }}</a>
+                                        {% endif %}
                                         <a href="{{ path('app_api_management_stats', { id: endPoint.id }) }}" class="btn btn-sm btn-primary m-r-2">{{ 'api.mng.idx.transactions'|trans }}</a>
                                         <a href="{{ path('app_api_management_details', { id: endPoint.id }) }}" class="btn btn-sm btn-white m-r-2">{{ 'api.mng.idx.item.details'|trans }}</a>
                                         <a href="#" class="btn btn-sm btn-danger">{{ 'item.action.delete'|trans }}</a>

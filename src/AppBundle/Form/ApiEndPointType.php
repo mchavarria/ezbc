@@ -35,6 +35,7 @@ class ApiEndPointType extends AbstractType
             ]
         ]);
 
+        //TODO agregar opcion para que usuario normal elija su wallet
         $isAdmin = $options['is_admin'];
         if ($isAdmin) {
             $builder->add('user', EntityType::class, [

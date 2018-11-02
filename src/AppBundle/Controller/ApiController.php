@@ -106,8 +106,53 @@ class ApiController extends Controller
         }
 
         $parameters = [
-            'user' => $user,
-            'apiEndPoint' => $endPoint,
+            'aep' => $endPoint,
+            'form' => $form->createView()
+        ];
+
+        return $parameters;
+    }
+
+    /**
+     * @Route("/edit/{id}/end-point", name="app_api_management_edit_end_point", requirements={"id" = "\d+"}, options={"expose" = true})
+     *
+     * @Template("@App/Api/edit.html.twig")
+     *
+     * @param Request $request
+     * @param integer $id
+     *
+     * TODO agregar role ADMIN nada mas
+     *
+     * @return array|Response
+     */
+    public function editAction(Request $request, $id)
+    {
+
+        $repository = $this->getDoctrine()->getRepository(ApiEndPoint::class);
+        $aep = $repository->find($id);
+
+        $isAdmin = $this->isGranted('ROLE_ADMIN', $this->getUser());
+        $form = $this->createForm(ApiEndPointType::class, $aep, ['is_admin' => $isAdmin]);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($aep);
+            $entityManager->flush();
+
+            if ($isAdmin) {
+                $redirectUrl = $this->redirectToRoute('app_api_management_index');
+            } else {
+                $redirectUrl = $this->redirectToRoute('backend_dashboard');
+            }
+
+            return $redirectUrl;
+        }
+
+        $parameters = [
+            'aep' => $aep,
             'form' => $form->createView()
         ];
 
