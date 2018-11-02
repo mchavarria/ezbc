@@ -3,13 +3,16 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\ApiEndPoint;
+use AppBundle\Entity\BcTransaction;
 use AppBundle\Entity\User;
 use AppBundle\Form\ApiEndPointType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Unirest;
 
 /**
  * Class UserController
@@ -17,6 +20,10 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class ApiController extends Controller
 {
+    const CONSUME_EXAMPLE = 'https://ez-blockchain-middleware.herokuapp.com/ethereum/testnet/sendtransaction/%s/%s/%s/%s';
+    //TODO cambiar WALLET_TO por configuracion.
+    const WALLET_TO = '0x09880965D52968d347d16E234adf5608fC1796d4';
+
     /**
      * @Template("@App/Api/index.html.twig")
      *
@@ -160,22 +167,55 @@ class ApiController extends Controller
     }
 
     /**
-     * @Route("/{id}/consume", name="app_api_consume", requirements={"id" = "\d+"}, options={"expose" = true})
+     * @Route("/v1/consume/{id}", name="app_api_consume", requirements={"id" = "\d+"}, options={"expose" = true})
      *
+     * @param Request $request
      * @param integer $id
      *
-     * @return array
+     * @return JsonResponse
      */
-    public function consumeAction($id)
+    public function consumeAction(Request $request, $id)
     {
+        $hash = $request->query->get('hash');
         $repository = $this->getDoctrine()->getRepository(ApiEndPoint::class);
         $aep = $repository->find($id);
+        $wallet = $aep->getWallet();
 
-        $parameters = [
-            'aep' => $aep
-        ];
+        //TODO hacer validaciones de uso, saldo, etc.
+        $url = self::CONSUME_EXAMPLE;
+        $url = sprintf(
+            $url,
+            self::WALLET_TO,
+            $wallet->getWalletKey(),
+            $wallet->getPKey(),
+            $hash
+        );
+        $resp = Unirest\Request::get($url);
+        $info = json_decode(json_encode($resp->body), true);
+        //TODO improve code with HTTP response codes.
+        //https://www.restapitutorial.com/httpstatuscodes.html
 
-        return $parameters;
+        $hasError = !(is_array($info));
+
+        if (!$hasError) {
+            $txid = $info['txId'];
+
+            //save Log.
+            //TODO usar event dispatcher.
+            //TODO solo txId si no hay error?
+            $log = new BcTransaction($aep);
+            $log->setBcHash($txid);
+
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($log);
+            $entityManager->persist($aep);
+            $entityManager->flush();
+
+            return new JsonResponse(['txid' => $txid]);
+        }
+
+        return new JsonResponse([], 500);
     }
 
 }

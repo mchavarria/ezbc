@@ -1,7 +1,81 @@
-{% extends "::base.html.twig" %}
+{% extends "layout.html.twig" %}
 
-{% block title %}AppBundle:ApiController:stadistic{% endblock %}
+{% block title %}{{ parent() }}{{ 'api.mng.stats.title'|trans }}{% endblock %}
 
-{% block body %}
-<h1>Welcome to the ApiController:stadistic page</h1>
+{% block sidebar %}
+    {{ render(controller('AppBundle:Navigation:sidebarComponent', { 'currentItem': 'api_end_point' })) }}
+{% endblock %}
+
+{% block page_header %}
+    {{ 'api.mng.stats.header.title'|trans }} <small>{{ 'api.mng.stats.header.subtitle'|trans }}.</small>
+{% endblock %}
+
+{% block content %}
+    {#TODO agregar algunos de los bloques de dibujos#}
+    {#TODO agregar info de la wallet#}
+    <div class="row">
+        <!-- begin col-12 -->
+        <div class="col-lg-12">
+            <a href="{{ 'https://ropsten.etherscan.io/address/'  ~ aep.wallet.walletKey }}" target="_blank" class="btn btn-primary">{{ 'api.mng.stats.wallet.more.info'|trans }}</a>
+        </div>
+        <!-- end col-12 -->
+    </div>
+    <br>
+    <div class="row">
+        <!-- begin col-12 -->
+        <div class="col-lg-12">
+            <!-- begin panel -->
+            <div class="panel panel-inverse" data-sortable-id="table-basic-7">
+                <!-- begin panel-heading -->
+                <div class="panel-heading">
+                    <div class="panel-heading-btn"></div>
+                    <h4 class="panel-title">{{ 'api.mng.stats.panel.header'|trans }}</h4>
+                </div>
+                <!-- end panel-heading -->
+                <!-- begin panel-body -->
+                <div class="panel-body">
+                    <!-- begin table-responsive -->
+                    <div class="table-responsive">
+                        <table class="table table-striped m-b-0">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>{{ 'api.mng.stats.item.bc.hash'|trans }}</th>
+                                <th>{{ 'api.mng.stats.item.creation'|trans }}</th>
+                                <th width="1%"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for transaction in aep.transactions %}
+                                <tr>
+                                    <td>{{ transaction.id }}</td>
+                                    <td>{{ transaction.bcHash }}</td>
+                                    <td>{{ transaction.createdDate|date('Y-m-d') }}</td>
+                                    <td class="with-btn" nowrap>
+                                        <a href="{{ 'https://ropsten.etherscan.io/tx/' ~ transaction.bcHash }}" target="_blank" class="btn btn-sm btn-primary m-r-2">{{ 'api.mng.stats.info'|trans }}</a>
+                                        {#<a href="{{ path('app_api_management_details', { id: transaction.id }) }}" class="btn btn-sm btn-white m-r-2">{{ 'api.mng.stats.item.details'|trans }}</a>#}
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td class="with-img">
+                                        <img src="{{ asset('img/admin/wallet/none.jpg') }}" class="img-rounded height-30" />
+                                    </td>
+                                    <td>---</td>
+                                    <td>{{ 'api.mng.stats.no.transaction'|trans }}</td>
+                                    <td class="with-btn" nowrap>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- end table-responsive -->
+                </div>
+                <!-- end panel-body -->
+            </div>
+            <!-- end panel -->
+        </div>
+        <!-- end col-12 -->
+    </div>
 {% endblock %}

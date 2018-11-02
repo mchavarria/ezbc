@@ -20,7 +20,7 @@
                     <div class="stats-title">{{ 'api.mng.detail.panel.header'|trans }}</div>
                     <div class="stats-number">
                         {#TODO agregar parametros que se usen para consumir Ej: value#}
-                        {% set apiUrl = url('app_api_consume', { id: endPoint.id }) %}
+                        {% set apiUrl = url('app_api_consume', { id: endPoint.id, hash:'YOUR_FILE_HASH' }) %}
                     </div>
                     <div class="stats-progress progress">
                         <div class="progress-bar" style="width: 20.5%;"></div>

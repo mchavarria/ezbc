@@ -25,9 +25,14 @@ class Wallet
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=100, nullable=FALSE)
+     * @ORM\Column(type="string", nullable=FALSE)
      */
     private $walletKey;
+
+    /**
+     * @ORM\Column(type="string", nullable=FALSE)
+     */
+    private $pKey;
 
     /**
      * @ORM\ManyToOne(targetEntity="User", inversedBy="wallets")
@@ -92,6 +97,22 @@ class Wallet
     public function getWalletKey()
     {
         return $this->walletKey;
+    }
+
+    /**
+     * @param string $key
+     */
+    public function setPKey($key)
+    {
+        $this->pKey = $key;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPKey()
+    {
+        return $this->pKey;
     }
 
     /**
