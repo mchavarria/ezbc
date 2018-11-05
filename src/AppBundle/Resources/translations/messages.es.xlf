@@ -2,6 +2,18 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file source-language="en" target-language="es" datatype="plaintext" original="file.ext">
         <body>
+            <trans-unit id="app.sb.hd.edit.profile">
+                <source>app.sb.hd.edit.profile</source>
+                <target>app.sb.hd.edit.profile</target>
+            </trans-unit>
+            <trans-unit id="app.sb.hd.send.feedback">
+                <source>app.sb.hd.send.feedback</source>
+                <target>app.sb.hd.send.feedback</target>
+            </trans-unit>
+            <trans-unit id="app.sb.hd.faq">
+                <source>app.sb.hd.faq</source>
+                <target>app.sb.hd.faq</target>
+            </trans-unit>
             <trans-unit id="app.sb.menu.navigation">
                 <source>app.sb.menu.navigation</source>
                 <target>Navegación</target>
@@ -33,6 +45,146 @@
             <trans-unit id="app.sb.menu.admin.users">
                 <source>app.sb.menu.admin.users</source>
                 <target>Usuarios</target>
+            </trans-unit>
+            <trans-unit id="db.idx.title">
+                <source>db.idx.title</source>
+                <target>db.idx.title</target>
+            </trans-unit>
+            <trans-unit id="db.idx.header.title">
+                <source>db.idx.header.title</source>
+                <target>db.idx.header.title</target>
+            </trans-unit>
+            <trans-unit id="db.idx.header.subtitle">
+                <source>db.idx.header.subtitle</source>
+                <target>db.idx.header.subtitle</target>
+            </trans-unit>
+            <trans-unit id="db.idx.stats.total.transactions">
+                <source>db.idx.stats.total.transactions</source>
+                <target>db.idx.stats.total.transactions</target>
+            </trans-unit>
+            <trans-unit id="db.idx.stats.view.details">
+                <source>db.idx.stats.view.details</source>
+                <target>db.idx.stats.view.details</target>
+            </trans-unit>
+            <trans-unit id="db.idx.stats.my.wallets">
+                <source>db.idx.stats.my.wallets</source>
+                <target>db.idx.stats.my.wallets</target>
+            </trans-unit>
+            <trans-unit id="db.idx.stats.my.apis">
+                <source>db.idx.stats.my.apis</source>
+                <target>db.idx.stats.my.apis</target>
+            </trans-unit>
+            <trans-unit id="db.idx.panel.latest.logs.title">
+                <source>db.idx.panel.latest.logs.title</source>
+                <target>db.idx.panel.latest.logs.title</target>
+            </trans-unit>
+            <trans-unit id="db.idx.panel.pricing.title">
+                <source>db.idx.panel.pricing.title</source>
+                <target>db.idx.panel.pricing.title</target>
+            </trans-unit>
+            <trans-unit id="wallet.idx.title">
+                <source>wallet.idx.title</source>
+                <target>wallet.idx.title</target>
+            </trans-unit>
+            <trans-unit id="wallet.idx.header.title">
+                <source>wallet.idx.header.title</source>
+                <target>wallet.idx.header.title</target>
+            </trans-unit>
+            <trans-unit id="wallet.idx.header.subtitle">
+                <source>wallet.idx.header.subtitle</source>
+                <target>wallet.idx.header.subtitle</target>
+            </trans-unit>
+            <trans-unit id="wallet.idx.new.btn">
+                <source>wallet.idx.new.btn</source>
+                <target>wallet.idx.new.btn</target>
+            </trans-unit>
+            <trans-unit id="wallet.idx.panel.title">
+                <source>wallet.idx.panel.title</source>
+                <target>wallet.idx.panel.title</target>
+            </trans-unit>
+            <trans-unit id="wallet.idx.panel.title.block.chain">
+                <source>wallet.idx.panel.title.block.chain</source>
+                <target>wallet.idx.panel.title.block.chain</target>
+            </trans-unit>
+            <trans-unit id="wallet.idx.panel.title.description">
+                <source>wallet.idx.panel.title.description</source>
+                <target>wallet.idx.panel.title.description</target>
+            </trans-unit>
+            <trans-unit id="wallet.idx.panel.list.no.description">
+                <source>wallet.idx.panel.list.no.description</source>
+                <target>wallet.idx.panel.list.no.description</target>
+            </trans-unit>
+            <trans-unit id="wallet.idx.panel.list.edit">
+                <source>wallet.idx.panel.list.edit</source>
+                <target>wallet.idx.panel.list.edit</target>
+            </trans-unit>
+            <trans-unit id="wallet.idx.panel.list.delete">
+                <source>wallet.idx.panel.list.delete</source>
+                <target>wallet.idx.panel.list.delete</target>
+            </trans-unit>
+            <trans-unit id="wallet.idx.panel.list.more.info">
+                <source>wallet.idx.panel.list.more.info</source>
+                <target>wallet.idx.panel.list.more.info</target>
+            </trans-unit>
+            <trans-unit id="wallet.idx.panel.list.no.wallet">
+                <source>wallet.idx.panel.list.no.wallet</source>
+                <target>wallet.idx.panel.list.no.wallet</target>
+            </trans-unit>
+            <trans-unit id="wallet.idx.panel.list.new">
+                <source>wallet.idx.panel.list.new</source>
+                <target>wallet.idx.panel.list.new</target>
+            </trans-unit>
+            <trans-unit id="wallet.new.title">
+                <source>wallet.new.title</source>
+                <target>wallet.new.title</target>
+            </trans-unit>
+            <trans-unit id="wallet.new.header.title">
+                <source>wallet.new.header.title</source>
+                <target>wallet.new.header.title</target>
+            </trans-unit>
+            <trans-unit id="wallet.new.header.subtitle">
+                <source>wallet.new.header.subtitle</source>
+                <target>wallet.new.header.subtitle</target>
+            </trans-unit>
+            <trans-unit id="wallet.new.form.title">
+                <source>wallet.new.form.title</source>
+                <target>wallet.new.form.title</target>
+            </trans-unit>
+            <trans-unit id="wallet.edit.title">
+                <source>wallet.edit.title</source>
+                <target>wallet.edit.title</target>
+            </trans-unit>
+            <trans-unit id="wallet.edit.header.title">
+                <source>wallet.edit.header.title</source>
+                <target>wallet.edit.header.title</target>
+            </trans-unit>
+            <trans-unit id="wallet.edit.header.subtitle">
+                <source>wallet.edit.header.subtitle</source>
+                <target>wallet.edit.header.subtitle</target>
+            </trans-unit>
+            <trans-unit id="wallet.edit.form.title">
+                <source>wallet.edit.form.title</source>
+                <target>wallet.edit.form.title</target>
+            </trans-unit>
+            <trans-unit id="wallet.form.subtitle">
+                <source>wallet.form.subtitle</source>
+                <target>wallet.form.subtitle</target>
+            </trans-unit>
+            <trans-unit id="wallet.form.create">
+                <source>wallet.form.create</source>
+                <target>wallet.form.create</target>
+            </trans-unit>
+            <trans-unit id="wallet.form.save">
+                <source>wallet.form.save</source>
+                <target>wallet.form.save</target>
+            </trans-unit>
+            <trans-unit id="wallet.form.cancel">
+                <source>wallet.form.cancel</source>
+                <target>wallet.form.cancel</target>
+            </trans-unit>
+            <trans-unit id="example">
+                <source>example</source>
+                <target>example</target>
             </trans-unit>
         </body>
     </file>

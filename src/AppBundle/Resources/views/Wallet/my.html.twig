@@ -1,20 +1,20 @@
 {% extends "layout.html.twig" %}
 
-{% block title %}{{ parent() }}{{ 'user.wallets'|trans }}{% endblock %}
+{% block title %}{{ parent() }}{{ 'wallet.idx.title'|trans }}{% endblock %}
 
 {% block sidebar %}
     {{ render(controller('AppBundle:Navigation:sidebarComponent', { 'currentItem': 'wallet' })) }}
 {% endblock %}
 
 {% block page_header %}
-    {{ 'user.wallets'|trans }} <small>{{ 'you.can.manage.your.wallets.here'|trans }}.</small>
+    {{ 'wallet.idx.header.title'|trans }} <small>{{ 'wallet.idx.header.subtitle'|trans }}.</small>
 {% endblock %}
 
 {% block content %}
     <div class="row">
         <!-- begin col-12 -->
         <div class="col-lg-12">
-            <a href="{{ path('app_wallet_new', { id: user.id }) }}" class="btn btn-primary">{{ 'new.wallet'|trans }}</a>
+            <a href="{{ path('app_wallet_new', { id: user.id }) }}" class="btn btn-primary">{{ 'wallet.idx.new.btn'|trans }}</a>
         </div>
         <!-- end col-12 -->
     </div>
@@ -27,7 +27,7 @@
                 <!-- begin panel-heading -->
                 <div class="panel-heading">
                     <div class="panel-heading-btn"></div>
-                    <h4 class="panel-title">{{ 'current.wallets'|trans }}</h4>
+                    <h4 class="panel-title">{{ 'wallet.idx.panel.title'|trans }}</h4>
                 </div>
                 <!-- end panel-heading -->
                 <!-- begin panel-body -->
@@ -38,8 +38,8 @@
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>{{ 'block.chain'|trans }}</th>
-                                <th>{{ 'description'|trans }}</th>
+                                <th>{{ 'wallet.idx.panel.title.block.chain'|trans }}</th>
+                                <th>{{ 'wallet.idx.panel.title.description'|trans }}</th>
                                 <th width="1%"></th>
                             </tr>
                             </thead>
@@ -50,11 +50,11 @@
                                     <img src="{{ asset('img/admin/wallet/'~wallet.bcType~'.jpg') }}" class="img-rounded height-30" />
                                 </td>
                                 <td>{{ wallet.bcType|capitalize }}</td>
-                                <td>{{ (wallet.description) ? wallet.description|slice(0, 60) ~ '...' : 'no.description'|trans }}</td>
+                                <td>{{ (wallet.description) ? wallet.description|slice(0, 60) ~ '...' : 'wallet.idx.panel.list.no.description'|trans }}</td>
                                 <td class="with-btn" nowrap>
-                                    <a href="{{ path('app_wallet_edit', { id: wallet.id }) }}" class="btn btn-sm btn-primary width-60 m-r-2">{{ 'edit'|trans }}</a>
-                                    <a href="{{ path('app_wallet_info', { id: wallet.id }) }}" class="btn btn-sm btn-white m-r-2">{{ 'wallet.info'|trans }}</a>
-                                    <a href="#" class="btn btn-sm btn-white width-60">{{ 'delete'|trans }}</a>
+                                    <a href="{{ path('app_wallet_edit', { id: wallet.id }) }}" class="btn btn-sm btn-primary m-r-2">{{ 'wallet.idx.panel.list.edit'|trans }}</a>
+                                    <a href="{{ path('app_wallet_info', { id: wallet.id }) }}" class="btn btn-sm btn-white m-r-2">{{ 'wallet.idx.panel.list.more.info'|trans }}</a>
+                                    <a href="#" class="btn btn-sm btn-white">{{ 'wallet.idx.panel.list.delete'|trans }}</a>
                                 </td>
                             </tr>
                             {% else %}
@@ -63,9 +63,9 @@
                                         <img src="{{ asset('img/admin/wallet/none.jpg') }}" class="img-rounded height-30" />
                                     </td>
                                     <td>---</td>
-                                    <td>{{ 'no.wallets.create.one'|trans }}</td>
+                                    <td>{{ 'wallet.idx.panel.list.no.wallet'|trans }}</td>
                                     <td class="with-btn" nowrap>
-                                        <a href="{{ path('app_wallet_new', { id: user.id }) }}" class="btn btn-sm btn-primary m-r-2">{{ 'wallet.create'|trans }}</a>
+                                        <a href="{{ path('app_wallet_new', { id: user.id }) }}" class="btn btn-sm btn-primary m-r-2">{{ 'wallet.idx.panel.list.new'|trans }}</a>
                                     </td>
                                 </tr>
                             {% endfor %}

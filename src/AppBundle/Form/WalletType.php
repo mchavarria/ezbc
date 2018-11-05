@@ -31,6 +31,7 @@ class WalletType extends AbstractType
             ]
         ]);
         $builder->add('pKey', TextType::class, [
+            'label' => 'Private Key',
             'attr' => [
                 'placeholder' => 'Wallet Private Key'
             ]

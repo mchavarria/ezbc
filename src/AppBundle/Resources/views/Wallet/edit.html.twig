@@ -1,13 +1,13 @@
 {% extends "layout.html.twig" %}
 
-{% block title %}{{ parent() }}{{ 'wallet.edit'|trans }}{% endblock %}
+{% block title %}{{ parent() }}{{ 'wallet.edit.title'|trans }}{% endblock %}
 
 {% block sidebar %}
     {{ render(controller('AppBundle:Navigation:sidebarComponent', { 'currentItem': 'wallet' })) }}
 {% endblock %}
 
 {% block page_header %}
-    {{ 'wallet.edit'|trans }} <small>{{ 'fill.wallet.form.edit'|trans }}.</small>
+    {{ 'wallet.edit.header.title'|trans }} <small>{{ 'wallet.edit.header.subtitle'|trans }}.</small>
 {% endblock %}
 
 {% block content %}
@@ -18,7 +18,7 @@
             <div class="panel panel-inverse">
                 <!-- begin panel-heading -->
                 <div class="panel-heading">
-                    <h4 class="panel-title">{{ 'wallet.form'|trans }}</h4>
+                    <h4 class="panel-title">{{ 'wallet.edit.form.title'|trans }}</h4>
                 </div>
                 <!-- end panel-heading -->
                 <!-- begin panel-body -->
