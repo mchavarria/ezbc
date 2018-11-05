@@ -184,7 +184,7 @@ class ApiController extends Controller
         $aep = $repository->find($id);
 
         $parameters = [
-            'endPoint' => $aep
+            'aep' => $aep
         ];
 
         return $parameters;

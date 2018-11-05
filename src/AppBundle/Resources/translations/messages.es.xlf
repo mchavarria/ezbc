@@ -182,9 +182,257 @@
                 <source>wallet.form.cancel</source>
                 <target>wallet.form.cancel</target>
             </trans-unit>
-            <trans-unit id="example">
-                <source>example</source>
-                <target>example</target>
+            <trans-unit id="wallet.info.title">
+                <source>wallet.info.title</source>
+                <target>wallet.info.title</target>
+            </trans-unit>
+            <trans-unit id="wallet.info.header.title">
+                <source>wallet.info.header.title</source>
+                <target>wallet.info.header.title</target>
+            </trans-unit>
+            <trans-unit id="wallet.info.header.subtitle">
+                <source>wallet.info.header.subtitle</source>
+                <target>wallet.info.header.subtitle</target>
+            </trans-unit>
+            <trans-unit id="wallet.info.balance.title">
+                <source>wallet.info.balance.title</source>
+                <target>wallet.info.balance.title</target>
+            </trans-unit>
+            <trans-unit id="wallet.info.balance.description">
+                <source>wallet.info.balance.description</source>
+                <target>wallet.info.balance.description</target>
+            </trans-unit>
+            <trans-unit id="api.idx.title">
+                <source>api.idx.title</source>
+                <target>api.idx.title</target>
+            </trans-unit>
+            <trans-unit id="api.idx.header.title">
+                <source>api.idx.header.title</source>
+                <target>api.idx.header.title</target>
+            </trans-unit>
+            <trans-unit id="api.idx.header.subtitle">
+                <source>api.idx.header.subtitle</source>
+                <target>api.idx.header.subtitle</target>
+            </trans-unit>
+            <trans-unit id="api.idx.new.btn">
+                <source>api.idx.new.btn</source>
+                <target>api.idx.new.btn</target>
+            </trans-unit>
+            <trans-unit id="api.idx.panel.title">
+                <source>api.idx.panel.title</source>
+                <target>api.idx.panel.title</target>
+            </trans-unit>
+            <trans-unit id="api.idx.panel.title.name">
+                <source>api.idx.panel.title.name</source>
+                <target>api.idx.panel.title.name</target>
+            </trans-unit>
+            <trans-unit id="api.idx.panel.title.description">
+                <source>api.idx.panel.title.description</source>
+                <target>api.idx.panel.title.description</target>
+            </trans-unit>
+            <trans-unit id="api.idx.panel.title.creation.date">
+                <source>api.idx.panel.title.creation.date</source>
+                <target>api.idx.panel.title.creation.date</target>
+            </trans-unit>
+            <trans-unit id="api.idx.panel.list.transactions">
+                <source>api.idx.panel.list.transactions</source>
+                <target>api.idx.panel.list.transactions</target>
+            </trans-unit>
+            <trans-unit id="api.idx.panel.list.edit">
+                <source>api.idx.panel.list.edit</source>
+                <target>api.idx.panel.list.edit</target>
+            </trans-unit>
+            <trans-unit id="api.idx.panel.list.delete">
+                <source>api.idx.panel.list.delete</source>
+                <target>api.idx.panel.list.delete</target>
+            </trans-unit>
+            <trans-unit id="api.idx.panel.list.detail">
+                <source>api.idx.panel.list.detail</source>
+                <target>api.idx.panel.list.detail</target>
+            </trans-unit>
+            <trans-unit id="api.idx.panel.list.no.api">
+                <source>api.idx.panel.list.no.api</source>
+                <target>api.idx.panel.list.no.api</target>
+            </trans-unit>
+            <trans-unit id="api.idx.panel.list.new">
+                <source>api.idx.panel.list.new</source>
+                <target>api.idx.panel.list.new</target>
+            </trans-unit>
+            <trans-unit id="api.detail.title">
+                <source>api.detail.title</source>
+                <target>api.detail.title</target>
+            </trans-unit>
+            <trans-unit id="api.detail.header.title">
+                <source>api.detail.header.title</source>
+                <target>api.detail.header.title</target>
+            </trans-unit>
+            <trans-unit id="api.detail.header.subtitle">
+                <source>api.detail.header.subtitle</source>
+                <target>api.detail.header.subtitle</target>
+            </trans-unit>
+            <trans-unit id="api.detail.panel.header">
+                <source>api.detail.panel.header</source>
+                <target>api.detail.panel.header</target>
+            </trans-unit>
+            <trans-unit id="api.detail.panel.description">
+                <source>api.detail.panel.description</source>
+                <target>api.detail.panel.description</target>
+            </trans-unit>
+            <trans-unit id="api.new.title">
+                <source>api.new.title</source>
+                <target>api.new.title</target>
+            </trans-unit>
+            <trans-unit id="api.new.header.title">
+                <source>api.new.header.title</source>
+                <target>api.new.header.title</target>
+            </trans-unit>
+            <trans-unit id="api.new.header.subtitle">
+                <source>api.new.header.subtitle</source>
+                <target>api.new.header.subtitle</target>
+            </trans-unit>
+            <trans-unit id="api.new.form.title">
+                <source>api.new.form.title</source>
+                <target>api.new.form.title</target>
+            </trans-unit>
+            <trans-unit id="api.edit.title">
+                <source>api.edit.title</source>
+                <target>api.edit.title</target>
+            </trans-unit>
+            <trans-unit id="api.edit.header.title">
+                <source>api.edit.header.title</source>
+                <target>api.edit.header.title</target>
+            </trans-unit>
+            <trans-unit id="api.edit.header.subtitle">
+                <source>api.edit.header.subtitle</source>
+                <target>api.edit.header.subtitle</target>
+            </trans-unit>
+            <trans-unit id="api.edit.form.title">
+                <source>api.edit.form.title</source>
+                <target>api.edit.form.title</target>
+            </trans-unit>
+            <trans-unit id="api.form.subtitle">
+                <source>api.form.subtitle</source>
+                <target>api.form.subtitle</target>
+            </trans-unit>
+            <trans-unit id="api.form.create">
+                <source>api.form.create</source>
+                <target>api.form.create</target>
+            </trans-unit>
+            <trans-unit id="api.form.save">
+                <source>api.form.save</source>
+                <target>api.form.save</target>
+            </trans-unit>
+            <trans-unit id="api.form.cancel">
+                <source>api.form.cancel</source>
+                <target>api.form.cancel</target>
+            </trans-unit>
+            <trans-unit id="api.stats.title">
+                <source>api.stats.title</source>
+                <target>api.stats.title</target>
+            </trans-unit>
+            <trans-unit id="api.stats.header.title">
+                <source>api.stats.header.title</source>
+                <target>api.stats.header.title</target>
+            </trans-unit>
+            <trans-unit id="api.stats.header.subtitle">
+                <source>api.stats.header.subtitle</source>
+                <target>api.stats.header.subtitle</target>
+            </trans-unit>
+            <trans-unit id="api.stats.wallet.more.info">
+                <source>api.stats.wallet.more.info</source>
+                <target>api.stats.wallet.more.info</target>
+            </trans-unit>
+            <trans-unit id="api.stats.panel.title">
+                <source>api.stats.panel.title</source>
+                <target>api.stats.panel.title</target>
+            </trans-unit>
+            <trans-unit id="api.stats.panel.title.bc.hash">
+                <source>api.stats.panel.title.bc.hash</source>
+                <target>api.stats.panel.title.bc.hash</target>
+            </trans-unit>
+            <trans-unit id="api.stats.panel.title.date">
+                <source>api.stats.panel.title.date</source>
+                <target>api.stats.panel.title.date</target>
+            </trans-unit>
+            <trans-unit id="api.stats.panel.list.info">
+                <source>api.stats.panel.list.info</source>
+                <target>api.stats.panel.list.info</target>
+            </trans-unit>
+            <trans-unit id="api.stats.panel.list.no.logs">
+                <source>api.stats.panel.list.no.logs</source>
+                <target>api.stats.panel.list.no.logs</target>
+            </trans-unit>
+            <trans-unit id="bc.idx.title">
+                <source>bc.idx.title</source>
+                <target>bc.idx.title</target>
+            </trans-unit>
+            <trans-unit id="bc.idx.header.title">
+                <source>bc.idx.header.title</source>
+                <target>bc.idx.header.title</target>
+            </trans-unit>
+            <trans-unit id="bc.idx.header.subtitle">
+                <source>bc.idx.header.subtitle</source>
+                <target>bc.idx.header.subtitle</target>
+            </trans-unit>
+            <trans-unit id="bc.idx.new.btn">
+                <source>bc.idx.new.btn</source>
+                <target>bc.idx.new.btn</target>
+            </trans-unit>
+            <trans-unit id="bc.idx.list.no.description">
+                <source>bc.idx.list.no.description</source>
+                <target>bc.idx.list.no.description</target>
+            </trans-unit>
+            <trans-unit id="bc.idx.edit.btn">
+                <source>bc.idx.edit.btn</source>
+                <target>bc.idx.edit.btn</target>
+            </trans-unit>
+            <trans-unit id="bc.new.title">
+                <source>bc.new.title</source>
+                <target>bc.new.title</target>
+            </trans-unit>
+            <trans-unit id="bc.new.header.title">
+                <source>bc.new.header.title</source>
+                <target>bc.new.header.title</target>
+            </trans-unit>
+            <trans-unit id="bc.new.header.subtitle">
+                <source>bc.new.header.subtitle</source>
+                <target>bc.new.header.subtitle</target>
+            </trans-unit>
+            <trans-unit id="bc.new.form.title">
+                <source>bc.new.form.title</source>
+                <target>bc.new.form.title</target>
+            </trans-unit>
+            <trans-unit id="bc.edit.title">
+                <source>bc.edit.title</source>
+                <target>bc.edit.title</target>
+            </trans-unit>
+            <trans-unit id="bc.edit.header.title">
+                <source>bc.edit.header.title</source>
+                <target>bc.edit.header.title</target>
+            </trans-unit>
+            <trans-unit id="bc.edit.header.subtitle">
+                <source>bc.edit.header.subtitle</source>
+                <target>bc.edit.header.subtitle</target>
+            </trans-unit>
+            <trans-unit id="bc.edit.form.title">
+                <source>bc.edit.form.title</source>
+                <target>bc.edit.form.title</target>
+            </trans-unit>
+            <trans-unit id="bc.form.subtitle">
+                <source>bc.form.subtitle</source>
+                <target>bc.form.subtitle</target>
+            </trans-unit>
+            <trans-unit id="bc.form.create">
+                <source>bc.form.create</source>
+                <target>bc.form.create</target>
+            </trans-unit>
+            <trans-unit id="bc.form.save">
+                <source>bc.form.save</source>
+                <target>bc.form.save</target>
+            </trans-unit>
+            <trans-unit id="bc.form.cancel">
+                <source>bc.form.cancel</source>
+                <target>bc.form.cancel</target>
             </trans-unit>
         </body>
     </file>

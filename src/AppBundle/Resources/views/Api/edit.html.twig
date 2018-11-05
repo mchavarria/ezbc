@@ -1,13 +1,13 @@
 {% extends "layout.html.twig" %}
 
-{% block title %}{{ parent() }}{{ 'api.mng.edit.title'|trans }}{% endblock %}
+{% block title %}{{ parent() }}{{ 'api.edit.title'|trans }}{% endblock %}
 
 {% block sidebar %}
     {{ render(controller('AppBundle:Navigation:sidebarComponent', { 'currentItem': 'api_end_point' })) }}
 {% endblock %}
 
 {% block page_header %}
-    {{ 'api.mng.edit.header.title'|trans }} <small>{{ 'api.mng.edit.header.subtitle'|trans }}.</small>
+    {{ 'api.edit.header.title'|trans }} <small>{{ 'api.edit.header.subtitle'|trans }}.</small>
 {% endblock %}
 
 {% block content %}
@@ -18,7 +18,7 @@
             <div class="panel panel-inverse">
                 <!-- begin panel-heading -->
                 <div class="panel-heading">
-                    <h4 class="panel-title">{{ 'api.mng.edit.form.title'|trans }}</h4>
+                    <h4 class="panel-title">{{ 'api.edit.form.title'|trans }}</h4>
                 </div>
                 <!-- end panel-heading -->
                 <!-- begin panel-body -->

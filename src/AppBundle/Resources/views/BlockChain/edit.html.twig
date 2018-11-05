@@ -1,13 +1,13 @@
 {% extends "layout.html.twig" %}
 
-{% block title %}{{ parent() }}{{ 'block.chain.edit'|trans }}{% endblock %}
+{% block title %}{{ parent() }}{{ 'bc.edit.title'|trans }}{% endblock %}
 
 {% block sidebar %}
     {{ render(controller('AppBundle:Navigation:sidebarComponent', { 'currentItem': 'admin_blockchain' })) }}
 {% endblock %}
 
 {% block page_header %}
-    {{ 'block.chain.edit'|trans }} <small>{{ 'fill.out.the.form'|trans }}.</small>
+    {{ 'bc.edit.header.title'|trans }} <small>{{ 'bc.edit.header.subtitle'|trans }}.</small>
 {% endblock %}
 
 {% block content %}
@@ -18,7 +18,7 @@
             <div class="panel panel-inverse">
                 <!-- begin panel-heading -->
                 <div class="panel-heading">
-                    <h4 class="panel-title">{{ 'block.chain.form'|trans }}</h4>
+                    <h4 class="panel-title">{{ 'bc.edit.form.title'|trans }}</h4>
                 </div>
                 <!-- end panel-heading -->
                 <!-- begin panel-body -->

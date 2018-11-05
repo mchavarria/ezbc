@@ -1,20 +1,20 @@
 {% extends "layout.html.twig" %}
 
-{% block title %}{{ parent() }}{{ 'api.mng.idx.title'|trans }}{% endblock %}
+{% block title %}{{ parent() }}{{ 'api.idx.title'|trans }}{% endblock %}
 
 {% block sidebar %}
     {{ render(controller('AppBundle:Navigation:sidebarComponent', { 'currentItem': 'api_end_point' })) }}
 {% endblock %}
 
 {% block page_header %}
-    {{ 'api.mng.idx.header.title'|trans }} <small>{{ 'api.mng.idx.header.subtitle'|trans }}.</small>
+    {{ 'api.idx.header.title'|trans }} <small>{{ 'api.idx.header.subtitle'|trans }}.</small>
 {% endblock %}
 
 {% block content %}
     <div class="row">
         <!-- begin col-12 -->
         <div class="col-lg-12">
-            <a href="{{ path('app_api_management_new_end_point') }}" class="btn btn-primary">{{ 'api.mng.new'|trans }}</a>
+            <a href="{{ path('app_api_management_new_end_point') }}" class="btn btn-primary">{{ 'api.idx.new.btn'|trans }}</a>
         </div>
         <!-- end col-12 -->
     </div>
@@ -27,7 +27,7 @@
                 <!-- begin panel-heading -->
                 <div class="panel-heading">
                     <div class="panel-heading-btn"></div>
-                    <h4 class="panel-title">{{ 'api.mng.idx.panel.header'|trans }}</h4>
+                    <h4 class="panel-title">{{ 'api.idx.panel.title'|trans }}</h4>
                 </div>
                 <!-- end panel-heading -->
                 <!-- begin panel-body -->
@@ -38,9 +38,9 @@
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>{{ 'api.mng.idx.item.name'|trans }}</th>
-                                <th>{{ 'api.mng.idx.item.description'|trans }}</th>
-                                <th>{{ 'api.mng.idx.item.creation'|trans }}</th>
+                                <th>{{ 'api.idx.panel.title.name'|trans }}</th>
+                                <th>{{ 'api.idx.panel.title.description'|trans }}</th>
+                                <th>{{ 'api.idx.panel.title.creation.date'|trans }}</th>
                                 <th width="1%"></th>
                             </tr>
                             </thead>
@@ -53,11 +53,11 @@
                                     <td>{{ endPoint.createdDate|date('Y-m-d') }}</td>
                                     <td class="with-btn" nowrap>
                                         {% if is_granted('ROLE_ADMIN') %}
-                                            <a href="{{ path('app_api_management_edit_end_point', { id: endPoint.id }) }}" class="btn btn-sm btn-green m-r-2">{{ 'api.mng.idx.edit'|trans }}</a>
+                                            <a href="{{ path('app_api_management_edit_end_point', { id: endPoint.id }) }}" class="btn btn-sm btn-green m-r-2">{{ 'api.idx.panel.list.edit'|trans }}</a>
                                         {% endif %}
-                                        <a href="{{ path('app_api_management_stats', { id: endPoint.id }) }}" class="btn btn-sm btn-primary m-r-2">{{ 'api.mng.idx.transactions'|trans }}</a>
-                                        <a href="{{ path('app_api_management_details', { id: endPoint.id }) }}" class="btn btn-sm btn-white m-r-2">{{ 'api.mng.idx.item.details'|trans }}</a>
-                                        <a href="#" class="btn btn-sm btn-danger">{{ 'item.action.delete'|trans }}</a>
+                                        <a href="{{ path('app_api_management_stats', { id: endPoint.id }) }}" class="btn btn-sm btn-primary m-r-2">{{ 'api.idx.panel.list.transactions'|trans }}</a>
+                                        <a href="{{ path('app_api_management_details', { id: endPoint.id }) }}" class="btn btn-sm btn-white m-r-2">{{ 'api.idx.panel.list.detail'|trans }}</a>
+                                        <a href="#" class="btn btn-sm btn-danger">{{ 'api.idx.panel.list.delete'|trans }}</a>
                                     </td>
                                 </tr>
                             {% else %}
@@ -65,9 +65,10 @@
                                     <td class="with-img">
                                         <img src="{{ asset('img/admin/wallet/none.jpg') }}" class="img-rounded height-30" />
                                     </td>
+                                    <td>{{ 'api.idx.panel.list.no.api'|trans }}</td>
                                     <td>---</td>
-                                    <td>{{ 'api.mng.idx.no.endpoint'|trans }}</td>
                                     <td class="with-btn" nowrap>
+                                        <a href="{{ path('app_wallet_new', { id: user.id }) }}" class="btn btn-sm btn-primary m-r-2">{{ 'api.idx.panel.list.new'|trans }}</a>
                                     </td>
                                 </tr>
                             {% endfor %}

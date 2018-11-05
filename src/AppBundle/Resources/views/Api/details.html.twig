@@ -1,13 +1,13 @@
 {% extends "layout.html.twig" %}
 
-{% block title %}{{ parent() }}{{ 'api.mng.detail.title'|trans }}{% endblock %}
+{% block title %}{{ parent() }}{{ 'api.detail.title'|trans }}{% endblock %}
 
 {% block sidebar %}
     {{ render(controller('AppBundle:Navigation:sidebarComponent', { 'currentItem': 'wallet' })) }}
 {% endblock %}
 
 {% block page_header %}
-    {{ 'api.mng.detail.header.title'|trans }} <small>{{ 'api.mng.detail.header.subtitle'|trans }}.</small>
+    {{ 'api.detail.header.title'|trans }} <small>{{ 'api.detail.header.subtitle'|trans }}.</small>
 {% endblock %}
 
 {% block content %}
@@ -17,15 +17,14 @@
             <div class="widget widget-stats bg-gradient-blue m-b-10">
                 <div class="stats-icon stats-icon-lg"><i class="fa fa-dollar-sign fa-fw"></i></div>
                 <div class="stats-content">
-                    <div class="stats-title">{{ 'api.mng.detail.panel.header'|trans }}</div>
+                    <div class="stats-title">{{ 'api.detail.panel.header'|trans }}</div>
                     <div class="stats-number">
-                        {#TODO agregar parametros que se usen para consumir Ej: value#}
-                        {% set apiUrl = url('app_api_consume', { id: endPoint.id, hash:'YOUR_FILE_HASH' }) %}
+                        {% set apiUrl = url('app_api_consume', { id: aep.id, hash:'YOUR_FILE_HASH' }) %}
                     </div>
                     <div class="stats-progress progress">
                         <div class="progress-bar" style="width: 20.5%;"></div>
                     </div>
-                    <div class="stats-desc">Better than last week (40.5%)</div>
+                    <div class="stats-desc">{{ 'api.detail.panel.description'|trans }}</div>
                 </div>
             </div>
             <h1>{{ apiUrl }}</h1>

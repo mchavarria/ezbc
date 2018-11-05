@@ -1,22 +1,21 @@
 {% extends "layout.html.twig" %}
 
-{% block title %}{{ parent() }}{{ 'api.mng.stats.title'|trans }}{% endblock %}
+{% block title %}{{ parent() }}{{ 'api.stats.title'|trans }}{% endblock %}
 
 {% block sidebar %}
     {{ render(controller('AppBundle:Navigation:sidebarComponent', { 'currentItem': 'api_end_point' })) }}
 {% endblock %}
 
 {% block page_header %}
-    {{ 'api.mng.stats.header.title'|trans }} <small>{{ 'api.mng.stats.header.subtitle'|trans }}.</small>
+    {{ 'api.stats.header.title'|trans }} <small>{{ 'api.stats.header.subtitle'|trans }}.</small>
 {% endblock %}
 
 {% block content %}
     {#TODO agregar algunos de los bloques de dibujos#}
-    {#TODO agregar info de la wallet#}
     <div class="row">
         <!-- begin col-12 -->
         <div class="col-lg-12">
-            <a href="{{ 'https://ropsten.etherscan.io/address/'  ~ aep.wallet.walletKey }}" target="_blank" class="btn btn-primary">{{ 'api.mng.stats.wallet.more.info'|trans }}</a>
+            <a href="{{ 'https://ropsten.etherscan.io/address/'  ~ aep.wallet.walletKey }}" target="_blank" class="btn btn-primary">{{ 'api.stats.wallet.more.info'|trans }}</a>
         </div>
         <!-- end col-12 -->
     </div>
@@ -29,7 +28,7 @@
                 <!-- begin panel-heading -->
                 <div class="panel-heading">
                     <div class="panel-heading-btn"></div>
-                    <h4 class="panel-title">{{ 'api.mng.stats.panel.header'|trans }}</h4>
+                    <h4 class="panel-title">{{ 'api.stats.panel.title'|trans }}</h4>
                 </div>
                 <!-- end panel-heading -->
                 <!-- begin panel-body -->
@@ -40,8 +39,8 @@
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>{{ 'api.mng.stats.item.bc.hash'|trans }}</th>
-                                <th>{{ 'api.mng.stats.item.creation'|trans }}</th>
+                                <th>{{ 'api.stats.panel.title.bc.hash'|trans }}</th>
+                                <th>{{ 'api.stats.panel.title.date'|trans }}</th>
                                 <th width="1%"></th>
                             </tr>
                             </thead>
@@ -52,7 +51,7 @@
                                     <td>{{ transaction.bcHash }}</td>
                                     <td>{{ transaction.createdDate|date('Y-m-d') }}</td>
                                     <td class="with-btn" nowrap>
-                                        <a href="{{ 'https://ropsten.etherscan.io/tx/' ~ transaction.bcHash }}" target="_blank" class="btn btn-sm btn-primary m-r-2">{{ 'api.mng.stats.info'|trans }}</a>
+                                        <a href="{{ 'https://ropsten.etherscan.io/tx/' ~ transaction.bcHash }}" target="_blank" class="btn btn-sm btn-primary m-r-2">{{ 'api.stats.panel.list.info'|trans }}</a>
                                         {#<a href="{{ path('app_api_management_details', { id: transaction.id }) }}" class="btn btn-sm btn-white m-r-2">{{ 'api.mng.stats.item.details'|trans }}</a>#}
                                     </td>
                                 </tr>
@@ -62,7 +61,7 @@
                                         <img src="{{ asset('img/admin/wallet/none.jpg') }}" class="img-rounded height-30" />
                                     </td>
                                     <td>---</td>
-                                    <td>{{ 'api.mng.stats.no.transaction'|trans }}</td>
+                                    <td>{{ 'api.stats.panel.list.no.logs'|trans }}</td>
                                     <td class="with-btn" nowrap>
                                     </td>
                                 </tr>
