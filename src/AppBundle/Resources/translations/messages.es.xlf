@@ -46,6 +46,14 @@
                 <source>app.sb.menu.admin.users</source>
                 <target>Usuarios</target>
             </trans-unit>
+            <trans-unit id="header.user.edit.profile">
+                <source>header.user.edit.profile</source>
+                <target>header.user.edit.profile</target>
+            </trans-unit>
+            <trans-unit id="header.logout">
+                <source>header.logout</source>
+                <target>header.logout</target>
+            </trans-unit>
             <trans-unit id="db.idx.title">
                 <source>db.idx.title</source>
                 <target>db.idx.title</target>
@@ -433,6 +441,102 @@
             <trans-unit id="bc.form.cancel">
                 <source>bc.form.cancel</source>
                 <target>bc.form.cancel</target>
+            </trans-unit>
+            <trans-unit id="user.idx.title">
+                <source>user.idx.title</source>
+                <target>user.idx.title</target>
+            </trans-unit>
+            <trans-unit id="user.idx.header.title">
+                <source>user.idx.header.title</source>
+                <target>user.idx.header.title</target>
+            </trans-unit>
+            <trans-unit id="user.idx.header.subtitle">
+                <source>user.idx.header.subtitle</source>
+                <target>user.idx.header.subtitle</target>
+            </trans-unit>
+            <trans-unit id="user.idx.new.btn">
+                <source>user.idx.new.btn</source>
+                <target>user.idx.new.btn</target>
+            </trans-unit>
+            <trans-unit id="user.idx.panel.title">
+                <source>user.idx.panel.title</source>
+                <target>user.idx.panel.title</target>
+            </trans-unit>
+            <trans-unit id="user.idx.panel.title.name">
+                <source>user.idx.panel.title.name</source>
+                <target>user.idx.panel.title.name</target>
+            </trans-unit>
+            <trans-unit id="user.idx.panel.title.email">
+                <source>user.idx.panel.title.email</source>
+                <target>user.idx.panel.title.email</target>
+            </trans-unit>
+            <trans-unit id="user.idx.panel.title.type">
+                <source>user.idx.panel.title.type</source>
+                <target>user.idx.panel.title.type</target>
+            </trans-unit>
+            <trans-unit id="user.idx.list.wallets">
+                <source>user.idx.list.wallets</source>
+                <target>user.idx.list.wallets</target>
+            </trans-unit>
+            <trans-unit id="user.idx.list.transactions">
+                <source>user.idx.list.transactions</source>
+                <target>user.idx.list.transactions</target>
+            </trans-unit>
+            <trans-unit id="user.idx.edit.btn">
+                <source>user.idx.edit.btn</source>
+                <target>user.idx.edit.btn</target>
+            </trans-unit>
+            <trans-unit id="user.idx.delete.btn">
+                <source>user.idx.delete.btn</source>
+                <target>user.idx.delete.btn</target>
+            </trans-unit>
+            <trans-unit id="user.new.title">
+                <source>user.new.title</source>
+                <target>user.new.title</target>
+            </trans-unit>
+            <trans-unit id="user.new.header.title">
+                <source>user.new.header.title</source>
+                <target>user.new.header.title</target>
+            </trans-unit>
+            <trans-unit id="user.new.header.subtitle">
+                <source>user.new.header.subtitle</source>
+                <target>user.new.header.subtitle</target>
+            </trans-unit>
+            <trans-unit id="user.new.form.title">
+                <source>user.new.form.title</source>
+                <target>user.new.form.title</target>
+            </trans-unit>
+            <trans-unit id="user.edit.title">
+                <source>user.edit.title</source>
+                <target>user.edit.title</target>
+            </trans-unit>
+            <trans-unit id="user.edit.header.title">
+                <source>user.edit.header.title</source>
+                <target>user.edit.header.title</target>
+            </trans-unit>
+            <trans-unit id="user.edit.header.subtitle">
+                <source>user.edit.header.subtitle</source>
+                <target>user.edit.header.subtitle</target>
+            </trans-unit>
+            <trans-unit id="user.edit.form.title">
+                <source>user.edit.form.title</source>
+                <target>user.edit.form.title</target>
+            </trans-unit>
+            <trans-unit id="user.form.subtitle">
+                <source>user.form.subtitle</source>
+                <target>user.form.subtitle</target>
+            </trans-unit>
+            <trans-unit id="user.form.create">
+                <source>user.form.create</source>
+                <target>user.form.create</target>
+            </trans-unit>
+            <trans-unit id="user.form.save">
+                <source>user.form.save</source>
+                <target>user.form.save</target>
+            </trans-unit>
+            <trans-unit id="user.form.cancel">
+                <source>user.form.cancel</source>
+                <target>user.form.cancel</target>
             </trans-unit>
         </body>
     </file>

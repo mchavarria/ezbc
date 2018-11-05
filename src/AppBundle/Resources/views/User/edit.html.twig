@@ -1,13 +1,13 @@
 {% extends "layout.html.twig" %}
 
-{% block title %}{{ parent() }}{{ 'user.edit'|trans }}{% endblock %}
+{% block title %}{{ parent() }}{{ 'user.edit.title'|trans }}{% endblock %}
 
 {% block sidebar %}
     {{ render(controller('AppBundle:Navigation:sidebarComponent', { 'currentItem': 'user' })) }}
 {% endblock %}
 
 {% block page_header %}
-    Edit User <small>fill out the form.</small>
+    {{ 'user.edit.header.title'|trans }} <small>{{ 'user.edit.header.subtitle'|trans }}.</small>
 {% endblock %}
 
 {% block content %}
@@ -18,7 +18,7 @@
             <div class="panel panel-inverse">
                 <!-- begin panel-heading -->
                 <div class="panel-heading">
-                    <h4 class="panel-title">User Form</h4>
+                    <h4 class="panel-title">{{ 'user.edit.form.title'|trans }}</h4>
                 </div>
                 <!-- end panel-heading -->
                 <!-- begin panel-body -->

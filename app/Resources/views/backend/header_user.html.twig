@@ -6,13 +6,13 @@
         {% endif %}
     </a>
     <div class="dropdown-menu dropdown-menu-right">
-        <a href="{{ path('app_user_edit', { id: app.user.id }) }}" class="dropdown-item">{{ 'user.edit.profile'|trans }}</a>
-        <a href="javascript:;" class="dropdown-item"><span class="badge badge-danger pull-right">2</span> Inbox</a>
-        <a href="javascript:;" class="dropdown-item">Calendar</a>
-        <a href="javascript:;" class="dropdown-item">Setting</a>
+        <a href="{{ path('app_user_edit', { id: app.user.id }) }}" class="dropdown-item">{{ 'header.user.edit.profile'|trans }}</a>
+        {#<a href="javascript:;" class="dropdown-item"><span class="badge badge-danger pull-right">2</span> Inbox</a>#}
+        {#<a href="javascript:;" class="dropdown-item">Calendar</a>#}
+        {#<a href="javascript:;" class="dropdown-item">Setting</a>#}
         <div class="dropdown-divider"></div>
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-        <a href="{{ path('fos_user_security_logout') }}" class="dropdown-item">{{ 'layout.logout'|trans }}</a>
+        <a href="{{ path('fos_user_security_logout') }}" class="dropdown-item">{{ 'header.logout'|trans }}</a>
         {% endif %}
     </div>
 </li>

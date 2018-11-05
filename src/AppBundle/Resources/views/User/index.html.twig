@@ -1,20 +1,20 @@
 {% extends "layout.html.twig" %}
 
-{% block title %}{{ parent() }}{{ 'user.management'|trans }}{% endblock %}
+{% block title %}{{ parent() }}{{ 'user.idx.title'|trans }}{% endblock %}
 
 {% block sidebar %}
     {{ render(controller('AppBundle:Navigation:sidebarComponent', { 'currentItem': 'admin_users' })) }}
 {% endblock %}
 
 {% block page_header %}
-    {{ 'user.management'|trans }} <small>{{ 'manage.users.and.roles'|trans }}.</small>
+    {{ 'user.idx.header.title'|trans }} <small>{{ 'user.idx.header.subtitle'|trans }}.</small>
 {% endblock %}
 
 {% block content %}
     <div class="row">
         <!-- begin col-12 -->
         <div class="col-lg-12">
-            <a href="{{ path('app_user_new') }}" class="btn btn-primary">{{ 'new.user'|trans }}</a>
+            <a href="{{ path('app_user_new') }}" class="btn btn-primary">{{ 'user.idx.new.btn'|trans }}</a>
         </div>
         <!-- end col-12 -->
     </div>
@@ -27,7 +27,7 @@
                 <!-- begin panel-heading -->
                 <div class="panel-heading">
                     <div class="panel-heading-btn"></div>
-                    <h4 class="panel-title">{{ 'all.users'|trans }}</h4>
+                    <h4 class="panel-title">{{ 'user.idx.panel.title'|trans }}</h4>
                 </div>
                 <!-- end panel-heading -->
                 <!-- begin panel-body -->
@@ -38,9 +38,9 @@
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>{{ 'user.name'|trans }}</th>
-                                <th>{{ 'user.email'|trans }}</th>
-                                <th>{{ 'user.type'|trans }}</th>
+                                <th>{{ 'user.idx.panel.title.name'|trans }}</th>
+                                <th>{{ 'user.idx.panel.title.email'|trans }}</th>
+                                <th>{{ 'user.idx.panel.title.type'|trans }}</th>
                                 <th width="1%"></th>
                             </tr>
                             </thead>
@@ -52,10 +52,10 @@
                                     <td>{{ user.email }}</td>
                                     <td>{{ user.type }}</td>
                                     <td class="with-btn" nowrap>
-                                        <a href="{{ path('app_user_edit', { id: user.id }) }}" class="btn btn-sm btn-primary width-60 m-r-2">{{ 'edit'|trans }}</a>
-                                        <a href="#" class="btn btn-sm btn-white m-r-2">{{ 'transactions'|trans }}</a>
-                                        <a href="{{ path('app_wallet_my', { id: user.id }) }}" class="btn btn-sm btn-white width-60 m-r-2">{{ 'wallets'|trans }}</a>
-                                        <a href="#" class="btn btn-sm btn-danger width-60">{{ 'delete'|trans }}</a>
+                                        <a href="{{ path('app_user_edit', { id: user.id }) }}" class="btn btn-sm btn-primary m-r-2">{{ 'user.idx.edit.btn'|trans }}</a>
+                                        <a href="#" class="btn btn-sm btn-white m-r-2">{{ 'user.idx.list.transactions'|trans }}</a>
+                                        <a href="{{ path('app_wallet_my', { id: user.id }) }}" class="btn btn-sm btn-white m-r-2">{{ 'user.idx.list.wallets'|trans }}</a>
+                                        <a href="#" class="btn btn-sm btn-danger">{{ 'user.idx.delete.btn'|trans }}</a>
                                     </td>
                                 </tr>
                             {% endfor %}
