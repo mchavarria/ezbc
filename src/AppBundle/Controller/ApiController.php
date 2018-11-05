@@ -21,8 +21,8 @@ use Unirest;
 class ApiController extends Controller
 {
     const CONSUME_EXAMPLE = 'https://ez-blockchain-middleware.herokuapp.com/ethereum/testnet/sendtransaction/%s/%s/%s/%s';
-    //TODO cambiar WALLET_TO por configuracion.
-    const WALLET_TO = '0x09880965D52968d347d16E234adf5608fC1796d4';
+    //TODO cambiar ETHEREUM_WALLET_TO por configuracion.
+    const ETHEREUM_WALLET_TO = '0xc095f4e5913dA8be66890b406C08BC13E3b2708D';
 
     /**
      * @Template("@App/Api/index.html.twig")
@@ -230,7 +230,7 @@ class ApiController extends Controller
         $url = self::CONSUME_EXAMPLE;
         $url = sprintf(
             $url,
-            self::WALLET_TO,
+            self::ETHEREUM_WALLET_TO,
             $wallet->getWalletKey(),
             $wallet->getPKey(),
             $hash
