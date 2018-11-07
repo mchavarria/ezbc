@@ -112,11 +112,11 @@
             </trans-unit>
             <trans-unit id="wallet.idx.panel.title.block.chain">
                 <source>wallet.idx.panel.title.block.chain</source>
-                <target>wallet.idx.panel.title.block.chain</target>
+                <target>Blockchain</target>
             </trans-unit>
             <trans-unit id="wallet.idx.panel.title.description">
                 <source>wallet.idx.panel.title.description</source>
-                <target>wallet.idx.panel.title.description</target>
+                <target>Descripción</target>
             </trans-unit>
             <trans-unit id="wallet.idx.panel.list.no.description">
                 <source>wallet.idx.panel.list.no.description</source>
@@ -124,15 +124,15 @@
             </trans-unit>
             <trans-unit id="wallet.idx.panel.list.edit">
                 <source>wallet.idx.panel.list.edit</source>
-                <target>wallet.idx.panel.list.edit</target>
+                <target>Editar</target>
             </trans-unit>
             <trans-unit id="wallet.idx.panel.list.delete">
                 <source>wallet.idx.panel.list.delete</source>
-                <target>wallet.idx.panel.list.delete</target>
+                <target>Eliminar</target>
             </trans-unit>
             <trans-unit id="wallet.idx.panel.list.more.info">
                 <source>wallet.idx.panel.list.more.info</source>
-                <target>wallet.idx.panel.list.more.info</target>
+                <target>Detalle</target>
             </trans-unit>
             <trans-unit id="wallet.idx.panel.list.no.wallet">
                 <source>wallet.idx.panel.list.no.wallet</source>
