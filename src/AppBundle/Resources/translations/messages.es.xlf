@@ -216,11 +216,11 @@
             </trans-unit>
             <trans-unit id="api.idx.header.title">
                 <source>api.idx.header.title</source>
-                <target>APIs & Endpoints</target>
+                <target>APIs y Endpoints</target>
             </trans-unit>
             <trans-unit id="api.idx.header.subtitle">
                 <source>api.idx.header.subtitle</source>
-                <target>Gestión de APIs & Endpoints</target>
+                <target>Gestión de APIs y Endpoints</target>
             </trans-unit>
             <trans-unit id="api.idx.new.btn">
                 <source>api.idx.new.btn</source>
