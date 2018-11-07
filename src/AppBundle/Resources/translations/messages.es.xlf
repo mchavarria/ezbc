@@ -68,7 +68,7 @@
             </trans-unit>
             <trans-unit id="db.idx.stats.total.transactions">
                 <source>db.idx.stats.total.transactions</source>
-                <target>db.idx.stats.total.transactions</target>
+                <target>Transacciones totales</target>
             </trans-unit>
             <trans-unit id="db.idx.stats.view.details">
                 <source>db.idx.stats.view.details</source>
