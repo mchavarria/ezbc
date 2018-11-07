@@ -72,7 +72,7 @@
             </trans-unit>
             <trans-unit id="db.idx.stats.view.details">
                 <source>db.idx.stats.view.details</source>
-                <target>db.idx.stats.view.details</target>
+                <target>Ver detalle</target>
             </trans-unit>
             <trans-unit id="db.idx.stats.my.wallets">
                 <source>db.idx.stats.my.wallets</source>
