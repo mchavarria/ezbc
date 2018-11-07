@@ -60,11 +60,11 @@
             </trans-unit>
             <trans-unit id="db.idx.header.title">
                 <source>db.idx.header.title</source>
-                <target>db.idx.header.title</target>
+                <target>Resumen</target>
             </trans-unit>
             <trans-unit id="db.idx.header.subtitle">
                 <source>db.idx.header.subtitle</source>
-                <target>db.idx.header.subtitle</target>
+                <target>últimos movimientos </target>
             </trans-unit>
             <trans-unit id="db.idx.stats.total.transactions">
                 <source>db.idx.stats.total.transactions</source>
@@ -76,11 +76,11 @@
             </trans-unit>
             <trans-unit id="db.idx.stats.my.wallets">
                 <source>db.idx.stats.my.wallets</source>
-                <target>db.idx.stats.my.wallets</target>
+                <target>Mis billeteras</target>
             </trans-unit>
             <trans-unit id="db.idx.stats.my.apis">
                 <source>db.idx.stats.my.apis</source>
-                <target>db.idx.stats.my.apis</target>
+                <target>Mis apis</target>
             </trans-unit>
             <trans-unit id="db.idx.panel.latest.logs.title">
                 <source>db.idx.panel.latest.logs.title</source>
@@ -96,15 +96,15 @@
             </trans-unit>
             <trans-unit id="wallet.idx.header.title">
                 <source>wallet.idx.header.title</source>
-                <target>wallet.idx.header.title</target>
+                <target>Mis billeteras</target>
             </trans-unit>
             <trans-unit id="wallet.idx.header.subtitle">
                 <source>wallet.idx.header.subtitle</source>
-                <target>wallet.idx.header.subtitle</target>
+                <target>Gestión de billeteras</target>
             </trans-unit>
             <trans-unit id="wallet.idx.new.btn">
                 <source>wallet.idx.new.btn</source>
-                <target>wallet.idx.new.btn</target>
+                <target>Nueva billetera</target>
             </trans-unit>
             <trans-unit id="wallet.idx.panel.title">
                 <source>wallet.idx.panel.title</source>
