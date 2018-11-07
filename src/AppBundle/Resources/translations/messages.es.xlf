@@ -216,35 +216,35 @@
             </trans-unit>
             <trans-unit id="api.idx.header.title">
                 <source>api.idx.header.title</source>
-                <target>api.idx.header.title</target>
+                <target>APIs & Endpoints</target>
             </trans-unit>
             <trans-unit id="api.idx.header.subtitle">
                 <source>api.idx.header.subtitle</source>
-                <target>api.idx.header.subtitle</target>
+                <target>Gestión de APIs & Endpoints</target>
             </trans-unit>
             <trans-unit id="api.idx.new.btn">
                 <source>api.idx.new.btn</source>
-                <target>api.idx.new.btn</target>
+                <target>Nueva API</target>
             </trans-unit>
             <trans-unit id="api.idx.panel.title">
                 <source>api.idx.panel.title</source>
-                <target>api.idx.panel.title</target>
+                <target>Listado de APIs</target>
             </trans-unit>
             <trans-unit id="api.idx.panel.title.name">
                 <source>api.idx.panel.title.name</source>
-                <target>api.idx.panel.title.name</target>
+                <target>Nombre</target>
             </trans-unit>
             <trans-unit id="api.idx.panel.title.description">
                 <source>api.idx.panel.title.description</source>
-                <target>api.idx.panel.title.description</target>
+                <target>Descripción</target>
             </trans-unit>
             <trans-unit id="api.idx.panel.title.creation.date">
                 <source>api.idx.panel.title.creation.date</source>
-                <target>api.idx.panel.title.creation.date</target>
+                <target>Fecha creación</target>
             </trans-unit>
             <trans-unit id="api.idx.panel.list.transactions">
                 <source>api.idx.panel.list.transactions</source>
-                <target>api.idx.panel.list.transactions</target>
+                <target>Ver transacciones</target>
             </trans-unit>
             <trans-unit id="api.idx.panel.list.edit">
                 <source>api.idx.panel.list.edit</source>
@@ -252,11 +252,11 @@
             </trans-unit>
             <trans-unit id="api.idx.panel.list.delete">
                 <source>api.idx.panel.list.delete</source>
-                <target>api.idx.panel.list.delete</target>
+                <target>Eliminar</target>
             </trans-unit>
             <trans-unit id="api.idx.panel.list.detail">
                 <source>api.idx.panel.list.detail</source>
-                <target>api.idx.panel.list.detail</target>
+                <target>Detalle</target>
             </trans-unit>
             <trans-unit id="api.idx.panel.list.no.api">
                 <source>api.idx.panel.list.no.api</source>
