@@ -448,47 +448,47 @@
             </trans-unit>
             <trans-unit id="user.idx.header.title">
                 <source>user.idx.header.title</source>
-                <target>user.idx.header.title</target>
+                <target>Usuarios</target>
             </trans-unit>
             <trans-unit id="user.idx.header.subtitle">
                 <source>user.idx.header.subtitle</source>
-                <target>user.idx.header.subtitle</target>
+                <target>Administración</target>
             </trans-unit>
             <trans-unit id="user.idx.new.btn">
                 <source>user.idx.new.btn</source>
-                <target>user.idx.new.btn</target>
+                <target>Nuevo</target>
             </trans-unit>
             <trans-unit id="user.idx.panel.title">
                 <source>user.idx.panel.title</source>
-                <target>user.idx.panel.title</target>
+                <target>Listado de usuarios</target>
             </trans-unit>
             <trans-unit id="user.idx.panel.title.name">
                 <source>user.idx.panel.title.name</source>
-                <target>user.idx.panel.title.name</target>
+                <target>Nombre</target>
             </trans-unit>
             <trans-unit id="user.idx.panel.title.email">
                 <source>user.idx.panel.title.email</source>
-                <target>user.idx.panel.title.email</target>
+                <target>Email</target>
             </trans-unit>
             <trans-unit id="user.idx.panel.title.type">
                 <source>user.idx.panel.title.type</source>
-                <target>user.idx.panel.title.type</target>
+                <target>Tipo</target>
             </trans-unit>
             <trans-unit id="user.idx.list.wallets">
                 <source>user.idx.list.wallets</source>
-                <target>user.idx.list.wallets</target>
+                <target>Wallets</target>
             </trans-unit>
             <trans-unit id="user.idx.list.transactions">
                 <source>user.idx.list.transactions</source>
-                <target>user.idx.list.transactions</target>
+                <target>Transacciones</target>
             </trans-unit>
             <trans-unit id="user.idx.edit.btn">
                 <source>user.idx.edit.btn</source>
-                <target>user.idx.edit.btn</target>
+                <target>Editar</target>
             </trans-unit>
             <trans-unit id="user.idx.delete.btn">
                 <source>user.idx.delete.btn</source>
-                <target>user.idx.delete.btn</target>
+                <target>Eliminar</target>
             </trans-unit>
             <trans-unit id="user.new.title">
                 <source>user.new.title</source>
