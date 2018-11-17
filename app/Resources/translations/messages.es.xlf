@@ -95,11 +95,19 @@
             </trans-unit>
             <trans-unit id="email.username">
                 <source>email.username</source>
-                <target>Usuaio o mail</target>
+                <target>Usuario o mail</target>
             </trans-unit>
             <trans-unit id="remember.me">
                  <source>remember.me</source>
                  <target>Recordarme</target>
+            </trans-unit>
+            <trans-unit id="sign.in">
+                 <source>sign.in</source>
+                 <target>Ingresar</target>
+            </trans-unit>
+            <trans-unit id="sign.up">
+                 <source>sign.up</source>
+                 <target>Registrarse</target>
             </trans-unit>
 
         </body>

@@ -90,17 +90,25 @@
                 <target>Developer</target>
             </trans-unit>
             <trans-unit id="password">
-                            <source>password</source>
-                            <target>Password</target>
-                        </trans-unit>
-                        <trans-unit id="email.username">
-                            <source>email.username</source>
-                            <target>Email or username</target>
-                        </trans-unit>
-             <trans-unit id="remember.me">
-                              <source>remember.me</source>
-                              <target>Remember me</target>
-                         </trans-unit>
+                 <source>password</source>
+                 <target>Password</target>
+            </trans-unit>
+            <trans-unit id="email.username">
+                 <source>email.username</source>
+                 <target>Email or username</target>
+            </trans-unit>
+            <trans-unit id="remember.me">
+                 <source>remember.me</source>
+                 <target>Remember me</target>
+            </trans-unit>
+            <trans-unit id="sign.in">
+                 <source>sign.in</source>
+                 <target>Sign in</target>
+            </trans-unit>
+            <trans-unit id="sign.up">
+                 <source>sign.up</source>
+                 <target>Registrarse</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
