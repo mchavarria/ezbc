@@ -36,7 +36,7 @@
             </trans-unit>
             <trans-unit id="ld.home.welcome">
                 <source>ld.home.welcome</source>
-                <target>Welcome to EZ Blockchain</target>
+                <target>Welcome to E-Z Blockchain</target>
             </trans-unit>
             <trans-unit id="ld.home.welcome.sub">
                 <source>ld.home.welcome.sub</source>
