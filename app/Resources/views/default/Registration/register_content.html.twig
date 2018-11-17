@@ -2,8 +2,8 @@
 <div class="right-content">
     <!-- begin register-header -->
     <h1 class="register-header">
-        Sign Up
-        <small>Create your Easy Block Chain Account.</small>
+        Registrarse
+        <small>Creá tu cuenta de E-Z Blackchain.</small>
     </h1>
     <!-- end register-header -->
     <!-- begin register-content -->
@@ -17,23 +17,15 @@
         {{ form_row(form.plainPassword.first) }}
         {{ form_row(form.plainPassword.second) }}
 
-        <div class="checkbox checkbox-css m-b-30">
-            <div class="checkbox checkbox-css m-b-30">
-                <input type="checkbox" id="agreement_checkbox" value="">
-                <label for="agreement_checkbox">
-                    By clicking Sign Up, you agree to our <a href="javascript:;">Terms</a> and that you have read our <a href="javascript:;">Data Policy</a>, including our <a href="javascript:;">Cookie Use</a>.
-                </label>
-            </div>
-        </div>
         <div class="register-buttons">
             <button type="submit" class="btn btn-primary btn-block btn-lg">{{ 'sign.up'|trans }}</button>
         </div>
         <div class="m-t-20 m-b-40 p-b-40 text-inverse">
-            Already a member? Click <a href="{{ path('fos_user_security_login') }}">here</a> to login.
+            Ya tenés usuario de E-Z Blockchain? Hacé click <a href="{{ path('fos_user_security_login') }}">acá</a> para ingresar.
         </div>
         <hr />
         <p class="text-center">
-            &copy; Easy Block Chain All Right Reserved 2018
+            &copy; E-Z Blockchain All Right Reserved 2018
         </p>
         {{ form_end(form) }}
     </div>
