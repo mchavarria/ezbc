@@ -97,6 +97,10 @@
                 <source>email.username</source>
                 <target>Usuaio o mail</target>
             </trans-unit>
+            <trans-unit id="remember.me">
+                 <source>remember.me</source>
+                 <target>Recordarme</target>
+            </trans-unit>
 
         </body>
     </file>
