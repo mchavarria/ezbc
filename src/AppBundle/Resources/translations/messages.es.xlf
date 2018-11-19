@@ -504,19 +504,19 @@
             </trans-unit>
             <trans-unit id="user.new.header.title">
                 <source>user.new.header.title</source>
-                <target>user.new.header.title</target>
+                <target>Usuarios</target>
             </trans-unit>
             <trans-unit id="user.new.header.subtitle">
                 <source>user.new.header.subtitle</source>
-                <target>user.new.header.subtitle</target>
+                <target>Administración</target>
             </trans-unit>
             <trans-unit id="user.new.form.title">
                 <source>user.new.form.title</source>
-                <target>user.new.form.title</target>
+                <target>Nuevo</target>
             </trans-unit>
             <trans-unit id="user.edit.title">
                 <source>user.edit.title</source>
-                <target>user.edit.title</target>
+                <target>Edición</target>
             </trans-unit>
             <trans-unit id="user.edit.header.title">
                 <source>user.edit.header.title</source>
@@ -536,15 +536,15 @@
             </trans-unit>
             <trans-unit id="user.form.create">
                 <source>user.form.create</source>
-                <target>user.form.create</target>
+                <target>Crear</target>
             </trans-unit>
             <trans-unit id="user.form.save">
                 <source>user.form.save</source>
-                <target>user.form.save</target>
+                <target>Guardar</target>
             </trans-unit>
             <trans-unit id="user.form.cancel">
                 <source>user.form.cancel</source>
-                <target>user.form.cancel</target>
+                <target>Cancelar</target>
             </trans-unit>
         </body>
     </file>
