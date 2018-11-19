@@ -12,10 +12,12 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Unirest;
 
 /**
  * Class UserController
+ *
  * @Route("/app/api-management")
  */
 class ApiController extends Controller
@@ -103,7 +105,7 @@ class ApiController extends Controller
             if ($isAdmin) {
                 $redirectUrl = $this->redirectToRoute('app_api_management_index');
             } else {
-                $redirectUrl = $this->redirectToRoute('backend_dashboard');
+                $redirectUrl = $this->redirectToRoute('app_api_management_my');
             }
 
             return $redirectUrl;
@@ -149,7 +151,7 @@ class ApiController extends Controller
             if ($isAdmin) {
                 $redirectUrl = $this->redirectToRoute('app_api_management_index');
             } else {
-                $redirectUrl = $this->redirectToRoute('backend_dashboard');
+                $redirectUrl = $this->redirectToRoute('app_api_management_my');
             }
 
             return $redirectUrl;
@@ -164,13 +166,51 @@ class ApiController extends Controller
     }
 
     /**
-     * @Route("/delete")
+     * @Route("/{id}/change-status", name="app_api_management_change_status", requirements={"id" = "\d+"}, options={"expose" = true})
+     *
+     * @Security("has_role('ROLE_ADMIN')")
+     *
+     * @param int     $id      Identifier
+     *
+     * @return array|Response
      */
-    public function deleteAction()
+    public function changeStatusAction($id)
     {
-        return $this->render('AppBundle:Api:delete.html.twig', array(
-            // ...
-        ));
+        $repository = $this->getDoctrine()->getRepository(ApiEndPoint::class);
+        $aep = $repository->find($id);
+        $enable = $aep->isEnabled() ? true : false;
+        $aep->setEnabled(!$enable);
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($aep);
+        $entityManager->flush();
+
+        $redirectUrl = $this->redirectToRoute('app_api_management_index');
+
+        return $redirectUrl;
+    }
+
+    /**
+     * @Route("/{id}/delete", name="app_api_management_delete", requirements={"id" = "\d+"}, options={"expose" = true})
+     *
+     * @Security("has_role('ROLE_ADMIN')")
+     *
+     * @param int     $id      Identifier
+     *
+     * @return array|Response
+     */
+    public function deleteAction($id)
+    {
+        $repository = $this->getDoctrine()->getRepository(ApiEndPoint::class);
+        $aep = $repository->find($id);
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($aep);
+        $entityManager->flush();
+
+        $redirectUrl = $this->redirectToRoute('app_api_management_index');
+
+        return $redirectUrl;
     }
 
     /**

@@ -59,6 +59,11 @@ class Wallet
     private $description;
 
     /**
+     * @ORM\Column(type="boolean", nullable=TRUE)
+     */
+    private $enabled;
+
+    /**
      * BcPublicKey constructor.
      * @param User $user
      */
@@ -161,6 +166,22 @@ class Wallet
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * @param bool $val
+     */
+    public function setEnabled($val)
+    {
+        $this->enabled = $val;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isEnabled()
+    {
+        return $this->enabled;
     }
 
     /**

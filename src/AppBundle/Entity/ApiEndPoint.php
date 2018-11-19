@@ -58,6 +58,10 @@ class ApiEndPoint
      */
     private $transactions;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=TRUE)
+     */
+    private $enabled;
 
     /**
      * ApiEndPoint constructor.
@@ -133,6 +137,8 @@ class ApiEndPoint
     public function setUser(User $user)
     {
         $this->user = $user;
+
+        return $this;
     }
 
     /**
@@ -153,6 +159,8 @@ class ApiEndPoint
     public function setWallet(Wallet $wallet)
     {
         $this->wallet = $wallet;
+
+        return $this;
     }
 
     /**
@@ -207,6 +215,22 @@ class ApiEndPoint
     public function hasTransaction(BcTransaction $transaction)
     {
         return $this->transactions->contains($transaction);
+    }
+
+    /**
+     * @param bool $val
+     */
+    public function setEnabled($val)
+    {
+        $this->enabled = $val;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isEnabled()
+    {
+        return $this->enabled;
     }
 }
 

@@ -13,6 +13,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
  * Class UserController
+ *
  * @Route("/app/user")
  */
 class UserController extends Controller
@@ -146,8 +147,12 @@ class UserController extends Controller
     {
         $repository = $this->getDoctrine()->getRepository(User::class);
         $user = $repository->find($id);
-        $isEnabled = $user->isEnabled();
-        $user->setEnabled(!$isEnabled);
+        $enable = $user->isEnabled() ? true : false;
+        $user->setEnabled(!$enable);
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($user);
+        $entityManager->flush();
 
         $redirectUrl = $this->redirectToRoute('app_user_index');
 

@@ -10,10 +10,12 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Unirest;
 
 /**
  * Class WalletController
+ *
  * @Route("/app/wallet")
  */
 class WalletController extends Controller
@@ -29,7 +31,12 @@ class WalletController extends Controller
      */
     public function indexAction()
     {
-        return [];
+        $repository = $this->getDoctrine()->getRepository(Wallet::class);
+        $wallets = $repository->findAll();
+
+        return [
+            'wallets' => $wallets
+        ];
     }
 
     /**
@@ -45,11 +52,6 @@ class WalletController extends Controller
     {
         $userRepository = $this->getDoctrine()->getRepository(User::class);
         $user = $userRepository->find($id);
-
-//        $walletRepository = $this->getDoctrine()->getRepository(Wallet::class);
-//        $wallets = $walletRepository->findBy([
-//            'user' => $user->getId()
-//        ]);
 
         $parameters = [
             'user' => $user
@@ -88,9 +90,9 @@ class WalletController extends Controller
             $entityManager->flush();
 
             if ($this->isGranted('ROLE_ADMIN', $this->getUser())) {
-                $redirectUrl = $this->redirectToRoute('app_user_index');
+                $redirectUrl = $this->redirectToRoute('app_wallet_index');
             } else {
-                $redirectUrl = $this->redirectToRoute('backend_dashboard');
+                $redirectUrl = $this->redirectToRoute('app_wallet_my');
             }
 
             return $redirectUrl;
@@ -130,9 +132,9 @@ class WalletController extends Controller
             $entityManager->flush();
 
             if ($this->isGranted('ROLE_ADMIN', $this->getUser())) {
-                $redirectUrl = $this->redirectToRoute('app_user_index');
+                $redirectUrl = $this->redirectToRoute('app_wallet_index');
             } else {
-                $redirectUrl = $this->redirectToRoute('backend_dashboard');
+                $redirectUrl = $this->redirectToRoute('app_wallet_my');
             }
 
             return $redirectUrl;
@@ -144,6 +146,54 @@ class WalletController extends Controller
         ];
 
         return $parameters;
+    }
+
+    /**
+     * @Route("/{id}/change-status", name="app_wallet_change_status", requirements={"id" = "\d+"}, options={"expose" = true})
+     *
+     * @Security("has_role('ROLE_ADMIN')")
+     *
+     * @param int     $id      Identifier
+     *
+     * @return array|Response
+     */
+    public function changeStatusAction($id)
+    {
+        $repository = $this->getDoctrine()->getRepository(Wallet::class);
+        $wallet = $repository->find($id);
+        $enable = $wallet->isEnabled() ? true : false;
+        $wallet->setEnabled(!$enable);
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($wallet);
+        $entityManager->flush();
+
+        $redirectUrl = $this->redirectToRoute('app_wallet_index');
+
+        return $redirectUrl;
+    }
+
+    /**
+     * @Route("/{id}/delete", name="app_wallet_delete", requirements={"id" = "\d+"}, options={"expose" = true})
+     *
+     * @Security("has_role('ROLE_ADMIN')")
+     *
+     * @param int     $id      Identifier
+     *
+     * @return array|Response
+     */
+    public function deleteAction($id)
+    {
+        $repository = $this->getDoctrine()->getRepository(User::class);
+        $wallet = $repository->find($id);
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($wallet);
+        $entityManager->flush();
+
+        $redirectUrl = $this->redirectToRoute('app_wallet_index');
+
+        return $redirectUrl;
     }
 
     /**

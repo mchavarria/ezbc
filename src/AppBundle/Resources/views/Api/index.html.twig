@@ -3,7 +3,7 @@
 {% block title %}{{ parent() }}{{ 'api.idx.title'|trans }}{% endblock %}
 
 {% block sidebar %}
-    {{ render(controller('AppBundle:Navigation:sidebarComponent', { 'currentItem': 'api_end_point' })) }}
+    {{ render(controller('AppBundle:Navigation:sidebarComponent', { 'currentItem': 'admin_api_end_point' })) }}
 {% endblock %}
 
 {% block page_header %}
@@ -38,8 +38,9 @@
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>{{ 'api.idx.panel.title.user'|trans }}</th>
+                                <th>{{ 'idx.panel.title.user'|trans }}</th>
                                 <th>{{ 'api.idx.panel.title.name'|trans }}</th>
+                                <th>{{ 'idx.panel.title.status'|trans }}</th>
                                 <th>{{ 'api.idx.panel.title.creation.date'|trans }}</th>
                                 <th width="1%"></th>
                             </tr>
@@ -50,14 +51,18 @@
                                     <td>{{ endPoint.id }}</td>
                                     <td>{{ endPoint.user.username }}</td>
                                     <td>{{ endPoint.name }}</td>
+                                    <td>{{ endPoint.enabled ? 'idx.list.enabled'|trans : 'idx.list.disabled'|trans }}</td>
                                     <td>{{ endPoint.createdDate|date('Y-m-d') }}</td>
                                     <td class="with-btn" nowrap>
                                         {% if is_granted('ROLE_ADMIN') %}
-                                            <a href="{{ path('app_api_management_edit_end_point', { id: endPoint.id }) }}" class="btn btn-sm btn-green m-r-2">{{ 'api.idx.panel.list.edit'|trans }}</a>
+                                            <a href="{{ path('app_api_management_edit_end_point', { id: endPoint.id }) }}" class="btn btn-sm btn-white m-r-2">{{ 'api.idx.panel.list.edit'|trans }}</a>
+                                            <a href="{{ path('app_api_management_change_status', { id: endPoint.id }) }}" class="btn btn-sm {{ endPoint.enabled ? 'btn-danger' : 'btn-green' }}">
+                                                {{ endPoint.enabled ? 'idx.status.btn.disable'|trans : 'idx.status.btn.enable'|trans }}
+                                            </a>
+                                            <a href="{{ path('app_api_management_delete', { id: endPoint.id }) }}" class="btn btn-sm btn-danger">{{ 'api.idx.panel.list.delete'|trans }}</a>
                                         {% endif %}
                                         <a href="{{ path('app_api_management_stats', { id: endPoint.id }) }}" class="btn btn-sm btn-primary m-r-2">{{ 'api.idx.panel.list.transactions'|trans }}</a>
                                         <a href="{{ path('app_api_management_details', { id: endPoint.id }) }}" class="btn btn-sm btn-white m-r-2">{{ 'api.idx.panel.list.detail'|trans }}</a>
-                                        <a href="#" class="btn btn-sm btn-danger">{{ 'api.idx.panel.list.delete'|trans }}</a>
                                     </td>
                                 </tr>
                             {% else %}

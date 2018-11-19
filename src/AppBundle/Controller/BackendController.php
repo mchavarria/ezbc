@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * Class BackendController
+ *
  * @Route("/app")
  */
 class BackendController extends Controller

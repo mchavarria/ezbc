@@ -28,7 +28,7 @@
             </trans-unit>
             <trans-unit id="app.sb.menu.my_wallets">
                 <source>app.sb.menu.my_wallets</source>
-                <target>My Wallets</target>
+                <target>Mis Billeteras</target>
             </trans-unit>
             <trans-unit id="app.sb.menu.aep">
                 <source>app.sb.menu.aep</source>
@@ -45,6 +45,10 @@
             <trans-unit id="app.sb.menu.admin.users">
                 <source>app.sb.menu.admin.users</source>
                 <target>Usuarios</target>
+            </trans-unit>
+            <trans-unit id="app.sb.menu.admin.wallets">
+                <source>app.sb.menu.admin.wallets</source>
+                <target>Billeteras</target>
             </trans-unit>
             <trans-unit id="app.sb.menu.admin.aep">
                 <source>app.sb.menu.admin.aep</source>
@@ -121,6 +125,10 @@
             <trans-unit id="wallet.idx.panel.title.description">
                 <source>wallet.idx.panel.title.description</source>
                 <target>Descripción</target>
+            </trans-unit>
+            <trans-unit id="idx.panel.title.user">
+                <source>idx.panel.title.user</source>
+                <target>Usuario</target>
             </trans-unit>
             <trans-unit id="wallet.idx.panel.list.no.description">
                 <source>wallet.idx.panel.list.no.description</source>
@@ -220,11 +228,11 @@
             </trans-unit>
             <trans-unit id="api.idx.header.title">
                 <source>api.idx.header.title</source>
-                <target>APIs y Endpoints</target>
+                <target>APIs Endpoints</target>
             </trans-unit>
             <trans-unit id="api.idx.header.subtitle">
                 <source>api.idx.header.subtitle</source>
-                <target>Gestión de APIs y Endpoints</target>
+                <target>Gestión de APIs Endpoints</target>
             </trans-unit>
             <trans-unit id="api.idx.new.btn">
                 <source>api.idx.new.btn</source>
@@ -237,10 +245,6 @@
             <trans-unit id="api.idx.panel.title.name">
                 <source>api.idx.panel.title.name</source>
                 <target>Nombre</target>
-            </trans-unit>
-            <trans-unit id="api.idx.panel.title.user">
-                <source>api.idx.panel.title.user</source>
-                <target>Usuario</target>
             </trans-unit>
             <trans-unit id="api.idx.panel.title.description">
                 <source>api.idx.panel.title.description</source>
@@ -256,7 +260,7 @@
             </trans-unit>
             <trans-unit id="api.idx.panel.list.edit">
                 <source>api.idx.panel.list.edit</source>
-                <target>api.idx.panel.list.edit</target>
+                <target>Editar</target>
             </trans-unit>
             <trans-unit id="api.idx.panel.list.delete">
                 <source>api.idx.panel.list.delete</source>
@@ -482,20 +486,20 @@
                 <source>user.idx.panel.title.type</source>
                 <target>Tipo</target>
             </trans-unit>
-            <trans-unit id="user.idx.panel.title.status">
-                <source>user.idx.panel.title.status</source>
+            <trans-unit id="idx.panel.title.status">
+                <source>idx.panel.title.status</source>
                 <target>Estado</target>
             </trans-unit>
             <trans-unit id="user.idx.list.wallets">
                 <source>user.idx.list.wallets</source>
                 <target>Wallets</target>
             </trans-unit>
-            <trans-unit id="user.idx.list.enabled">
-                <source>user.idx.list.enabled</source>
+            <trans-unit id="idx.list.enabled">
+                <source>idx.list.enabled</source>
                 <target>Habilitado</target>
             </trans-unit>
-            <trans-unit id="user.idx.list.disabled">
-                <source>user.idx.list.disabled</source>
+            <trans-unit id="idx.list.disabled">
+                <source>idx.list.disabled</source>
                 <target>Deshabilitado</target>
             </trans-unit>
             <trans-unit id="user.idx.list.transactions">
@@ -506,12 +510,12 @@
                 <source>user.idx.edit.btn</source>
                 <target>Editar</target>
             </trans-unit>
-            <trans-unit id="user.idx.status.btn.disable">
-                <source>user.idx.status.btn.disable</source>
+            <trans-unit id="idx.status.btn.disable">
+                <source>idx.status.btn.disable</source>
                 <target>Deshabilitar</target>
             </trans-unit>
-            <trans-unit id="user.idx.status.btn.enable">
-                <source>user.idx.status.btn.enable</source>
+            <trans-unit id="idx.status.btn.enable">
+                <source>idx.status.btn.enable</source>
                 <target>Habilitar</target>
             </trans-unit>
             <trans-unit id="user.idx.delete.btn">
