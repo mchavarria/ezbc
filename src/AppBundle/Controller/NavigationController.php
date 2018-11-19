@@ -19,7 +19,6 @@ class NavigationController extends Controller
      */
     public function sidebarComponentAction($currentItem)
     {
-        $hola ='hola';
         return [
             'currentItem' => $currentItem
         ];

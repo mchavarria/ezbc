@@ -21,10 +21,7 @@
         </a>
     </li>
     <li class="{{ currentItem == 'api_end_point' ? 'active' }}">
-
-        {% set apiPath = (is_granted('ROLE_ADMIN')) ? path('app_api_management_index') : path('app_api_management_my') %}
-
-        <a href="{{ apiPath }}">
+        <a href="{{ path('app_api_management_my', { id: app.user.id }) }}">
             <i class="fa fa-wallet"></i>
             <span>{{ 'app.sb.menu.aep'|trans }}</span>
         </a>
@@ -42,6 +39,9 @@
             </li>
             <li class="{{ isAdmin and 'users' in currentItem ? 'active' }}">
                 <a href="{{ path('app_user_index') }}">{{ 'app.sb.menu.admin.users'|trans }}</a>
+            </li>
+            <li class="{{ isAdmin and 'api_end_point' in currentItem ? 'active' }}">
+                <a href="{{ path('app_api_management_index') }}">{{ 'app.sb.menu.admin.aep'|trans }}</a>
             </li>
         </ul>
     </li>
