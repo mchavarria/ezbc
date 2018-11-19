@@ -133,4 +133,46 @@ class UserController extends Controller
 
         return $parameters;
     }
+
+    /**
+     * @Route("/{id}/change-status", name="app_user_change_status", requirements={"id" = "\d+"}, options={"expose" = true})
+     *
+     * @param Request $request HTTP request.
+     * @param int     $id      Identifier
+     *
+     * @return array|Response
+     */
+    public function changeStatusAction(Request $request, $id)
+    {
+        $repository = $this->getDoctrine()->getRepository(User::class);
+        $user = $repository->find($id);
+        $isEnabled = $user->isEnabled();
+        $user->setEnabled(!$isEnabled);
+
+        $redirectUrl = $this->redirectToRoute('app_user_index');
+
+        return $redirectUrl;
+    }
+
+    /**
+     * @Route("/{id}/delete", name="app_user_delete", requirements={"id" = "\d+"}, options={"expose" = true})
+     *
+     * @param Request $request HTTP request.
+     * @param int     $id      Identifier
+     *
+     * @return array|Response
+     */
+    public function deleteAction(Request $request, $id)
+    {
+        $repository = $this->getDoctrine()->getRepository(User::class);
+        $user = $repository->find($id);
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($user);
+        $entityManager->flush();
+
+        $redirectUrl = $this->redirectToRoute('app_user_index');
+
+        return $redirectUrl;
+    }
 }

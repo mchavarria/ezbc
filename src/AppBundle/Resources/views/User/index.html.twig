@@ -41,7 +41,7 @@
                                 <th>{{ 'user.idx.panel.title.name'|trans }}</th>
                                 <th>{{ 'user.idx.panel.title.email'|trans }}</th>
                                 <th>{{ 'user.idx.panel.title.type'|trans }}</th>
-                                <th>{{ 'user.idx.panel.title.enabled'|trans }}</th>
+                                <th>{{ 'user.idx.panel.title.status'|trans }}</th>
                                 <th width="1%"></th>
                             </tr>
                             </thead>
@@ -57,8 +57,10 @@
                                         <a href="{{ path('app_user_edit', { id: user.id }) }}" class="btn btn-sm btn-primary m-r-2">{{ 'user.idx.edit.btn'|trans }}</a>
                                         <a href="#" class="btn btn-sm btn-white m-r-2">{{ 'user.idx.list.transactions'|trans }}</a>
                                         <a href="{{ path('app_wallet_my', { id: user.id }) }}" class="btn btn-sm btn-white m-r-2">{{ 'user.idx.list.wallets'|trans }}</a>
-                                        <a href="#" class="btn btn-sm {{ user.enabled ? 'btn-danger' : 'btn-green' }}">{{ 'user.idx.status.btn'|trans }}</a>
-                                        <a href="#" class="btn btn-sm btn-danger">{{ 'user.idx.delete.btn'|trans }}</a>
+                                        <a href="{{ path('app_user_change_status', { id: user.id }) }}" class="btn btn-sm {{ user.enabled ? 'btn-danger' : 'btn-green' }}">
+                                            {{ user.enabled ? 'user.idx.status.btn.disable'|trans : 'user.idx.status.btn.enable'|trans }}
+                                        </a>
+                                        <a href="{{ path('app_user_delete', { id: user.id }) }}" class="btn btn-sm btn-danger">{{ 'user.idx.delete.btn'|trans }}</a>
                                     </td>
                                 </tr>
                             {% endfor %}

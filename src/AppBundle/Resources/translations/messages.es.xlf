@@ -482,9 +482,21 @@
                 <source>user.idx.panel.title.type</source>
                 <target>Tipo</target>
             </trans-unit>
+            <trans-unit id="user.idx.panel.title.status">
+                <source>user.idx.panel.title.status</source>
+                <target>Estado</target>
+            </trans-unit>
             <trans-unit id="user.idx.list.wallets">
                 <source>user.idx.list.wallets</source>
                 <target>Wallets</target>
+            </trans-unit>
+            <trans-unit id="user.idx.list.enabled">
+                <source>user.idx.list.enabled</source>
+                <target>Habilitado</target>
+            </trans-unit>
+            <trans-unit id="user.idx.list.disabled">
+                <source>user.idx.list.disabled</source>
+                <target>Deshabilitado</target>
             </trans-unit>
             <trans-unit id="user.idx.list.transactions">
                 <source>user.idx.list.transactions</source>
@@ -493,6 +505,14 @@
             <trans-unit id="user.idx.edit.btn">
                 <source>user.idx.edit.btn</source>
                 <target>Editar</target>
+            </trans-unit>
+            <trans-unit id="user.idx.status.btn.disable">
+                <source>user.idx.status.btn.disable</source>
+                <target>Deshabilitar</target>
+            </trans-unit>
+            <trans-unit id="user.idx.status.btn.enable">
+                <source>user.idx.status.btn.enable</source>
+                <target>Habilitar</target>
             </trans-unit>
             <trans-unit id="user.idx.delete.btn">
                 <source>user.idx.delete.btn</source>
