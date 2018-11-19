@@ -42,15 +42,19 @@ class ApiController extends Controller
     }
 
     /**
-     * @Template("@App/Api/index.html.twig")
+     * @Route("/{id}/my", name="app_api_management_my", requirements={"id" = "\d+"}, options={"expose" = true})
      *
-     * @Route("/my", name="app_api_management_my")
+     * @Template("@App/Api/my.html.twig")
+     *
+     * @param int     $id      user id
      *
      * @return array
      */
-    public function myApisAction()
+    public function myApisAction($id)
     {
-        $user = $this->getUser();
+        $userRepository = $this->getDoctrine()->getRepository(User::class);
+        $user = $userRepository->find($id);
+
         $repository = $this->getDoctrine()->getRepository(ApiEndPoint::class);
         $apiEndPoints = $repository->findBy(['user' => $user]);
 

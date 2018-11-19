@@ -38,8 +38,8 @@
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>{{ 'api.idx.panel.title.user'|trans }}</th>
                                 <th>{{ 'api.idx.panel.title.name'|trans }}</th>
+                                <th>{{ 'api.idx.panel.title.description'|trans }}</th>
                                 <th>{{ 'api.idx.panel.title.creation.date'|trans }}</th>
                                 <th width="1%"></th>
                             </tr>
@@ -48,8 +48,8 @@
                             {% for endPoint in apiEndPoints %}
                                 <tr>
                                     <td>{{ endPoint.id }}</td>
-                                    <td>{{ endPoint.user.username }}</td>
                                     <td>{{ endPoint.name }}</td>
+                                    <td>{{ endPoint.description }}</td>
                                     <td>{{ endPoint.createdDate|date('Y-m-d') }}</td>
                                     <td class="with-btn" nowrap>
                                         {% if is_granted('ROLE_ADMIN') %}

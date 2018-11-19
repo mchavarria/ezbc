@@ -32,7 +32,6 @@ class WalletController extends Controller
         return [];
     }
 
-
     /**
      * @Route("/{id}/my", name="app_wallet_my", requirements={"id" = "\d+"}, options={"expose" = true})
      *

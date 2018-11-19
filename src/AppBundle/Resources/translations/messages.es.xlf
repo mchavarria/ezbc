@@ -32,7 +32,7 @@
             </trans-unit>
             <trans-unit id="app.sb.menu.aep">
                 <source>app.sb.menu.aep</source>
-                <target>Api end Points</target>
+                <target>Mis Apis</target>
             </trans-unit>
             <trans-unit id="app.sb.menu.admin_options">
                 <source>app.sb.menu.admin_options</source>
@@ -45,6 +45,10 @@
             <trans-unit id="app.sb.menu.admin.users">
                 <source>app.sb.menu.admin.users</source>
                 <target>Usuarios</target>
+            </trans-unit>
+            <trans-unit id="app.sb.menu.admin.aep">
+                <source>app.sb.menu.admin.aep</source>
+                <target>Api end Points</target>
             </trans-unit>
             <trans-unit id="header.user.edit.profile">
                 <source>header.user.edit.profile</source>
@@ -233,6 +237,10 @@
             <trans-unit id="api.idx.panel.title.name">
                 <source>api.idx.panel.title.name</source>
                 <target>Nombre</target>
+            </trans-unit>
+            <trans-unit id="api.idx.panel.title.user">
+                <source>api.idx.panel.title.user</source>
+                <target>Usuario</target>
             </trans-unit>
             <trans-unit id="api.idx.panel.title.description">
                 <source>api.idx.panel.title.description</source>
