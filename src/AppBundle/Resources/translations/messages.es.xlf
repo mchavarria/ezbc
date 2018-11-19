@@ -376,15 +376,15 @@
             </trans-unit>
             <trans-unit id="bc.idx.header.title">
                 <source>bc.idx.header.title</source>
-                <target>bc.idx.header.title</target>
+                <target>Blockchains</target>
             </trans-unit>
             <trans-unit id="bc.idx.header.subtitle">
                 <source>bc.idx.header.subtitle</source>
-                <target>bc.idx.header.subtitle</target>
+                <target>Administración</target>
             </trans-unit>
             <trans-unit id="bc.idx.new.btn">
                 <source>bc.idx.new.btn</source>
-                <target>bc.idx.new.btn</target>
+                <target>Nuevo</target>
             </trans-unit>
             <trans-unit id="bc.idx.list.no.description">
                 <source>bc.idx.list.no.description</source>
@@ -392,7 +392,7 @@
             </trans-unit>
             <trans-unit id="bc.idx.edit.btn">
                 <source>bc.idx.edit.btn</source>
-                <target>bc.idx.edit.btn</target>
+                <target>Editar</target>
             </trans-unit>
             <trans-unit id="bc.new.title">
                 <source>bc.new.title</source>
