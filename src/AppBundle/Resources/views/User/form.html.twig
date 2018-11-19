@@ -10,6 +10,9 @@
             {{ form_row(form.email) }}
             {{ form_row(form.username) }}
             {{ form_row(form.type) }}
+            {% if user.id is null %}
+                {{ form_row(form.plainPassword) }}
+            {% endif %}
 
             <button type="submit" class="btn btn-sm btn-primary m-r-5">{{ user.id ? 'user.form.save'|trans : 'user.form.create'|trans }}</button>
             <a href="{{ path('app_user_index')}}" class="btn btn-sm btn-default">{{ 'user.form.cancel'|trans }}</a>

@@ -5,6 +5,7 @@ namespace AppBundle\Form;
 use AppBundle\Data\UserTypes;
 use AppBundle\Entity\User;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -40,6 +41,11 @@ class UserType extends AbstractType
         $builder->add('username', TextType::class, [
             'attr' => [
                 'placeholder' => 'Username'
+            ]
+        ]);
+        $builder->add('plainPassword', PasswordType::class, [
+            'attr' => [
+                'placeholder' => 'Password'
             ]
         ]);
         $builder->add('type', ChoiceType::class, [

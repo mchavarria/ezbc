@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
  * Class UserController
@@ -16,6 +17,16 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class UserController extends Controller
 {
+    /**
+     * @var UserPasswordEncoderInterface $encoder
+     */
+    private $encoder;
+
+    public function __construct(UserPasswordEncoderInterface $encoder)
+    {
+        $this->encoder = $encoder;
+    }
+
     /**
      * @Template("@App/User/index.html.twig")
      *
@@ -53,7 +64,13 @@ class UserController extends Controller
             // $form->getData() holds the submitted values
             // but, the original `$task` variable has also been updated
             //$user = $form->getData();
+            $plainPassword = $user->getPlainPassword();
+            $encoded = $this->encoder->encodePassword($user, $plainPassword);
 
+            $user->setPassword($encoded);
+
+
+            $user->setEnabled(true);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();

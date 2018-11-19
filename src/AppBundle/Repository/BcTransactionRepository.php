@@ -11,14 +11,14 @@ class BcTransactionRepository extends EntityRepository
 {
     public function countAllByUser($id)
     {
-        $result = $this->getEntityManager()
-            ->createQuery(
-                "SELECT bct FROM AppBundle:BcTransaction bct
-                INNER JOIN AppBundle:ApiEndPoint aep WITH aep.id IN 
-                (SELECT aap.id FROM AppBundle:ApiEndPoint aap where aep.user = '.$id.')"
-            )
-            ->getResult();
+        $qb = $this->getEntityManager()->createQueryBuilder();
+        $qb->select('bct')
+            ->from('AppBundle:BcTransaction', 'bct')
+            ->innerJoin('bct.apiEndPoint', 'aep', 'WITH', 'aep.user = :user AND aep.id = bct.apiEndPoint')
+            ->setParameter('user', $id);
 
-        return count($result);
+        $query = $qb->getQuery();
+
+        return count($query->getResult());
     }
 }

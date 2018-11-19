@@ -11,13 +11,14 @@ class ApiEndPointRepository extends EntityRepository
 {
     public function countAllByUser($id)
     {
-        $result = $this->getEntityManager()
-            ->createQuery(
-                "SELECT aep FROM AppBundle:ApiEndPoint aep
-                WHERE aep.user = '.$id.'"
-            )
-            ->getResult();
+        $qb = $this->getEntityManager()->createQueryBuilder();
+        $qb->select('aep')
+            ->from('AppBundle:ApiEndPoint', 'aep')
+            ->where('aep.user = :user')
+            ->setParameter('user', $id);
 
-        return count($result);
+        $query = $qb->getQuery();
+
+        return count($query->getResult());
     }
 }
