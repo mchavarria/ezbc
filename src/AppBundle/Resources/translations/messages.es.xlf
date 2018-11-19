@@ -574,6 +574,30 @@
                 <source>user.form.cancel</source>
                 <target>Cancelar</target>
             </trans-unit>
+            <trans-unit id="user.form.first.name">
+                <source>user.form.first.name</source>
+                <target>Nombre</target>
+            </trans-unit>
+            <trans-unit id="user.form.last.name">
+                <source>user.form.last.name</source>
+                <target>Apellido</target>
+            </trans-unit>
+            <trans-unit id="user.form.email">
+                <source>user.form.email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="user.form.username">
+                <source>user.form.username</source>
+                <target>Usuario</target>
+            </trans-unit>
+            <trans-unit id="user.form.password">
+                <source>user.form.password</source>
+                <target>Contraseña</target>
+            </trans-unit>
+            <trans-unit id="user.form.confirm.password">
+                <source>user.form.confirm.password</source>
+                <target>Repetir Contraseña</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
