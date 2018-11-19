@@ -19,7 +19,7 @@
                 <div class="stats-icon"><i class="fa fa-desktop"></i></div>
                 <div class="stats-info">
                     <h4>{{ 'db.idx.stats.total.transactions'|trans|upper }}</h4>
-                    <p>3,291,922</p>
+                    <p>{{ getBcLogs(app.user) }}</p>
                 </div>
                 <div class="stats-link">
                     <a href="javascript:;">{{ 'db.idx.stats.view.details'|trans }} <i class="fa fa-arrow-alt-circle-right"></i></a>
@@ -47,27 +47,13 @@
                 <div class="stats-icon"><i class="fa fa-link"></i></div>
                 <div class="stats-info">
                     <h4>{{ 'db.idx.stats.my.apis'|trans|upper }}</h4>
-                    <p>1,291,922</p>
+                    <p>{{ getApisQty(app.user) }}</p>
                 </div>
                 <div class="stats-link">
                     <a href="{{ path('app_api_management_my', { id: app.user.id }) }}">{{ 'db.idx.stats.view.details'|trans }} <i class="fa fa-arrow-alt-circle-right"></i></a>
                 </div>
             </div>
         </div>
-        <!-- end col-3 -->
-        <!-- begin col-3 -->
-        {#<div class="col-lg-3 col-md-6">#}
-            {#<div class="widget widget-stats bg-black-lighter">#}
-                {#<div class="stats-icon"><i class="fa fa-clock"></i></div>#}
-                {#<div class="stats-info">#}
-                    {#<h4>AVG TIME ON SITE</h4>#}
-                    {#<p>00:12:23</p>#}
-                {#</div>#}
-                {#<div class="stats-link">#}
-                    {#<a href="javascript:;">View Detail <i class="fa fa-arrow-alt-circle-right"></i></a>#}
-                {#</div>#}
-            {#</div>#}
-        {#</div>#}
         <!-- end col-3 -->
     </div>
     <!-- end row -->
@@ -90,7 +76,7 @@
                                     <img src="../assets/img/user/user-5.jpg" alt="" class="media-object rounded-corner" />
                                 </a>
                                 <div class="media-body">
-                                    <h5 class="media-heading">John Doe</h5>
+                                    <h5 class="media-heading">{{ testFunction('Migue') }}</h5>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id nunc non eros fermentum vestibulum ut id felis. Nunc molestie libero eget urna aliquet, vitae laoreet felis ultricies. Fusce sit amet massa malesuada, tincidunt augue vitae, gravida felis.</p>
                                 </div>
                             </li>

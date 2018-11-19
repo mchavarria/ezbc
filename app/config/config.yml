@@ -70,7 +70,7 @@ doctrine:
                         type:       annotation
                         dir:        Entity
                         prefix:     AppBundle\Entity
-                        alias:      App
+                        alias:      AppBundle
                 filters:
                     softdeleteable:
                         class: Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter

@@ -4,7 +4,7 @@ services:
 ### TODO: Should be changed
 ###########################################################################
     _defaults:
-        autowire: false
+        autowire: true
         autoconfigure: false
         public: true
 
@@ -29,3 +29,13 @@ services:
         arguments: ['@router']
         tags:
             - { name: kernel.event_subscriber }
+
+###########################################################################
+### Other
+###########################################################################
+    app.twig.app_extension:
+        class: AppBundle\Twig\AppExtension
+        arguments:
+            - "@doctrine.orm.entity_manager"
+        tags:
+            - { name: twig.extension }
