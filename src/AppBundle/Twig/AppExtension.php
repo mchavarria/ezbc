@@ -3,6 +3,7 @@
 namespace AppBundle\Twig;
 
 use AppBundle\Entity\ApiEndPoint;
+use AppBundle\Entity\BlockChain;
 use AppBundle\Entity\User;
 use AppBundle\Entity\BcTransaction;
 use Doctrine\ORM\EntityManagerInterface;
@@ -42,7 +43,8 @@ class AppExtension extends \Twig_Extension
         return [
             new \Twig_SimpleFunction('testFunction', [$this, 'testFunction']),
             new \Twig_SimpleFunction('getBcLogs', [$this, 'getBcLogs']),
-            new \Twig_SimpleFunction('getApisQty', [$this, 'getApisQty'])
+            new \Twig_SimpleFunction('getApisQty', [$this, 'getApisQty']),
+            new \Twig_SimpleFunction('getMoreInfoLink', [$this, 'getMoreInfoLink'])
         ];
     }
 
@@ -72,7 +74,7 @@ class AppExtension extends \Twig_Extension
     public function getBcLogs(User $user)
     {
         $repository = $this->em->getRepository(BcTransaction::class);
-        $qty = $repository->countAllByUser($user->getId());
+        $qty = $repository->countAllByUser($user);
 
         return $qty;
     }
@@ -88,6 +90,21 @@ class AppExtension extends \Twig_Extension
         $qty = $repository->countAllByUser($user->getId());
 
         return $qty;
+    }
+
+    /**
+     * @param BcTransaction $log
+     *
+     * @return string
+     */
+    public function getMoreInfoLink(BcTransaction $log)
+    {
+        $blockChain = $log->getWallet()->getBcType();
+        if ($blockChain->getExplorer()) {
+            return $blockChain->getExplorer().$log->getBcHash();
+        }
+
+        return '#';
     }
 
     /**

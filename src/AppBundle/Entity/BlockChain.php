@@ -42,6 +42,12 @@ class BlockChain
     private $description;
 
     /**
+     * @var string
+     * @ORM\Column(type="string", nullable=TRUE)
+     */
+    private $explorer;
+
+    /**
      * @return int
      */
     public function getId()
@@ -95,6 +101,22 @@ class BlockChain
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * @param string $url
+     */
+    public function setExplorer($url)
+    {
+        $this->explorer = $url;
+    }
+
+    /**
+     * @return string
+     */
+    public function getExplorer()
+    {
+        return $this->explorer;
     }
 
     /**

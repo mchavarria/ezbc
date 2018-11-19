@@ -1,0 +1,74 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}{{ parent() }}{{ 'bct.idx.title'|trans }}{% endblock %}
+
+{% block sidebar %}
+    {{ render(controller('AppBundle:Navigation:sidebarComponent', { 'currentItem': 'bc_transaction' })) }}
+{% endblock %}
+
+{% block page_header %}
+    {{ 'bct.idx.header.title'|trans }} <small>{{ 'bct.idx.header.subtitle'|trans }}.</small>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <!-- begin col-12 -->
+        <div class="col-lg-12">
+            <!-- begin panel -->
+            <div class="panel panel-inverse" data-sortable-id="table-basic-7">
+                <!-- begin panel-heading -->
+                <div class="panel-heading">
+                    <div class="panel-heading-btn"></div>
+                    <h4 class="panel-title">{{ 'bct.idx.panel.title'|trans }}</h4>
+                </div>
+                <!-- end panel-heading -->
+                <!-- begin panel-body -->
+                <div class="panel-body">
+                    <!-- begin table-responsive -->
+                    <div class="table-responsive">
+                        <table class="table table-striped m-b-0">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>{{ 'bct.panel.title.bcType'|trans }}</th>
+                                <th>{{ 'bct.idx.panel.title.aep'|trans }}</th>
+                                <th>{{ 'bct.panel.title.wallet'|trans }}</th>
+                                <th>{{ 'bct.idx.panel.title.creation.date'|trans }}</th>
+                                <th width="1%"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for log in bcTransactions %}
+                                <tr>
+                                    <td>{{ log.id }}</td>
+                                    <td>{{ log.bcType }}</td>
+                                    <td>{{ log.apiEndPoint.id }}</td>
+                                    <td>{{ log.apiEndPoint.wallet.id }}</td>
+                                    <td>{{ log.createdDate|date('Y-m-d') }}</td>
+                                    <td class="with-btn" nowrap>
+                                        <a href="{{ getMoreInfoLink(log) }}" target="_blank" class="btn btn-sm btn-primary m-r-2">{{ 'bct.idx.panel.list.info'|trans }}</a>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td class="with-img">
+                                        <img src="{{ asset('img/admin/wallet/none.jpg') }}" class="img-rounded height-30" />
+                                    </td>
+                                    <td>{{ 'bct.idx.panel.list.no.bct'|trans }}</td>
+                                    <td>---</td>
+                                    <td>---</td>
+                                    <td>---</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- end table-responsive -->
+                </div>
+                <!-- end panel-body -->
+            </div>
+            <!-- end panel -->
+        </div>
+        <!-- end col-12 -->
+    </div>
+{% endblock %}

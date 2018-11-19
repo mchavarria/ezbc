@@ -9,7 +9,7 @@
         </a>
     </li>
     <li class="{{ currentItem == 'transactions' ? 'active' }}">
-        <a href="#">
+        <a href="{{ path('app_bc_transaction_my', { id: app.user.id }) }}">
             <i class="fa fa-link"></i>
             <span>{{ 'app.sb.menu.transactions'|trans }}</span>
         </a>
@@ -45,6 +45,9 @@
             </li>
             <li class="{{ isAdmin and 'api_end_point' in currentItem ? 'active' }}">
                 <a href="{{ path('app_api_management_index') }}">{{ 'app.sb.menu.admin.aep'|trans }}</a>
+            </li>
+            <li class="{{ isAdmin and 'bc_transaction' in currentItem ? 'active' }}">
+                <a href="{{ path('app_bc_transaction_index') }}">{{ 'app.sb.menu.admin.bc_transactions'|trans }}</a>
             </li>
         </ul>
     </li>

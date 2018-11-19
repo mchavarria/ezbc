@@ -36,6 +36,12 @@ class BlockChainType extends AbstractType
                 'placeholder' => 'Some description about the Blockchain.'
             ]
         ]);
+        $builder->add('explorer', TextType::class, [
+            'label' => 'Transaction Explorer',
+            'attr' => [
+                'placeholder' => 'Some transaction explorer Url.'
+            ]
+        ]);
     }
 
     /**

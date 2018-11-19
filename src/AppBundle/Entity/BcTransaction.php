@@ -10,6 +10,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * @ORM\Entity
  * @ORM\Table(name="bc_transaction")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\BcTransactionRepository")
+ *
  * @Gedmo\SoftDeleteable(fieldName="deletedDate", timeAware=false)
  */
 class BcTransaction

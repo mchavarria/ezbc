@@ -27,9 +27,11 @@ class ApiController extends Controller
     const ETHEREUM_WALLET_TO = '0xc095f4e5913dA8be66890b406C08BC13E3b2708D';
 
     /**
-     * @Template("@App/Api/index.html.twig")
-     *
      * @Route("/index", name="app_api_management_index")
+     *
+     * @Security("has_role('ROLE_ADMIN')")
+     *
+     * @Template("@App/Api/index.html.twig")
      *
      * @return array
      */

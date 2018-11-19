@@ -8,6 +8,7 @@
             {{ form_row(form.name) }}
             {{ form_row(form.code) }}
             {{ form_row(form.description) }}
+            {{ form_row(form.explorer) }}
 
             <button type="submit" class="btn btn-sm btn-primary m-r-5">{{ blockChain.id ? 'bc.form.save'|trans : 'bc.form.create'|trans }}</button>
             <a href="{{ path('adm_bc_index')}}" class="btn btn-sm btn-default">{{ 'bc.form.cancel'|trans }}</a>

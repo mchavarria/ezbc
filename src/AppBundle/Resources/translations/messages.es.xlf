@@ -24,7 +24,7 @@
             </trans-unit>
             <trans-unit id="app.sb.menu.transactions">
                 <source>app.sb.menu.transactions</source>
-                <target>Transacciones</target>
+                <target>Mis Transacciones</target>
             </trans-unit>
             <trans-unit id="app.sb.menu.my_wallets">
                 <source>app.sb.menu.my_wallets</source>
@@ -49,6 +49,10 @@
             <trans-unit id="app.sb.menu.admin.wallets">
                 <source>app.sb.menu.admin.wallets</source>
                 <target>Billeteras</target>
+            </trans-unit>
+            <trans-unit id="app.sb.menu.admin.bc_transactions">
+                <source>app.sb.menu.admin.bc_transactions</source>
+                <target>Transacciones</target>
             </trans-unit>
             <trans-unit id="app.sb.menu.admin.aep">
                 <source>app.sb.menu.admin.aep</source>
