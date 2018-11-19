@@ -146,6 +146,8 @@ class UserController extends Controller
     /**
      * @Route("/{id}/change-status", name="app_user_change_status", requirements={"id" = "\d+"}, options={"expose" = true})
      *
+     * @Security("has_role('ROLE_ADMIN')")
+     *
      * @param Request $request HTTP request.
      * @param int     $id      Identifier
      *
@@ -169,6 +171,8 @@ class UserController extends Controller
 
     /**
      * @Route("/{id}/delete", name="app_user_delete", requirements={"id" = "\d+"}, options={"expose" = true})
+     *
+     * @Security("has_role('ROLE_ADMIN')")
      *
      * @param Request $request HTTP request.
      * @param int     $id      Identifier

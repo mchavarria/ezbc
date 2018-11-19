@@ -232,5 +232,15 @@ class ApiEndPoint
     {
         return $this->enabled;
     }
+
+    /**
+     * Used on Form as label
+     *
+     * @return string
+     */
+    public function getFormLabel()
+    {
+        return '#'.$this->id .' - '.$this->name;
+    }
 }
 

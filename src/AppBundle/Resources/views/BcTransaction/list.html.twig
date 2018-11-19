@@ -24,7 +24,7 @@
                     <td>{{ log.wallet.bcMode|upper }}</td>
                     <td>{{ log.apiEndPoint.user.username }}</td>
                 {% endif %}
-                <td><a href="{{ path('app_api_management_details', { id: log.apiEndPoint.id }) }}">{{ log.apiEndPoint.name }}</a></td>
+                <td><a href="{{ path('app_api_management_details', { id: log.apiEndPoint.id }) }}">{{ log.apiEndPoint.formLabel }}</a></td>
                 <td><a href="{{ path('app_wallet_info', { id: log.apiEndPoint.wallet.id }) }}">{{ log.apiEndPoint.wallet.formLabel }}</a></td>
                 <td>{{ log.createdDate|date('Y-m-d h:m') }}</td>
                 <td class="with-btn" nowrap>

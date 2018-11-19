@@ -104,7 +104,7 @@ class ApiController extends Controller
             if ($isAdmin) {
                 $redirectUrl = $this->redirectToRoute('app_api_management_index');
             } else {
-                $redirectUrl = $this->redirectToRoute('app_api_management_my');
+                $redirectUrl = $this->redirectToRoute('app_api_management_my', ['id' => $user->getId()]);
             }
 
             return $redirectUrl;
@@ -135,8 +135,9 @@ class ApiController extends Controller
 
         $repository = $this->getDoctrine()->getRepository(ApiEndPoint::class);
         $aep = $repository->find($id);
+        $user = $aep->getUser();
 
-        $form = $this->createForm(ApiEndPointType::class, $aep, ['user' => $this->getUser()]);
+        $form = $this->createForm(ApiEndPointType::class, $aep, ['user' => $user]);
 
         $form->handleRequest($request);
 
@@ -149,7 +150,7 @@ class ApiController extends Controller
             if ($this->isGranted('ROLE_ADMIN', $this->getUser())) {
                 $redirectUrl = $this->redirectToRoute('app_api_management_index');
             } else {
-                $redirectUrl = $this->redirectToRoute('app_api_management_my');
+                $redirectUrl = $this->redirectToRoute('app_api_management_my', ['id' => $user->getId()]);
             }
 
             return $redirectUrl;
