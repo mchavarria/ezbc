@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\BlockChain;
 use AppBundle\Form\BlockChainType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,6 +13,9 @@ use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class BlockChainController
+ *
+ * @Security("has_role('ROLE_ADMIN')")
+ *
  * @Route("/adm/bc")
  */
 class BlockChainController extends Controller

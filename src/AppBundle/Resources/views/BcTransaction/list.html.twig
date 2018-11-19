@@ -1,0 +1,48 @@
+<!-- begin table-responsive -->
+<div class="table-responsive">
+    <table class="table table-striped m-b-0">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>{{ 'bct.panel.title.bcType'|trans }}</th>
+            {% if is_granted('ROLE_ADMIN') %}
+                <th>{{ 'bct.panel.title.bcMode'|trans }}</th>
+                <th>{{ 'idx.panel.title.user'|trans }}</th>
+            {% endif %}
+            <th>{{ 'bct.idx.panel.title.aep'|trans }}</th>
+            <th>{{ 'bct.panel.title.wallet'|trans }}</th>
+            <th>{{ 'bct.idx.panel.title.creation.date'|trans }}</th>
+            <th width="1%"></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for log in bcTransactions %}
+            <tr>
+                <td>{{ log.id }}</td>
+                <td>{{ log.bcType|upper }}</td>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <td>{{ log.wallet.bcMode|upper }}</td>
+                    <td>{{ log.apiEndPoint.user.username }}</td>
+                {% endif %}
+                <td><a href="{{ path('app_api_management_details', { id: log.apiEndPoint.id }) }}">{{ log.apiEndPoint.name }}</a></td>
+                <td><a href="{{ path('app_wallet_info', { id: log.apiEndPoint.wallet.id }) }}">{{ log.apiEndPoint.wallet.formLabel }}</a></td>
+                <td>{{ log.createdDate|date('Y-m-d h:m') }}</td>
+                <td class="with-btn" nowrap>
+                    <a href="{{ getMoreInfoLink(log) }}" target="_blank" class="btn btn-sm btn-primary m-r-2">{{ 'bct.idx.panel.list.info'|trans }}</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td class="with-img">
+                    <img src="{{ asset('img/admin/wallet/none.jpg') }}" class="img-rounded height-30" />
+                </td>
+                <td>{{ 'bct.idx.panel.list.no.bct'|trans }}</td>
+                <td>---</td>
+                <td>---</td>
+                <td>---</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<!-- end table-responsive -->

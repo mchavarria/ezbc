@@ -49,8 +49,6 @@ class BlockChainType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
-            'data_class' => BlockChain::class,
-        ));
+        $resolver->setDefaults(['data_class' => BlockChain::class]);
     }
 }

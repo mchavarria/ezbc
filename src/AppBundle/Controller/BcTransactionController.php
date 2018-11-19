@@ -5,9 +5,9 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\BcTransaction;
 use AppBundle\Entity\User;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 /**
  * Class BcTransactionController
@@ -37,8 +37,6 @@ class BcTransactionController extends Controller
 
     /**
      * @Route("/{id}/my", name="app_bc_transaction_my", requirements={"id" = "\d+"}, options={"expose" = true})
-     *
-     * @Security("has_role('ROLE_ADMIN')")
      *
      * @Template("@App/BcTransaction/my.html.twig")
      *

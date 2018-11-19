@@ -19,7 +19,7 @@
                 <div class="stats-content">
                     <div class="stats-title">{{ 'api.detail.panel.header'|trans }}</div>
                     <div class="stats-number">
-                        {% set apiUrl = url('app_api_consume', { id: aep.id, hash:'YOUR_FILE_HASH' }) %}
+                        {% set apiUrl = url('app_rest_api_consume', { id: aep.id, hash:'YOUR_FILE_HASH' }) %}
                     </div>
                     <div class="stats-progress progress">
                         <div class="progress-bar" style="width: 20.5%;"></div>

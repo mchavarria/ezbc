@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\User;
 use AppBundle\Form\UserType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,6 +24,11 @@ class UserController extends Controller
      */
     private $encoder;
 
+    /**
+     * UserController constructor.
+     *
+     * @param UserPasswordEncoderInterface $encoder
+     */
     public function __construct(UserPasswordEncoderInterface $encoder)
     {
         $this->encoder = $encoder;
@@ -30,6 +36,8 @@ class UserController extends Controller
 
     /**
      * @Template("@App/User/index.html.twig")
+     *
+     * @Security("has_role('ROLE_ADMIN')")
      *
      * @Route("/index", name="app_user_index")
      *

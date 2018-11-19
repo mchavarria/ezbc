@@ -2,15 +2,16 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Data\MiddleWareApi;
 use AppBundle\Entity\User;
 use AppBundle\Entity\Wallet;
 use AppBundle\Form\WalletType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Unirest;
 
 /**
@@ -75,7 +76,7 @@ class WalletController extends Controller
         $repository = $this->getDoctrine()->getRepository(User::class);
         $user = $repository->find($id);
         $wallet = new Wallet($user);
-        $form = $this->createForm(WalletType::class, $wallet);
+        $form = $this->createForm(WalletType::class, $wallet, ['user' => $user]);
 
         $form->handleRequest($request);
 
@@ -92,7 +93,7 @@ class WalletController extends Controller
             if ($this->isGranted('ROLE_ADMIN', $this->getUser())) {
                 $redirectUrl = $this->redirectToRoute('app_wallet_index');
             } else {
-                $redirectUrl = $this->redirectToRoute('app_wallet_my');
+                $redirectUrl = $this->redirectToRoute('app_wallet_my', ['id' => $user->getId()]);
             }
 
             return $redirectUrl;
@@ -120,8 +121,9 @@ class WalletController extends Controller
     {
         $repository = $this->getDoctrine()->getRepository(Wallet::class);
         $wallet = $repository->find($id);
+        $user = $wallet->getUser();
 
-        $form = $this->createForm(WalletType::class, $wallet);
+        $form = $this->createForm(WalletType::class, $wallet, ['user' => $user]);
 
         $form->handleRequest($request);
 
@@ -134,7 +136,7 @@ class WalletController extends Controller
             if ($this->isGranted('ROLE_ADMIN', $this->getUser())) {
                 $redirectUrl = $this->redirectToRoute('app_wallet_index');
             } else {
-                $redirectUrl = $this->redirectToRoute('app_wallet_my');
+                $redirectUrl = $this->redirectToRoute('app_wallet_my', ['id' => $user->getId()]);
             }
 
             return $redirectUrl;
@@ -210,7 +212,7 @@ class WalletController extends Controller
         $repository = $this->getDoctrine()->getRepository(Wallet::class);
         $wallet = $repository->find($id);
 
-        $url = self::EXAMPLE_URL;
+        $url = MiddleWareApi::METHOD_GET_WALLET_INFO;
         $url = sprintf(
             $url,
             $wallet->getBcType(),

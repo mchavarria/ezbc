@@ -54,6 +54,7 @@ class UserType extends AbstractType
                 'Free User' => UserTypes::FREE_USER,
                 'Basic User' => UserTypes::BASIC_USER,
                 'Premium User' => UserTypes::PREMIUM_USER,
+                'Exclusive User' => UserTypes::EXCLUSIVE_USER
             ],
             'placeholder' => '-- Choose an option --'
         ]);
@@ -64,8 +65,6 @@ class UserType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
-            'data_class' => User::class,
-        ));
+        $resolver->setDefaults(['data_class' => User::class]);
     }
 }

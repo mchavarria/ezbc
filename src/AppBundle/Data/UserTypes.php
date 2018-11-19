@@ -12,5 +12,6 @@ class UserTypes extends Enum
     const FREE_USER = 'free';
     const BASIC_USER = 'basic';
     const PREMIUM_USER = 'premium';
+    const EXCLUSIVE_USER = 'exclusive';
     const ADMIN_USER = 'admin';
 }

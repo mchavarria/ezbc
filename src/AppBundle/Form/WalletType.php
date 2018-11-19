@@ -3,7 +3,9 @@
 namespace AppBundle\Form;
 
 use AppBundle\Data\BcModes;
+use AppBundle\Data\UserTypes;
 use AppBundle\Entity\BlockChain;
+use AppBundle\Entity\User;
 use AppBundle\Entity\Wallet;
 use AppBundle\Repository\BlockChainRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -50,12 +52,22 @@ class WalletType extends AbstractType
                 'placeholder' => '-- Choose a Block Chain --'
             ]
         );
-        $builder->add('bcMode', ChoiceType::class, [
-            'label' => 'Block Chain Mode',
-            'choices' => [
+
+        /** @var User $user */
+        $user = $options['user'];
+        if ($user->getType() === UserTypes::FREE_USER) {
+            $choices = [
+                'Test Net' => BcModes::TEST_NET
+            ];
+        } else {
+            $choices = [
                 'Main Net' => BcModes::MAIN_NET,
                 'Test Net' => BcModes::TEST_NET
-            ],
+            ];
+        }
+        $builder->add('bcMode', ChoiceType::class, [
+            'label' => 'Block Chain Mode',
+            'choices' => $choices,
             'placeholder' => '-- Choose an option --',
             'required' => true
         ]);
@@ -71,8 +83,7 @@ class WalletType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
-            'data_class' => Wallet::class,
-        ));
+        $resolver->setDefaults(['data_class' => Wallet::class]);
+        $resolver->setRequired('user');
     }
 }
