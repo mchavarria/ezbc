@@ -52,13 +52,12 @@
             </trans-unit>
             <trans-unit id="ld.home.about.title">
                 <source>ld.home.about.title</source>
-                <target>Sobre nosotros</target>
+                <target>Cómo Funciona?</target>
             </trans-unit>
             <trans-unit id="ld.home.about.description">
                 <source>ld.home.about.description</source>
                 <target>
-                Somos un grupo de Ingenieros en Sistemas comprometidos con brindar un servicio
-                único en cuanto al uso de la tecnología Blockchain
+                Mira este breve video sobre E-Z Block Chain
                 </target>
             </trans-unit>
             <trans-unit id="ld.home.our.team.title">
