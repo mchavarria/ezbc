@@ -27,7 +27,7 @@ class BcTransaction
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=100, nullable=FALSE)
+     * @ORM\Column(type="string", nullable=TRUE)
      */
     private $bcHash;
 
@@ -42,12 +42,21 @@ class BcTransaction
      */
     private $bcType;
 
-
     /**
      * @ORM\ManyToOne(targetEntity="ApiEndPoint", inversedBy="transactions")
      * @ORM\JoinColumn(name="api_ep_id", referencedColumnName="id", nullable=FALSE)
      */
     private $apiEndPoint;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=TRUE)
+     */
+    private $successful;
+
+    /**
+     * @ORM\Column(type="integer", nullable=TRUE)
+     */
+    private $errorCode;
 
     /**
      * BcTransaction constructor.
@@ -107,5 +116,37 @@ class BcTransaction
     public function getBcHash()
     {
         return $this->bcHash;
+    }
+
+    /**
+     * @param bool $val
+     */
+    public function setSuccessful($val)
+    {
+        $this->successful = $val;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isSuccessful()
+    {
+        return $this->successful;
+    }
+
+    /**
+     * @param int $code
+     */
+    public function setErrorCode($code)
+    {
+        $this->errorCode = $code;
+    }
+
+    /**
+     * @return string
+     */
+    public function getErrorCode()
+    {
+        return $this->errorCode;
     }
 }

@@ -9,7 +9,9 @@ use AppBundle\Lib\Enum;
  */
 class PlanFees extends Enum
 {
-    const BASIC_USER = 0.5;
-    const PREMIUM_USER = 0.43;
-    const EXCLUSIVE_USER = 0.4;
+    const FREE = 0;
+    const BASIC = 0.5;
+    const PREMIUM = 0.43;
+    const EXCLUSIVE = 0.4;
+    const ADMIN = 0;
 }

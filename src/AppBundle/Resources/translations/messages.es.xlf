@@ -2,17 +2,21 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file source-language="en" target-language="es" datatype="plaintext" original="file.ext">
         <body>
+            <trans-unit id="ez.bc">
+                <source>ez.bc</source>
+                <target>E-Z Block Chain</target>
+            </trans-unit>
             <trans-unit id="app.sb.hd.edit.profile">
                 <source>app.sb.hd.edit.profile</source>
-                <target>app.sb.hd.edit.profile</target>
+                <target>Editar Perfil</target>
             </trans-unit>
             <trans-unit id="app.sb.hd.send.feedback">
                 <source>app.sb.hd.send.feedback</source>
-                <target>app.sb.hd.send.feedback</target>
+                <target>Enviar Feedback</target>
             </trans-unit>
             <trans-unit id="app.sb.hd.faq">
                 <source>app.sb.hd.faq</source>
-                <target>app.sb.hd.faq</target>
+                <target>FAQ</target>
             </trans-unit>
             <trans-unit id="app.sb.menu.navigation">
                 <source>app.sb.menu.navigation</source>
@@ -254,8 +258,8 @@
                 <source>api.idx.panel.title.description</source>
                 <target>Descripción</target>
             </trans-unit>
-            <trans-unit id="api.idx.panel.title.creation.date">
-                <source>api.idx.panel.title.creation.date</source>
+            <trans-unit id="idx.panel.title.creation.date">
+                <source>idx.panel.title.creation.date</source>
                 <target>Fecha creación</target>
             </trans-unit>
             <trans-unit id="api.idx.panel.list.transactions">
@@ -597,6 +601,46 @@
             <trans-unit id="user.form.confirm.password">
                 <source>user.form.confirm.password</source>
                 <target>Repetir Contraseña</target>
+            </trans-unit>
+            <trans-unit id="bct.idx.title">
+                <source>bct.idx.title</source>
+                <target>Transacciones</target>
+            </trans-unit>
+            <trans-unit id="bct.idx.header.title">
+                <source>bct.idx.header.title</source>
+                <target>Transacciones en Block Chain</target>
+            </trans-unit>
+            <trans-unit id="bct.idx.header.subtitle">
+                <source>bct.idx.header.subtitle</source>
+                <target>Consumo de las APIs</target>
+            </trans-unit>
+            <trans-unit id="bct.idx.panel.title">
+                <source>bct.idx.panel.title</source>
+                <target>Transacciones</target>
+            </trans-unit>
+            <trans-unit id="bct.panel.title.bcType">
+                <source>bct.panel.title.bcType</source>
+                <target>Blockchain</target>
+            </trans-unit>
+            <trans-unit id="bct.idx.panel.title.aep">
+                <source>bct.idx.panel.title.aep</source>
+                <target>API</target>
+            </trans-unit>
+            <trans-unit id="bct.idx.panel.title.wallet">
+                <source>bct.idx.panel.title.wallet</source>
+                <target>Billetera</target>
+            </trans-unit>
+            <trans-unit id="bct.idx.panel.list.success">
+                <source>bct.idx.panel.list.success</source>
+                <target>Exitosa</target>
+            </trans-unit>
+            <trans-unit id="bct.idx.panel.list.fail">
+                <source>bct.idx.panel.list.fail</source>
+                <target>Fallida</target>
+            </trans-unit>
+            <trans-unit id="bct.idx.panel.list.info">
+                <source>bct.idx.panel.list.info</source>
+                <target>Detalles</target>
             </trans-unit>
         </body>
     </file>

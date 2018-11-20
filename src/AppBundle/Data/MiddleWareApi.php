@@ -12,7 +12,8 @@ use AppBundle\Lib\Enum;
 class MiddleWareApi extends Enum
 {
     // wallet_to/wallet_from/private_key/hash_to_save/comision
-    const METHOD_SEND_TRANSACTION = 'https://ez-blockchain-middleware.herokuapp.com/%s/%s/sendtransaction/%s/%s/%s/%s/%i';
+//    const METHOD_SEND_TRANSACTION = 'https://ez-blockchain-middleware.herokuapp.com/%s/%s/sendtransaction/%s/%s/%s/%s/%f';
+    const METHOD_SEND_TRANSACTION = 'https://ez-blockchain-middleware.herokuapp.com/%s/%s/sendtransaction/%s/%s/%s/%s';
     // wallet_id
     const METHOD_GET_BALANCE = 'https://ez-blockchain-middleware.herokuapp.com/%s/%s/getbalance/%s';
     // wallet_id

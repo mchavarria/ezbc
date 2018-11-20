@@ -6,12 +6,12 @@
             <th>#</th>
             <th>{{ 'bct.panel.title.bcType'|trans }}</th>
             {% if is_granted('ROLE_ADMIN') %}
-                <th>{{ 'bct.panel.title.bcMode'|trans }}</th>
+                <th>{{ 'idx.panel.title.status'|trans }}</th>
                 <th>{{ 'idx.panel.title.user'|trans }}</th>
             {% endif %}
             <th>{{ 'bct.idx.panel.title.aep'|trans }}</th>
-            <th>{{ 'bct.panel.title.wallet'|trans }}</th>
-            <th>{{ 'bct.idx.panel.title.creation.date'|trans }}</th>
+            <th>{{ 'bct.idx.panel.title.wallet'|trans }}</th>
+            <th>{{ 'idx.panel.title.creation.date'|trans }}</th>
             <th width="1%"></th>
         </tr>
         </thead>
@@ -19,16 +19,18 @@
         {% for log in bcTransactions %}
             <tr>
                 <td>{{ log.id }}</td>
-                <td>{{ log.bcType|upper }}</td>
+                <td>{{ log.bcType|upper }}{{ is_granted('ROLE_ADMIN') ? ' ' ~ log.wallet.bcMode|upper }}</td>
+                <td>{{ log.successful ? 'bct.idx.panel.list.success'|trans : 'bct.idx.panel.list.fail'|trans }}</td>
                 {% if is_granted('ROLE_ADMIN') %}
-                    <td>{{ log.wallet.bcMode|upper }}</td>
                     <td>{{ log.apiEndPoint.user.username }}</td>
                 {% endif %}
                 <td><a href="{{ path('app_api_management_details', { id: log.apiEndPoint.id }) }}">{{ log.apiEndPoint.formLabel }}</a></td>
                 <td><a href="{{ path('app_wallet_info', { id: log.apiEndPoint.wallet.id }) }}">{{ log.apiEndPoint.wallet.formLabel }}</a></td>
                 <td>{{ log.createdDate|date('Y-m-d h:m') }}</td>
                 <td class="with-btn" nowrap>
+                    {% if log.successful %}
                     <a href="{{ getMoreInfoLink(log) }}" target="_blank" class="btn btn-sm btn-primary m-r-2">{{ 'bct.idx.panel.list.info'|trans }}</a>
+                    {% endif %}
                 </td>
             </tr>
         {% else %}
@@ -37,6 +39,10 @@
                     <img src="{{ asset('img/admin/wallet/none.jpg') }}" class="img-rounded height-30" />
                 </td>
                 <td>{{ 'bct.idx.panel.list.no.bct'|trans }}</td>
+                <td>---</td>
+                {% if is_granted('ROLE_ADMIN') %}
+                <td>---</td>
+                {% endif %}
                 <td>---</td>
                 <td>---</td>
                 <td>---</td>
