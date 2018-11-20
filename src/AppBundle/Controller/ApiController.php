@@ -135,7 +135,7 @@ class ApiController extends Controller
 
         $repository = $this->getDoctrine()->getRepository(ApiEndPoint::class);
         $aep = $repository->find($id);
-        $user = $aep->getUser();
+        $user = $this->getUser();
 
         $form = $this->createForm(ApiEndPointType::class, $aep, ['user' => $user]);
 

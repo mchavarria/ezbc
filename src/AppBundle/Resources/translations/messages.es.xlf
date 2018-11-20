@@ -72,7 +72,7 @@
             </trans-unit>
             <trans-unit id="db.idx.title">
                 <source>db.idx.title</source>
-                <target>db.idx.title</target>
+                <target>Inicio</target>
             </trans-unit>
             <trans-unit id="db.idx.header.title">
                 <source>db.idx.header.title</source>
@@ -80,7 +80,7 @@
             </trans-unit>
             <trans-unit id="db.idx.header.subtitle">
                 <source>db.idx.header.subtitle</source>
-                <target>últimos movimientos </target>
+                <target>información actual</target>
             </trans-unit>
             <trans-unit id="db.idx.stats.total.transactions">
                 <source>db.idx.stats.total.transactions</source>
@@ -100,7 +100,7 @@
             </trans-unit>
             <trans-unit id="db.idx.panel.latest.logs.title">
                 <source>db.idx.panel.latest.logs.title</source>
-                <target>db.idx.panel.latest.logs.title</target>
+                <target>Transacciones recientes</target>
             </trans-unit>
             <trans-unit id="db.idx.panel.pricing.title">
                 <source>db.idx.panel.pricing.title</source>
@@ -108,11 +108,11 @@
             </trans-unit>
             <trans-unit id="wallet.idx.title">
                 <source>wallet.idx.title</source>
-                <target>wallet.idx.title</target>
+                <target>Billeteras</target>
             </trans-unit>
             <trans-unit id="wallet.idx.header.title">
                 <source>wallet.idx.header.title</source>
-                <target>Mis billeteras</target>
+                <target>Billeteras</target>
             </trans-unit>
             <trans-unit id="wallet.idx.header.subtitle">
                 <source>wallet.idx.header.subtitle</source>
@@ -124,7 +124,11 @@
             </trans-unit>
             <trans-unit id="wallet.idx.panel.title">
                 <source>wallet.idx.panel.title</source>
-                <target>wallet.idx.panel.title</target>
+                <target>Billeteras</target>
+            </trans-unit>
+            <trans-unit id="wallet.my.panel.title">
+                <source>wallet.my.panel.title</source>
+                <target>Mis Billeteras</target>
             </trans-unit>
             <trans-unit id="wallet.idx.panel.title.block.chain">
                 <source>wallet.idx.panel.title.block.chain</source>
@@ -164,75 +168,71 @@
             </trans-unit>
             <trans-unit id="wallet.new.title">
                 <source>wallet.new.title</source>
-                <target>wallet.new.title</target>
+                <target>Nueva Billetera</target>
             </trans-unit>
             <trans-unit id="wallet.new.header.title">
                 <source>wallet.new.header.title</source>
-                <target>wallet.new.header.title</target>
+                <target>Crear Billetera</target>
             </trans-unit>
             <trans-unit id="wallet.new.header.subtitle">
                 <source>wallet.new.header.subtitle</source>
-                <target>wallet.new.header.subtitle</target>
+                <target>completa los datos necesarios</target>
             </trans-unit>
             <trans-unit id="wallet.new.form.title">
                 <source>wallet.new.form.title</source>
-                <target>wallet.new.form.title</target>
+                <target>Billetera</target>
             </trans-unit>
             <trans-unit id="wallet.edit.title">
                 <source>wallet.edit.title</source>
-                <target>wallet.edit.title</target>
+                <target>Editar Billetera</target>
             </trans-unit>
             <trans-unit id="wallet.edit.header.title">
                 <source>wallet.edit.header.title</source>
-                <target>wallet.edit.header.title</target>
+                <target>Editar Billetera</target>
             </trans-unit>
             <trans-unit id="wallet.edit.header.subtitle">
                 <source>wallet.edit.header.subtitle</source>
-                <target>wallet.edit.header.subtitle</target>
+                <target>actualiza los datos necesarios</target>
             </trans-unit>
             <trans-unit id="wallet.edit.form.title">
                 <source>wallet.edit.form.title</source>
-                <target>wallet.edit.form.title</target>
+                <target>Billetera</target>
             </trans-unit>
             <trans-unit id="wallet.form.subtitle">
                 <source>wallet.form.subtitle</source>
-                <target>wallet.form.subtitle</target>
-            </trans-unit>
-            <trans-unit id="wallet.form.create">
-                <source>wallet.form.create</source>
-                <target>wallet.form.create</target>
+                <target>Datos</target>
             </trans-unit>
             <trans-unit id="wallet.form.save">
                 <source>wallet.form.save</source>
-                <target>wallet.form.save</target>
+                <target>GUARDAR</target>
             </trans-unit>
             <trans-unit id="wallet.form.cancel">
                 <source>wallet.form.cancel</source>
-                <target>wallet.form.cancel</target>
+                <target>CANCELAR</target>
             </trans-unit>
             <trans-unit id="wallet.info.title">
                 <source>wallet.info.title</source>
-                <target>wallet.info.title</target>
+                <target>Información de Billetera</target>
             </trans-unit>
             <trans-unit id="wallet.info.header.title">
                 <source>wallet.info.header.title</source>
-                <target>wallet.info.header.title</target>
+                <target>Información</target>
             </trans-unit>
             <trans-unit id="wallet.info.header.subtitle">
                 <source>wallet.info.header.subtitle</source>
-                <target>wallet.info.header.subtitle</target>
+                <target>obtenida de internet</target>
             </trans-unit>
             <trans-unit id="wallet.info.balance.title">
                 <source>wallet.info.balance.title</source>
-                <target>wallet.info.balance.title</target>
+                <target>Saldo actual</target>
             </trans-unit>
             <trans-unit id="wallet.info.balance.description">
                 <source>wallet.info.balance.description</source>
-                <target>wallet.info.balance.description</target>
+                <target>la información se puede validar en otras páginas</target>
             </trans-unit>
             <trans-unit id="api.idx.title">
                 <source>api.idx.title</source>
-                <target>api.idx.title</target>
+                <target>APIs</target>
             </trans-unit>
             <trans-unit id="api.idx.header.title">
                 <source>api.idx.header.title</source>
@@ -240,7 +240,7 @@
             </trans-unit>
             <trans-unit id="api.idx.header.subtitle">
                 <source>api.idx.header.subtitle</source>
-                <target>Gestión de APIs Endpoints</target>
+                <target>Gestión de API Endpoints</target>
             </trans-unit>
             <trans-unit id="api.idx.new.btn">
                 <source>api.idx.new.btn</source>
@@ -280,23 +280,23 @@
             </trans-unit>
             <trans-unit id="api.idx.panel.list.no.api">
                 <source>api.idx.panel.list.no.api</source>
-                <target>api.idx.panel.list.no.api</target>
+                <target>Sin APIs aún</target>
             </trans-unit>
             <trans-unit id="api.idx.panel.list.new">
                 <source>api.idx.panel.list.new</source>
-                <target>api.idx.panel.list.new</target>
+                <target>Crear API</target>
             </trans-unit>
             <trans-unit id="api.detail.title">
                 <source>api.detail.title</source>
-                <target>api.detail.title</target>
+                <target>Detalle de API</target>
             </trans-unit>
             <trans-unit id="api.detail.header.title">
                 <source>api.detail.header.title</source>
-                <target>api.detail.header.title</target>
+                <target>API Endpoint</target>
             </trans-unit>
             <trans-unit id="api.detail.header.subtitle">
                 <source>api.detail.header.subtitle</source>
-                <target>api.detail.header.subtitle</target>
+                <target>detalles de la API</target>
             </trans-unit>
             <trans-unit id="api.detail.panel.header">
                 <source>api.detail.panel.header</source>
@@ -308,83 +308,79 @@
             </trans-unit>
             <trans-unit id="api.new.title">
                 <source>api.new.title</source>
-                <target>api.new.title</target>
+                <target>Nueva API</target>
             </trans-unit>
             <trans-unit id="api.new.header.title">
                 <source>api.new.header.title</source>
-                <target>api.new.header.title</target>
+                <target>Nuevo API Endpoint</target>
             </trans-unit>
             <trans-unit id="api.new.header.subtitle">
                 <source>api.new.header.subtitle</source>
-                <target>api.new.header.subtitle</target>
+                <target>completa los datos necesarios</target>
             </trans-unit>
             <trans-unit id="api.new.form.title">
                 <source>api.new.form.title</source>
-                <target>api.new.form.title</target>
+                <target>API</target>
             </trans-unit>
             <trans-unit id="api.edit.title">
                 <source>api.edit.title</source>
-                <target>api.edit.title</target>
+                <target>Editar API</target>
             </trans-unit>
             <trans-unit id="api.edit.header.title">
                 <source>api.edit.header.title</source>
-                <target>api.edit.header.title</target>
+                <target>Edición de API</target>
             </trans-unit>
             <trans-unit id="api.edit.header.subtitle">
                 <source>api.edit.header.subtitle</source>
-                <target>api.edit.header.subtitle</target>
+                <target>actualiza los datos necesarios</target>
             </trans-unit>
             <trans-unit id="api.edit.form.title">
                 <source>api.edit.form.title</source>
-                <target>api.edit.form.title</target>
+                <target>API</target>
             </trans-unit>
             <trans-unit id="api.form.subtitle">
                 <source>api.form.subtitle</source>
-                <target>api.form.subtitle</target>
-            </trans-unit>
-            <trans-unit id="api.form.create">
-                <source>api.form.create</source>
-                <target>api.form.create</target>
+                <target>Datos</target>
             </trans-unit>
             <trans-unit id="api.form.save">
                 <source>api.form.save</source>
-                <target>api.form.save</target>
+                <target>GUARDAR</target>
             </trans-unit>
             <trans-unit id="api.form.cancel">
                 <source>api.form.cancel</source>
-                <target>api.form.cancel</target>
+                <target>CANCELAR</target>
             </trans-unit>
             <trans-unit id="api.stats.title">
                 <source>api.stats.title</source>
-                <target>api.stats.title</target>
+                <target>Consumos de API</target>
             </trans-unit>
             <trans-unit id="api.stats.header.title">
                 <source>api.stats.header.title</source>
-                <target>api.stats.header.title</target>
+                <target>Consumos de la API</target>
             </trans-unit>
             <trans-unit id="api.stats.header.subtitle">
                 <source>api.stats.header.subtitle</source>
-                <target>api.stats.header.subtitle</target>
+                <target>historial de las transacciones realizadas</target>
             </trans-unit>
             <trans-unit id="api.stats.wallet.more.info">
                 <source>api.stats.wallet.more.info</source>
-                <target>api.stats.wallet.more.info</target>
+                <target>Detalles de la Billetera</target>
             </trans-unit>
             <trans-unit id="api.stats.panel.title">
                 <source>api.stats.panel.title</source>
-                <target>api.stats.panel.title</target>
+                <target>Transacciones</target>
             </trans-unit>
             <trans-unit id="api.stats.panel.title.bc.hash">
                 <source>api.stats.panel.title.bc.hash</source>
-                <target>api.stats.panel.title.bc.hash</target>
+                <target>Detalle</target>
             </trans-unit>
             <trans-unit id="api.stats.panel.title.date">
                 <source>api.stats.panel.title.date</source>
-                <target>api.stats.panel.title.date</target>
+                <target>Fecha</target>
             </trans-unit>
             <trans-unit id="api.stats.panel.list.info">
                 <source>api.stats.panel.list.info</source>
-                <target>api.stats.panel.list.info</target>
+                <target>Detalles</target>
             </trans-unit>
             <trans-unit id="api.stats.panel.list.no.logs">
                 <source>api.stats.panel.list.no.logs</source>
@@ -392,11 +388,11 @@
             </trans-unit>
             <trans-unit id="bc.idx.title">
                 <source>bc.idx.title</source>
-                <target>bc.idx.title</target>
+                <target>Block Chain</target>
             </trans-unit>
             <trans-unit id="bc.idx.header.title">
                 <source>bc.idx.header.title</source>
-                <target>Blockchains</target>
+                <target>Block Chains</target>
             </trans-unit>
             <trans-unit id="bc.idx.header.subtitle">
                 <source>bc.idx.header.subtitle</source>
@@ -408,7 +404,7 @@
             </trans-unit>
             <trans-unit id="bc.idx.list.no.description">
                 <source>bc.idx.list.no.description</source>
-                <target>bc.idx.list.no.description</target>
+                <target>No hay block chains aún</target>
             </trans-unit>
             <trans-unit id="bc.idx.edit.btn">
                 <source>bc.idx.edit.btn</source>
@@ -416,55 +412,51 @@
             </trans-unit>
             <trans-unit id="bc.new.title">
                 <source>bc.new.title</source>
-                <target>bc.new.title</target>
+                <target>Nueva Block Chain</target>
             </trans-unit>
             <trans-unit id="bc.new.header.title">
                 <source>bc.new.header.title</source>
-                <target>bc.new.header.title</target>
+                <target>Crear Block Chain</target>
             </trans-unit>
             <trans-unit id="bc.new.header.subtitle">
                 <source>bc.new.header.subtitle</source>
-                <target>bc.new.header.subtitle</target>
+                <target>completa los datos del formulario</target>
             </trans-unit>
             <trans-unit id="bc.new.form.title">
                 <source>bc.new.form.title</source>
-                <target>bc.new.form.title</target>
+                <target>Block Chain</target>
             </trans-unit>
             <trans-unit id="bc.edit.title">
                 <source>bc.edit.title</source>
-                <target>bc.edit.title</target>
+                <target>Editar Block Chain</target>
             </trans-unit>
             <trans-unit id="bc.edit.header.title">
                 <source>bc.edit.header.title</source>
-                <target>bc.edit.header.title</target>
+                <target>Editar Block Chain</target>
             </trans-unit>
             <trans-unit id="bc.edit.header.subtitle">
                 <source>bc.edit.header.subtitle</source>
-                <target>bc.edit.header.subtitle</target>
+                <target>actualiza los datos necesarios</target>
             </trans-unit>
             <trans-unit id="bc.edit.form.title">
                 <source>bc.edit.form.title</source>
-                <target>bc.edit.form.title</target>
+                <target>Block Chain</target>
             </trans-unit>
             <trans-unit id="bc.form.subtitle">
                 <source>bc.form.subtitle</source>
-                <target>bc.form.subtitle</target>
-            </trans-unit>
-            <trans-unit id="bc.form.create">
-                <source>bc.form.create</source>
-                <target>bc.form.create</target>
+                <target>Datos</target>
             </trans-unit>
             <trans-unit id="bc.form.save">
                 <source>bc.form.save</source>
-                <target>bc.form.save</target>
+                <target>GUARDAR</target>
             </trans-unit>
             <trans-unit id="bc.form.cancel">
                 <source>bc.form.cancel</source>
-                <target>bc.form.cancel</target>
+                <target>CANCELAR</target>
             </trans-unit>
             <trans-unit id="user.idx.title">
                 <source>user.idx.title</source>
-                <target>user.idx.title</target>
+                <target>Usuarios</target>
             </trans-unit>
             <trans-unit id="user.idx.header.title">
                 <source>user.idx.header.title</source>
@@ -532,51 +524,47 @@
             </trans-unit>
             <trans-unit id="user.new.title">
                 <source>user.new.title</source>
-                <target>user.new.title</target>
+                <target>Nuevo Usuario</target>
             </trans-unit>
             <trans-unit id="user.new.header.title">
                 <source>user.new.header.title</source>
-                <target>Usuarios</target>
+                <target>Nuevo Usuario</target>
             </trans-unit>
             <trans-unit id="user.new.header.subtitle">
                 <source>user.new.header.subtitle</source>
-                <target>Administración</target>
+                <target>completa los datos del formulario</target>
             </trans-unit>
             <trans-unit id="user.new.form.title">
                 <source>user.new.form.title</source>
-                <target>Nuevo</target>
+                <target>Usuario</target>
             </trans-unit>
             <trans-unit id="user.edit.title">
                 <source>user.edit.title</source>
-                <target>Edición</target>
+                <target>Editar Usuario</target>
             </trans-unit>
             <trans-unit id="user.edit.header.title">
                 <source>user.edit.header.title</source>
-                <target>user.edit.header.title</target>
+                <target>Editar Usuario</target>
             </trans-unit>
             <trans-unit id="user.edit.header.subtitle">
                 <source>user.edit.header.subtitle</source>
-                <target>user.edit.header.subtitle</target>
+                <target>actualiza los datos necesarios</target>
             </trans-unit>
             <trans-unit id="user.edit.form.title">
                 <source>user.edit.form.title</source>
-                <target>user.edit.form.title</target>
+                <target>Usuario</target>
             </trans-unit>
             <trans-unit id="user.form.subtitle">
                 <source>user.form.subtitle</source>
-                <target>user.form.subtitle</target>
-            </trans-unit>
-            <trans-unit id="user.form.create">
-                <source>user.form.create</source>
-                <target>Crear</target>
+                <target>Datos</target>
             </trans-unit>
             <trans-unit id="user.form.save">
                 <source>user.form.save</source>
-                <target>Guardar</target>
+                <target>GUARDAR</target>
             </trans-unit>
             <trans-unit id="user.form.cancel">
                 <source>user.form.cancel</source>
-                <target>Cancelar</target>
+                <target>CANCELAR</target>
             </trans-unit>
             <trans-unit id="user.form.first.name">
                 <source>user.form.first.name</source>
