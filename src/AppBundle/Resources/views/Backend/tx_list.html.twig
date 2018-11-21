@@ -1,0 +1,37 @@
+<!-- begin col-12 -->
+<div class="col-lg-12">
+    <!-- begin panel -->
+    <div class="panel panel-inverse" data-sortable-id="index-5">
+        <div class="panel-heading">
+            <div class="panel-heading-btn">
+            </div>
+            <h4 class="panel-title">{{ 'db.idx.panel.latest.logs.title'|trans|upper }}</h4>
+        </div>
+        <div class="panel-body">
+            <div class="height-sm" data-scrollbar="true">
+                <ul class="media-list media-list-with-divider media-messaging">
+                    {% for log in bcTransactions %}
+                        <li class="media media-sm">
+                            <a href="javascript:;" class="pull-left">
+                                <img src="{{ asset('img/blockchain/'~log.wallet.bcType~'.png') }}" alt="" class="media-object rounded-corner" />
+                            </a>
+                            <div class="media-body">
+                                <h5 class="media-heading">#{{ log.id }} - {{ log.apiEndPoint.name }}</h5>
+                                <p>{{ log.successful ? 'bct.idx.panel.list.success'|trans : 'bct.idx.panel.list.fail'|trans }}</p>
+                                {% if log.successful %}
+                                    <p>Hash: {{ log.bcHash }}</p>
+                                {% else %}
+                                    <p>Error: {{ getHumanError(log.errorCode)|trans }}</p>
+                                {% endif %}
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="panel-footer">
+        </div>
+    </div>
+    <!-- end panel -->
+</div>
+<!-- end col-8 -->

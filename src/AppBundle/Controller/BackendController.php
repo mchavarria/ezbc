@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\BcTransaction;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,6 +23,11 @@ class BackendController extends Controller
      */
     public function indexAction()
     {
-        return [];
+        $repository = $this->getDoctrine()->getRepository(BcTransaction::class);
+        $transactions = $repository->getAllByUser($this->getUser(), 10);
+
+        return [
+            'bcTransactions' => $transactions
+        ];
     }
 }

@@ -28,15 +28,18 @@ class BcTransactionRepository extends EntityRepository
      * Get All transactions by User
      *
      * @param User $user
+     * @param int  $limit
      *
      * @return array
      */
-    public function getAllByUser(User $user)
+    public function getAllByUser(User $user, $limit = 100)
     {
         $qb = $this->getEntityManager()->createQueryBuilder();
         $qb->select('bct')
             ->from('AppBundle:BcTransaction', 'bct')
             ->innerJoin('bct.apiEndPoint', 'aep', 'WITH', 'aep.user = :user')
+            ->setMaxResults($limit)
+            ->orderBy('bct.createdDate', 'DESC')
             ->setParameter('user', $user);
 
         $query = $qb->getQuery();

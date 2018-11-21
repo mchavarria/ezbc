@@ -22,7 +22,7 @@
                     <p>{{ getBcLogs(app.user) }}</p>
                 </div>
                 <div class="stats-link">
-                    <a href="javascript:;">{{ 'db.idx.stats.view.details'|trans }} <i class="fa fa-arrow-alt-circle-right"></i></a>
+                    <a href="{{ path('app_bc_transaction_my', { id: app.user.id }) }}">{{ 'db.idx.stats.view.details'|trans }} <i class="fa fa-arrow-alt-circle-right"></i></a>
                 </div>
             </div>
         </div>
@@ -59,63 +59,7 @@
     <!-- end row -->
     <!-- begin row -->
     <div class="row">
-        <!-- begin col-12 -->
-        <div class="col-lg-12">
-            <!-- begin panel -->
-            <div class="panel panel-inverse" data-sortable-id="index-5">
-                <div class="panel-heading">
-                    <div class="panel-heading-btn">
-                    </div>
-                    <h4 class="panel-title">{{ 'db.idx.panel.latest.logs.title'|trans|upper }}</h4>
-                </div>
-                <div class="panel-body">
-                    <div class="height-sm" data-scrollbar="true">
-                        <ul class="media-list media-list-with-divider media-messaging">
-                            <li class="media media-sm">
-                                <a href="javascript:;" class="pull-left">
-                                    <img src="../assets/img/user/user-5.jpg" alt="" class="media-object rounded-corner" />
-                                </a>
-                                <div class="media-body">
-                                    <h5 class="media-heading">{{ testFunction('Migue') }}</h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id nunc non eros fermentum vestibulum ut id felis. Nunc molestie libero eget urna aliquet, vitae laoreet felis ultricies. Fusce sit amet massa malesuada, tincidunt augue vitae, gravida felis.</p>
-                                </div>
-                            </li>
-                            <li class="media media-sm">
-                                <a href="javascript:;" class="pull-left">
-                                    <img src="../assets/img/user/user-6.jpg" alt="" class="media-object rounded-corner" />
-                                </a>
-                                <div class="media-body">
-                                    <h5 class="media-heading">Terry Ng</h5>
-                                    <p>Sed in ante vel ipsum tristique euismod posuere eget nulla. Quisque ante sem, scelerisque iaculis interdum quis, eleifend id mi. Fusce congue leo nec mauris malesuada, id scelerisque sapien ultricies.</p>
-                                </div>
-                            </li>
-                            <li class="media media-sm">
-                                <a href="javascript:;" class="pull-left">
-                                    <img src="../assets/img/user/user-8.jpg" alt="" class="media-object rounded-corner" />
-                                </a>
-                                <div class="media-body">
-                                    <h5 class="media-heading">Fiona Log</h5>
-                                    <p>Pellentesque dictum in tortor ac blandit. Nulla rutrum eu leo vulputate ornare. Nulla a semper mi, ac lacinia sapien. Sed volutpat ornare eros, vel semper sem sagittis in. Quisque risus ipsum, iaculis quis cursus eu, tristique sed nulla.</p>
-                                </div>
-                            </li>
-                            <li class="media media-sm">
-                                <a href="javascript:;" class="pull-left">
-                                    <img src="../assets/img/user/user-7.jpg" alt="" class="media-object rounded-corner" />
-                                </a>
-                                <div class="media-body">
-                                    <h5 class="media-heading">John Doe</h5>
-                                    <p>Morbi molestie lorem quis accumsan elementum. Morbi condimentum nisl iaculis, laoreet risus sed, porta neque. Proin mi leo, dapibus at ligula a, aliquam consectetur metus.</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="panel-footer">
-                </div>
-            </div>
-            <!-- end panel -->
-        </div>
-        <!-- end col-8 -->
+        {{ include('@App/Backend/tx_list.html.twig') }}
     </div>
     <!-- end row -->
 {% endblock %}

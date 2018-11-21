@@ -2,6 +2,7 @@
 
 namespace AppBundle\Twig;
 
+use AppBundle\Data\BcTxError;
 use AppBundle\Entity\ApiEndPoint;
 use AppBundle\Entity\BlockChain;
 use AppBundle\Entity\User;
@@ -42,8 +43,9 @@ class AppExtension extends \Twig_Extension
     {
         return [
             new \Twig_SimpleFunction('testFunction', [$this, 'testFunction']),
-            new \Twig_SimpleFunction('getBcLogs', [$this, 'getBcLogs']),
             new \Twig_SimpleFunction('getApisQty', [$this, 'getApisQty']),
+            new \Twig_SimpleFunction('getBcLogs', [$this, 'getBcLogs']),
+            new \Twig_SimpleFunction('getHumanError', [$this, 'getHumanError']),
             new \Twig_SimpleFunction('getMoreInfoLink', [$this, 'getMoreInfoLink'])
         ];
     }
@@ -105,6 +107,30 @@ class AppExtension extends \Twig_Extension
         }
 
         return '#';
+    }
+
+    /**
+     * @param $code
+     *
+     * @return string
+     */
+    public function getHumanError($code)
+    {
+        if ($code == BcTxError::USER_DISABLED) {
+            $msg = 'bct.item.error.user.disabled';
+        } elseif ($code == BcTxError::API_DISABLED) {
+            $msg = 'bct.item.error.api.disabled';
+        } elseif ($code == BcTxError::WALLET_DISABLED) {
+            $msg = 'bct.item.error.wallet.disabled';
+        } elseif ($code == BcTxError::WALLET_INSUFFICIENT_FUNDS) {
+            $msg = 'bct.item.error.wallet.insufficient.funds';
+        } elseif ($code == BcTxError::WALLET_CONFIG) {
+            $msg = 'bct.item.error.wallet.config';
+        } else {
+            $msg = 'bct.item.error.generic';
+        }
+
+        return $msg;
     }
 
     /**
