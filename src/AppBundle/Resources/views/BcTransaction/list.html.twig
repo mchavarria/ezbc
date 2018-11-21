@@ -29,7 +29,7 @@
                 <td>{{ log.createdDate|date('Y-m-d h:m') }}</td>
                 <td class="with-btn" nowrap>
                     {% if log.successful %}
-                    <a href="{{ getMoreInfoLink(log) }}" target="_blank" class="btn btn-sm btn-primary m-r-2">{{ 'bct.idx.panel.list.info'|trans }}</a>
+                    <a href="{{ getTxMoreInfoLink(log) }}" target="_blank" class="btn btn-sm btn-primary m-r-2">{{ 'bct.idx.panel.list.info'|trans }}</a>
                     {% endif %}
                 </td>
             </tr>

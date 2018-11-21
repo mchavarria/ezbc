@@ -3,10 +3,12 @@
 namespace AppBundle\Twig;
 
 use AppBundle\Data\BcTxError;
+use AppBundle\Data\ExplorerLinks;
 use AppBundle\Entity\ApiEndPoint;
 use AppBundle\Entity\BlockChain;
 use AppBundle\Entity\User;
 use AppBundle\Entity\BcTransaction;
+use AppBundle\Entity\Wallet;
 use Doctrine\ORM\EntityManagerInterface;
 
 class AppExtension extends \Twig_Extension
@@ -46,7 +48,8 @@ class AppExtension extends \Twig_Extension
             new \Twig_SimpleFunction('getApisQty', [$this, 'getApisQty']),
             new \Twig_SimpleFunction('getBcLogs', [$this, 'getBcLogs']),
             new \Twig_SimpleFunction('getHumanError', [$this, 'getHumanError']),
-            new \Twig_SimpleFunction('getMoreInfoLink', [$this, 'getMoreInfoLink'])
+            new \Twig_SimpleFunction('getTxMoreInfoLink', [$this, 'getTxMoreInfoLink']),
+            new \Twig_SimpleFunction('getWalletMoreInfoLink', [$this, 'getWalletMoreInfoLink'])
         ];
     }
 
@@ -99,11 +102,26 @@ class AppExtension extends \Twig_Extension
      *
      * @return string
      */
-    public function getMoreInfoLink(BcTransaction $log)
+    public function getTxMoreInfoLink(BcTransaction $log)
     {
         $blockChain = $log->getWallet()->getBcType();
         if ($blockChain->getExplorer()) {
-            return $blockChain->getExplorer().$log->getBcHash();
+            return $blockChain->getExplorer().ExplorerLinks::TX_INFO_URL.$log->getBcHash();
+        }
+
+        return '#';
+    }
+
+    /**
+     * @param Wallet $wallet
+     *
+     * @return string
+     */
+    public function getWalletMoreInfoLink(Wallet $wallet)
+    {
+        $blockChain = $wallet->getBcType();
+        if ($blockChain->getExplorer()) {
+            return $blockChain->getExplorer().ExplorerLinks::ADDRESS_INFO_URL.$wallet->getWalletKey();
         }
 
         return '#';
