@@ -64,11 +64,11 @@
             </trans-unit>
             <trans-unit id="header.user.edit.profile">
                 <source>header.user.edit.profile</source>
-                <target>header.user.edit.profile</target>
+                <target>Mi perfil</target>
             </trans-unit>
             <trans-unit id="header.logout">
                 <source>header.logout</source>
-                <target>header.logout</target>
+                <target>Salir</target>
             </trans-unit>
             <trans-unit id="db.idx.title">
                 <source>db.idx.title</source>
