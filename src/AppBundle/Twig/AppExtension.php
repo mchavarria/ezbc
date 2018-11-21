@@ -4,12 +4,15 @@ namespace AppBundle\Twig;
 
 use AppBundle\Data\BcTxError;
 use AppBundle\Data\ExplorerLinks;
+use AppBundle\Data\EzWallet;
+use AppBundle\Data\MiddleWareApi;
 use AppBundle\Entity\ApiEndPoint;
 use AppBundle\Entity\BlockChain;
 use AppBundle\Entity\User;
 use AppBundle\Entity\BcTransaction;
 use AppBundle\Entity\Wallet;
 use Doctrine\ORM\EntityManagerInterface;
+use Unirest;
 
 class AppExtension extends \Twig_Extension
 {
@@ -46,9 +49,14 @@ class AppExtension extends \Twig_Extension
         return [
             new \Twig_SimpleFunction('testFunction', [$this, 'testFunction']),
             new \Twig_SimpleFunction('getApisQty', [$this, 'getApisQty']),
-            new \Twig_SimpleFunction('getBcLogs', [$this, 'getBcLogs']),
+            new \Twig_SimpleFunction('getBlockChainsQty', [$this, 'getBlockChainsQty']),
+            new \Twig_SimpleFunction('getBcTxLogs', [$this, 'getBcTxLogs']),
+            new \Twig_SimpleFunction('getDbWalletMoreInfoLink', [$this, 'getDbWalletMoreInfoLink']),
             new \Twig_SimpleFunction('getHumanError', [$this, 'getHumanError']),
             new \Twig_SimpleFunction('getTxMoreInfoLink', [$this, 'getTxMoreInfoLink']),
+            new \Twig_SimpleFunction('getUsersQty', [$this, 'getUsersQty']),
+            new \Twig_SimpleFunction('getWalletBalance', [$this, 'getWalletBalance']),
+            new \Twig_SimpleFunction('getWalletsQty', [$this, 'getWalletsQty']),
             new \Twig_SimpleFunction('getWalletMoreInfoLink', [$this, 'getWalletMoreInfoLink'])
         ];
     }
@@ -72,27 +80,108 @@ class AppExtension extends \Twig_Extension
     }
 
     /**
-     * @param User $user
+     * @param User|null $user
      *
      * @return int
      */
-    public function getBcLogs(User $user)
+    public function getBcTxLogs(User $user = null)
     {
         $repository = $this->em->getRepository(BcTransaction::class);
-        $qty = $repository->countAllByUser($user);
+        if ($user) {
+            $qty = $repository->countAllByUser($user);
+        } else {
+            $qty = count($repository->findAll());
+        }
 
         return $qty;
     }
 
     /**
-     * @param User $user
+     * @param User|null $user
      *
      * @return int
      */
-    public function getApisQty(User $user)
+    public function getApisQty(User $user = null)
     {
         $repository = $this->em->getRepository(ApiEndPoint::class);
-        $qty = $repository->countAllByUser($user->getId());
+        if ($user) {
+            $qty = $repository->countAllByUser($user->getId());
+        } else {
+            $qty = count($repository->findAll());
+        }
+
+        return $qty;
+    }
+
+    /**
+     * @param string $bcType
+     * @param string $bcMode
+     *
+     * @return float
+     */
+    public function getWalletBalance($bcType, $bcMode)
+    {
+        $walletName = strtoupper($bcType.'_'.$bcMode);
+
+        if (!EzWallet::isValidName($walletName)) {
+            return 0;
+        }
+
+        $wallets = EzWallet::getConstants();
+        $walletTo = $wallets[$walletName];
+
+        $url = MiddleWareApi::METHOD_GET_BALANCE;
+        $url = sprintf(
+            $url,
+            $bcType,
+            $bcMode,
+            $walletTo
+        );
+
+        $resp = Unirest\Request::get($url);
+        $info = json_decode(json_encode($resp->body), true);
+
+        $hasError = !(is_array($info));
+        $code = (int) $resp->code;
+
+        if ($code == 200 && !$hasError) {
+            $balance = (float) $info['balance'];
+
+            return $balance;
+        }
+
+        return 0;
+    }
+
+    /**
+     * @return int
+     */
+    public function getWalletsQty()
+    {
+        $repository = $this->em->getRepository(Wallet::class);
+        $qty = count($repository->findAll());
+
+        return $qty;
+    }
+
+    /**
+     * @return int
+     */
+    public function getBlockChainsQty()
+    {
+        $repository = $this->em->getRepository(BlockChain::class);
+        $qty = count($repository->findAll());
+
+        return $qty;
+    }
+
+    /**
+     * @return int
+     */
+    public function getUsersQty()
+    {
+        $repository = $this->em->getRepository(User::class);
+        $qty = count($repository->findAll());
 
         return $qty;
     }
@@ -122,6 +211,33 @@ class AppExtension extends \Twig_Extension
         $blockChain = $wallet->getBcType();
         if ($blockChain->getExplorer()) {
             return $blockChain->getExplorer().ExplorerLinks::ADDRESS_INFO_URL.$wallet->getWalletKey();
+        }
+
+        return '#';
+    }
+
+    /**
+     * @param string $bcType
+     * @param string $bcMode
+     *
+     * @return string
+     */
+    public function getDbWalletMoreInfoLink($bcType, $bcMode)
+    {
+        $walletName = strtoupper($bcType.'_'.$bcMode);
+
+        if (!EzWallet::isValidName($walletName)) {
+            return '#';
+        }
+
+        $wallets = EzWallet::getConstants();
+        $walletTo = $wallets[$walletName];
+
+        $repository = $this->em->getRepository(BlockChain::class);
+        $blockChain = $repository->findOneBy(['code' => $bcType]);
+
+        if ($blockChain && $blockChain->getExplorer()) {
+            return $blockChain->getExplorer().ExplorerLinks::ADDRESS_INFO_URL.$walletTo;
         }
 
         return '#';

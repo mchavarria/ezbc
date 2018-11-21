@@ -92,11 +92,23 @@
             </trans-unit>
             <trans-unit id="db.idx.stats.my.wallets">
                 <source>db.idx.stats.my.wallets</source>
-                <target>Mis billeteras</target>
+                <target>Billeteras</target>
             </trans-unit>
             <trans-unit id="db.idx.stats.my.apis">
                 <source>db.idx.stats.my.apis</source>
-                <target>Mis apis</target>
+                <target>Apis</target>
+            </trans-unit>
+            <trans-unit id="db.idx.stats.block.chain">
+                <source>db.idx.stats.block.chain</source>
+                <target>Block Chains</target>
+            </trans-unit>
+            <trans-unit id="db.idx.stats.balance.ethereum">
+                <source>db.idx.stats.balance.ethereum</source>
+                <target>Ethereum</target>
+            </trans-unit>
+            <trans-unit id="db.idx.stats.balance.rsk">
+                <source>db.idx.stats.balance.rsk</source>
+                <target>Rsk</target>
             </trans-unit>
             <trans-unit id="db.idx.panel.latest.logs.title">
                 <source>db.idx.panel.latest.logs.title</source>

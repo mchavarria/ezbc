@@ -19,7 +19,7 @@
                 <div class="stats-icon"><i class="fa fa-desktop"></i></div>
                 <div class="stats-info">
                     <h4>{{ 'db.idx.stats.total.transactions'|trans|upper }}</h4>
-                    <p>{{ getBcLogs(app.user) }}</p>
+                    <p>{{ getBcTxLogs(app.user) }}</p>
                 </div>
                 <div class="stats-link">
                     <a href="{{ path('app_bc_transaction_my', { id: app.user.id }) }}">{{ 'db.idx.stats.view.details'|trans }} <i class="fa fa-arrow-alt-circle-right"></i></a>

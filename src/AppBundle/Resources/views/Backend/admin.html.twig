@@ -1,0 +1,125 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}{{ parent() }} {{ 'db.idx.title'|trans }}{% endblock %}
+
+{% block sidebar %}
+    {{ render(controller('AppBundle:Navigation:sidebarComponent', { 'currentItem': 'dashboard' })) }}
+{% endblock %}
+
+{% block page_header %}
+    {{ 'db.idx.header.title'|trans }} <small>{{ 'db.idx.header.subtitle'|trans }}.</small>
+{% endblock %}
+
+{% block content %}
+    <!-- begin row -->
+    <div class="row">
+        <!-- begin col-3 -->
+        <div class="col-lg-3 col-md-6">
+            <div class="widget widget-stats bg-blue">
+                <div class="stats-icon"><i class="fa fa-desktop"></i></div>
+                <div class="stats-info">
+                    <h4>{{ 'db.idx.stats.total.transactions'|trans|upper }}</h4>
+                    <p>{{ getBcTxLogs() }}</p>
+                </div>
+                <div class="stats-link">
+                    <a href="{{ path('app_bc_transaction_index') }}">{{ 'db.idx.stats.view.details'|trans }} <i class="fa fa-arrow-alt-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- end col-3 -->
+        <!-- begin col-3 -->
+        <div class="col-lg-3 col-md-6">
+            <div class="widget widget-stats bg-orange">
+                <div class="stats-icon"><i class="fa fa-user"></i></div>
+                <div class="stats-info">
+                    <h4>{{ 'db.idx.stats.total.user'|trans|upper }}</h4>
+                    <p>{{ getUsersQty() }}</p>
+                </div>
+                <div class="stats-link">
+                    <a href="{{ path('app_user_index') }}">{{ 'db.idx.stats.view.details'|trans }} <i class="fa fa-arrow-alt-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- end col-3 -->
+        <!-- begin col-3 -->
+        <div class="col-lg-3 col-md-6">
+            <div class="widget widget-stats bg-grey-darker">
+                <div class="stats-icon"><i class="fa fa-link"></i></div>
+                <div class="stats-info">
+                    <h4>{{ 'db.idx.stats.my.apis'|trans|upper }}</h4>
+                    <p>{{ getApisQty() }}</p>
+                </div>
+                <div class="stats-link">
+                    <a href="{{ path('app_api_management_index') }}">{{ 'db.idx.stats.view.details'|trans }} <i class="fa fa-arrow-alt-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- end col-3 -->
+        <!-- begin col-3 -->
+        <div class="col-lg-3 col-md-6">
+            <div class="widget widget-stats bg-indigo-lighter">
+                <div class="stats-icon"><i class="fa fa-wallet"></i></div>
+                <div class="stats-info">
+                    <h4>{{ 'db.idx.stats.my.wallets'|trans|upper }}</h4>
+                    <p>{{ getWalletsQty() }}</p>
+                </div>
+                <div class="stats-link">
+                    <a href="{{ path('app_wallet_index') }}">{{ 'db.idx.stats.view.details'|trans }} <i class="fa fa-arrow-alt-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- end col-3 -->
+    </div>
+    <!-- end row -->
+    <!-- begin row -->
+    <div class="row">
+        <!-- begin col-3 -->
+        <div class="col-lg-4 col-md-6">
+            <div class="widget widget-stats bg-black-lighter">
+                <div class="stats-icon"><i class="fa fa-cogs"></i></div>
+                <div class="stats-info">
+                    <h4>{{ 'db.idx.stats.block.chain'|trans|upper }}</h4>
+                    <p>{{ getBlockChainsQty() }}</p>
+                </div>
+                <div class="stats-link">
+                    <a href="{{ path('adm_bc_index') }}">{{ 'db.idx.stats.view.details'|trans }} <i class="fa fa-arrow-alt-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- end col-3 -->
+        <!-- begin col-3 -->
+        <div class="col-lg-4 col-md-6">
+            <div class="widget widget-stats bg-purple-lighter">
+                <div class="stats-icon"><i class="fa fa-money-bill"></i></div>
+                <div class="stats-info">
+                    <h4>{{ 'db.idx.stats.balance.ethereum'|trans|upper }}</h4>
+                    <p>{{ getWalletBalance(constant('AppBundle\\Data\\BcTypes::ETHEREUM'), constant('AppBundle\\Data\\BcModes::TEST_NET')) }}</p>
+                </div>
+                <div class="stats-link">
+                    <a href="{{ getDbWalletMoreInfoLink(constant('AppBundle\\Data\\BcTypes::ETHEREUM'), constant('AppBundle\\Data\\BcModes::TEST_NET')) }}" target="_blank">{{ 'db.idx.stats.view.details'|trans }} <i class="fa fa-arrow-alt-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- end col-3 -->
+        <!-- begin col-3 -->
+        <div class="col-lg-4 col-md-6">
+            <div class="widget widget-stats bg-green-lighter">
+                <div class="stats-icon"><i class="fa fa-money-bill"></i></div>
+                <div class="stats-info">
+                    <h4>{{ 'db.idx.stats.balance.rsk'|trans|upper }}</h4>
+                    <p>{{ getWalletBalance(constant('AppBundle\\Data\\BcTypes::RSK'), constant('AppBundle\\Data\\BcModes::TEST_NET')) }}</p>
+                </div>
+                <div class="stats-link">
+                    <a href="{{ getDbWalletMoreInfoLink(constant('AppBundle\\Data\\BcTypes::RSK'), constant('AppBundle\\Data\\BcModes::TEST_NET')) }}" target="_blank">{{ 'db.idx.stats.view.details'|trans }} <i class="fa fa-arrow-alt-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- end col-3 -->
+    </div>
+    <!-- end row -->
+    <!-- begin row -->
+    <div class="row">
+        {{ include('@App/Backend/tx_list.html.twig') }}
+    </div>
+    <!-- end row -->
+{% endblock %}
