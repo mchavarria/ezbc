@@ -17,7 +17,7 @@
                             </a>
                             <div class="media-body">
                                 <h5 class="media-heading">#{{ log.id }} - {{ log.apiEndPoint.name }}</h5>
-                                <p>{{ log.successful ? 'bct.idx.panel.list.success'|trans : 'bct.idx.panel.list.fail'|trans }}</p>
+                                <p>{{ log.createdDate|date('Y-m-d') }} | {{ log.successful ? 'bct.idx.panel.list.success'|trans : 'bct.idx.panel.list.fail'|trans }}</p>
                                 {% if log.successful %}
                                     <p>Hash: {{ log.bcHash }}</p>
                                 {% else %}

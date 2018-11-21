@@ -10,6 +10,7 @@
             <th>{{ 'idx.panel.title.user'|trans }}</th>
             <th>{{ 'idx.panel.title.status'|trans }}</th>
             {% endif %}
+            <th>{{ 'idx.panel.title.creation.date'|trans }}</th>
             <th width="1%"></th>
         </tr>
         </thead>
@@ -23,6 +24,7 @@
                 <td>{{ wallet.user.username }}</td>
                 <td>{{ wallet.enabled ? 'idx.list.enabled'|trans : 'idx.list.disabled'|trans }}</td>
                 {% endif %}
+                <td>{{ wallet.createdDate|date('Y-m-d') }}</td>
                 <td class="with-btn" nowrap>
                     <a href="{{ path('app_wallet_edit', { id: wallet.id }) }}" class="btn btn-sm btn-primary m-r-2">{{ 'wallet.idx.panel.list.edit'|trans }}</a>
                     <a href="{{ path('app_wallet_info', { id: wallet.id }) }}" class="btn btn-sm btn-white m-r-2">{{ 'wallet.idx.panel.list.more.info'|trans }}</a>
