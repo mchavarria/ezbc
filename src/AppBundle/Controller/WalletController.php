@@ -186,7 +186,7 @@ class WalletController extends Controller
      */
     public function deleteAction($id)
     {
-        $repository = $this->getDoctrine()->getRepository(User::class);
+        $repository = $this->getDoctrine()->getRepository(Wallet::class);
         $wallet = $repository->find($id);
 
         $entityManager = $this->getDoctrine()->getManager();
