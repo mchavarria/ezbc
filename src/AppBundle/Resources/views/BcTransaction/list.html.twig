@@ -19,13 +19,13 @@
         {% for log in bcTransactions %}
             <tr>
                 <td>{{ log.id }}</td>
-                <td>{{ log.bcType|upper }}{{ is_granted('ROLE_ADMIN') ? ' ' ~ log.wallet.bcMode|upper }}</td>
+                <td>{{ log.bcType|upper }}</td>
                 <td>{{ log.successful ? 'bct.idx.panel.list.success'|trans : 'bct.idx.panel.list.fail'|trans }}</td>
                 {% if is_granted('ROLE_ADMIN') %}
                     <td>{{ log.apiEndPoint.user.username }}</td>
                 {% endif %}
                 <td><a href="{{ path('app_api_management_details', { id: log.apiEndPoint.id }) }}">{{ log.apiEndPoint.formLabel }}</a></td>
-                <td><a href="{{ path('app_wallet_info', { id: log.apiEndPoint.wallet.id }) }}">{{ log.apiEndPoint.wallet.formLabel }}</a></td>
+                <td><a href="{{ path('app_wallet_info', { id: log.apiEndPoint.wallet.id }) }}">{{ log.apiEndPoint.wallet.formLabel|upper }}</a></td>
                 <td>{{ log.createdDate|date('Y-m-d h:m') }}</td>
                 <td class="with-btn" nowrap>
                     {% if log.successful %}

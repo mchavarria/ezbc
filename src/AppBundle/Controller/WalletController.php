@@ -55,7 +55,7 @@ class WalletController extends Controller
         $user = $userRepository->find($id);
 
         $parameters = [
-            'user' => $user
+            'wallets' => $user->getWallets()
         ];
 
         return $parameters;

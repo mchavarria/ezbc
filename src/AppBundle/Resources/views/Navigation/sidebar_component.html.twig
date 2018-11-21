@@ -10,7 +10,7 @@
     </li>
     <li class="{{ currentItem == 'transactions' ? 'active' }}">
         <a href="{{ path('app_bc_transaction_my', { id: app.user.id }) }}">
-            <i class="fa fa-link"></i>
+            <i class="fa fa-history"></i>
             <span>{{ 'app.sb.menu.transactions'|trans }}</span>
         </a>
     </li>
@@ -22,7 +22,7 @@
     </li>
     <li class="{{ currentItem == 'api_end_point' ? 'active' }}">
         <a href="{{ path('app_api_management_my', { id: app.user.id }) }}">
-            <i class="fa fa-wallet"></i>
+            <i class="fa fa-link"></i>
             <span>{{ 'app.sb.menu.aep'|trans }}</span>
         </a>
     </li>

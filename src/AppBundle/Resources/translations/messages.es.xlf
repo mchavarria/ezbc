@@ -630,6 +630,30 @@
                 <source>bct.idx.panel.list.info</source>
                 <target>Detalles</target>
             </trans-unit>
+            <trans-unit id="bct.item.error.user.disabled">
+                <source>bct.item.error.user.disabled</source>
+                <target>Usuario deshabilitado</target>
+            </trans-unit>
+            <trans-unit id="bct.item.error.api.disabled">
+                <source>bct.item.error.api.disabled</source>
+                <target>API deshabilitada</target>
+            </trans-unit>
+            <trans-unit id="bct.item.error.wallet.disabled">
+                <source>bct.item.error.wallet.disabled</source>
+                <target>Billetera deshabilitada</target>
+            </trans-unit>
+            <trans-unit id="bct.item.error.wallet.insufficient.funds">
+                <source>bct.item.error.wallet.insufficient.funds</source>
+                <target>Fondos insuficientes en la billetera</target>
+            </trans-unit>
+            <trans-unit id="bct.item.error.wallet.config">
+                <source>bct.item.error.wallet.config</source>
+                <target>Error de configuración en la billetera</target>
+            </trans-unit>
+            <trans-unit id="bct.item.error.generic">
+                <source>bct.item.error.generic</source>
+                <target>Error en la operación</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
