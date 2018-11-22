@@ -232,7 +232,7 @@
             </trans-unit>
             <trans-unit id="wallet.info.header.subtitle">
                 <source>wallet.info.header.subtitle</source>
-                <target>obtenida de internet</target>
+                <target>de la billetera</target>
             </trans-unit>
             <trans-unit id="wallet.info.balance.title">
                 <source>wallet.info.balance.title</source>
@@ -697,6 +697,10 @@
             <trans-unit id="bct.idx.panel.list.no.bct">
                 <source>bct.idx.panel.list.no.bct</source>
                 <target>No hay transacciones aún</target>
+            </trans-unit>
+            <trans-unit id="aep.detail.item.url">
+                <source>aep.detail.item.url</source>
+                <target>Url para consumir</target>
             </trans-unit>
         </body>
     </file>

@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\ApiEndPoint;
+use AppBundle\Entity\BcTransaction;
 use AppBundle\Entity\User;
 use AppBundle\Form\ApiEndPointType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
@@ -226,8 +227,12 @@ class ApiController extends Controller
         $repository = $this->getDoctrine()->getRepository(ApiEndPoint::class);
         $aep = $repository->find($id);
 
+        $bcRepository = $this->getDoctrine()->getRepository(BcTransaction::class);
+        $bcTransactions = $bcRepository->findby(['apiEndPoint' => $aep], [], 10);
+
         $parameters = [
-            'aep' => $aep
+            'aep' => $aep,
+            'bcTransactions' => $bcTransactions
         ];
 
         return $parameters;
