@@ -28,8 +28,9 @@
                 <td><a href="{{ path('app_wallet_info', { id: log.apiEndPoint.wallet.id }) }}">{{ log.apiEndPoint.wallet.formLabel|upper }}</a></td>
                 <td>{{ log.createdDate|date('Y-m-d h:m') }}</td>
                 <td class="with-btn" nowrap>
+                    <a href="{{ path('app_bc_transaction_detail', { id: log.apiEndPoint.wallet.id }) }}" class="btn btn-sm btn-white m-r-2">{{ 'bct.idx.panel.list.info'|trans }}</a>
                     {% if log.successful %}
-                    <a href="{{ getTxMoreInfoLink(log) }}" target="_blank" class="btn btn-sm btn-primary m-r-2">{{ 'bct.idx.panel.list.info'|trans }}</a>
+                        <a href="{{ getTxMoreInfoLink(log) }}" target="_blank" class="btn btn-sm btn-primary m-r-2">{{ 'bct.idx.panel.list.more.info'|trans }}</a>
                     {% endif %}
                 </td>
             </tr>

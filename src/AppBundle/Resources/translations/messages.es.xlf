@@ -642,6 +642,10 @@
                 <source>bct.idx.panel.list.info</source>
                 <target>Detalles</target>
             </trans-unit>
+            <trans-unit id="bct.idx.panel.list.more.info">
+                <source>bct.idx.panel.list.more.info</source>
+                <target>Detalles Web</target>
+            </trans-unit>
             <trans-unit id="bct.item.error.user.disabled">
                 <source>bct.item.error.user.disabled</source>
                 <target>Usuario deshabilitado</target>
@@ -665,6 +669,26 @@
             <trans-unit id="bct.item.error.generic">
                 <source>bct.item.error.generic</source>
                 <target>Error en la operación</target>
+            </trans-unit>
+            <trans-unit id="bct.detail.title">
+                <source>bct.detail.title</source>
+                <target>Detalles de Transacción</target>
+            </trans-unit>
+            <trans-unit id="bct.detail.header.title">
+                <source>bct.detail.header.title</source>
+                <target>Transacción</target>
+            </trans-unit>
+            <trans-unit id="bct.detail.header.subtitle">
+                <source>bct.detail.header.subtitle</source>
+                <target>detalles</target>
+            </trans-unit>
+            <trans-unit id="bct.detail.item.api">
+                <source>bct.detail.item.api</source>
+                <target>API asociada</target>
+            </trans-unit>
+            <trans-unit id="bct.detail.item.wallet">
+                <source>bct.detail.item.wallet</source>
+                <target>Billetera asociada</target>
             </trans-unit>
         </body>
     </file>

@@ -13,7 +13,7 @@
                     {% for log in bcTransactions %}
                         <li class="media media-sm">
                             <a href="javascript:;" class="pull-left">
-                                <img src="{{ asset('img/blockchain/'~log.wallet.bcType~'.png') }}" alt="" class="media-object rounded-corner" />
+                                <img src="{{ asset('img/blockchain/'~log.wallet.bcType~'.png') }}" alt="" class="media-object" />
                             </a>
                             <div class="media-body">
                                 <h5 class="media-heading">#{{ log.id }} - {{ log.apiEndPoint.name }}</h5>

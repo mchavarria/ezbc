@@ -1,7 +1,49 @@
-{% extends "::base.html.twig" %}
+{% extends "layout.html.twig" %}
 
-{% block title %}AppBundle:BcTransaction:detail{% endblock %}
+{% block title %}{{ parent() }}{{ 'bct.detail.title'|trans }}{% endblock %}
 
-{% block body %}
-<h1>Welcome to the BcTransaction:detail page</h1>
+{% block sidebar %}
+    {{ render(controller('AppBundle:Navigation:sidebarComponent', { 'currentItem': 'admin_bc_transaction' })) }}
+{% endblock %}
+
+{% block page_header %}
+    {{ 'bct.detail.header.title'|trans }} <small>{{ 'bct.detail.header.subtitle'|trans }}.</small>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <!-- begin col-12 -->
+        <div class="col-lg-12">
+            <!-- begin #accordion -->
+            <div id="accordion" class="card-accordion">
+                <!-- begin card -->
+                <div class="card">
+                    <div class="card-header bg-black text-white pointer-cursor" data-toggle="collapse" data-target="#chain{{ transaction.id }}">
+                        #{{ transaction.id }} - {{ transaction.apiEndPoint.name }}
+                    </div>
+                    <div id="chain{{ transaction.id }}" class="collapse show" data-parent="#accordion">
+                        <div class="card-body">
+                            <p>
+                                <img src="{{ asset('img/blockchain/'~transaction.wallet.bcType~'.png') }}" alt="" class="media-object rounded-corner" />
+                                {{ transaction.createdDate|date('Y-m-d') }} | {{ transaction.successful ? 'bct.idx.panel.list.success'|trans : 'bct.idx.panel.list.fail'|trans }}
+                            </p>
+                            {% if transaction.successful %}
+                                <p>Hash: {{ transaction.bcHash }}</p>
+                            {% else %}
+                                <p>Error: {{ getHumanError(transaction.errorCode)|trans }}</p>
+                            {% endif %}
+                            <p>{{ 'bct.detail.item.api'|trans }}: <a href="{{ path('app_api_management_details', { id: transaction.apiEndPoint.id }) }}">{{ transaction.apiEndPoint.formLabel }}</a></p>
+                            <p>{{ 'bct.detail.item.wallet'|trans }}: <a href="{{ path('app_wallet_info', { id: transaction.apiEndPoint.wallet.id }) }}">{{ transaction.wallet.formLabel|upper }}</a></p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="{{ getTxMoreInfoLink(transaction) }}" target="_blank"  class="btn btn-white btn-sm">{{ 'bct.idx.panel.list.more.info'|trans }}</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- end card -->
+            </div>
+            <!-- end #accordion -->
+        </div>
+        <!-- end col-12 -->
+    </div>
 {% endblock %}

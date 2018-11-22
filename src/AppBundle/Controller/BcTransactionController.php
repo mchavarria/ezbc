@@ -56,4 +56,23 @@ class BcTransactionController extends Controller
             'bcTransactions' => $transactions
         ];
     }
+
+    /**
+     * @Route("/{id}/detail", name="app_bc_transaction_detail", requirements={"id" = "\d+"}, options={"expose" = true})
+     *
+     * @Template("@App/BcTransaction/detail.html.twig")
+     *
+     * @param int     $id      transaction id
+     *
+     * @return array
+     */
+    public function detailAction($id)
+    {
+        $repository = $this->getDoctrine()->getRepository(BcTransaction::class);
+        $transaction = $repository->find($id);
+
+        return [
+            'transaction' => $transaction
+        ];
+    }
 }
