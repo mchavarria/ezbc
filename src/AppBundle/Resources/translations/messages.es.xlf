@@ -618,6 +618,10 @@
                 <source>bct.idx.panel.title</source>
                 <target>Transacciones</target>
             </trans-unit>
+            <trans-unit id="bct.idx.panel.title.latest">
+                <source>bct.idx.panel.title.latest</source>
+                <target>Últimas 10 Transacciones</target>
+            </trans-unit>
             <trans-unit id="bct.panel.title.bcType">
                 <source>bct.panel.title.bcType</source>
                 <target>Blockchain</target>

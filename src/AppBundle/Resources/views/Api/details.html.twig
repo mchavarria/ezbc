@@ -28,6 +28,7 @@
                                 <p>{{ 'aep.detail.item.url'|trans }}: {{ apiUrl }}</p>
                             </div>
                             <div class="card-footer">
+                                <a href="{{ path('app_api_management_stats', { id: aep.id }) }}" class="btn btn-sm btn-primary m-r-2">{{ 'api.idx.panel.list.transactions'|trans }}</a>
                             </div>
                         </div>
                     </div>
@@ -45,7 +46,7 @@
                 <!-- begin panel-heading -->
                 <div class="panel-heading">
                     <div class="panel-heading-btn"></div>
-                    <h4 class="panel-title">{{ 'bct.idx.panel.title'|trans }}</h4>
+                    <h4 class="panel-title">{{ 'bct.idx.panel.title.latest'|trans }}</h4>
                 </div>
                 <!-- end panel-heading -->
                 <!-- begin panel-body -->
