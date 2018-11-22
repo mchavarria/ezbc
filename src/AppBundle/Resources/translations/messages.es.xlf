@@ -690,6 +690,10 @@
                 <source>bct.detail.item.wallet</source>
                 <target>Billetera asociada</target>
             </trans-unit>
+            <trans-unit id="click.here">
+                <source>click.here</source>
+                <target>Click aquí</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

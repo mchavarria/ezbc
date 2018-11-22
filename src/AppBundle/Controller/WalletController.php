@@ -3,6 +3,8 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Data\MiddleWareApi;
+use AppBundle\Entity\ApiEndPoint;
+use AppBundle\Entity\BcTransaction;
 use AppBundle\Entity\User;
 use AppBundle\Entity\Wallet;
 use AppBundle\Form\WalletType;
@@ -212,6 +214,12 @@ class WalletController extends Controller
         $repository = $this->getDoctrine()->getRepository(Wallet::class);
         $wallet = $repository->find($id);
 
+        $bcRepository = $this->getDoctrine()->getRepository(BcTransaction::class);
+        $bcTransactions = $bcRepository->findBy(['wallet' => $wallet], [], 10);
+
+        $apiRepository = $this->getDoctrine()->getRepository(ApiEndPoint::class);
+        $apiEndPoints = $apiRepository->findBy(['wallet' => $wallet], [], 10);
+
         $url = MiddleWareApi::METHOD_GET_WALLET_INFO;
         $url = sprintf(
             $url,
@@ -221,11 +229,15 @@ class WalletController extends Controller
         );
         $resp = Unirest\Request::get($url);
         $info = json_decode(json_encode($resp->body), true);
+
         //TODO improve code with HTTP response codes.
         //https://www.restapitutorial.com/httpstatuscodes.html
-        $hasError = !(is_array($info));
+        $hasError = !(is_array($info)) && ($resp->code == 200);
+
         $parameters = [
             'wallet' => $wallet,
+            'bcTransactions' => $bcTransactions,
+            'apiEndPoints' => $apiEndPoints,
             'info' => $info,
             'hasError' => $hasError
         ];

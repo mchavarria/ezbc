@@ -24,7 +24,7 @@
                     <div id="chain{{ transaction.id }}" class="collapse show" data-parent="#accordion">
                         <div class="card-body">
                             <p>
-                                <img src="{{ asset('img/blockchain/'~transaction.wallet.bcType~'.png') }}" alt="" class="media-object rounded-corner" />
+                                <img src="{{ asset('img/blockchain/'~transaction.wallet.bcType~'.png') }}" alt="" class="media-object" />
                                 {{ transaction.createdDate|date('Y-m-d') }} | {{ transaction.successful ? 'bct.idx.panel.list.success'|trans : 'bct.idx.panel.list.fail'|trans }}
                             </p>
                             {% if transaction.successful %}
