@@ -65,7 +65,7 @@ class UserController extends Controller
     public function newAction(Request $request)
     {
         $user = new User();
-        $form = $this->createForm(UserType::class, $user);
+        $form = $this->createForm(UserType::class, $user, ['is_new' => true]);
 
         $form->handleRequest($request);
 
@@ -116,7 +116,7 @@ class UserController extends Controller
         $repository = $this->getDoctrine()->getRepository(User::class);
         $user = $repository->find($id);
 
-        $form = $this->createForm(UserType::class, $user);
+        $form = $this->createForm(UserType::class, $user, ['is_new' => false]);
 
         $form->handleRequest($request);
 

@@ -43,11 +43,16 @@ class UserType extends AbstractType
                 'placeholder' => 'Username'
             ]
         ]);
-        $builder->add('plainPassword', PasswordType::class, [
-            'attr' => [
-                'placeholder' => 'Password'
-            ]
-        ]);
+
+        $isNew = $options['is_new'];
+        if ($isNew) {
+            $builder->add('plainPassword', PasswordType::class, [
+                'attr' => [
+                    'placeholder' => 'Password'
+                ]
+            ]);
+        }
+
         $builder->add('type', ChoiceType::class, [
             'choices' => [
                 'Admin' => UserTypes::ADMIN_USER,

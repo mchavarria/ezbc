@@ -518,9 +518,9 @@
                 <source>idx.list.disabled</source>
                 <target>Deshabilitado</target>
             </trans-unit>
-            <trans-unit id="user.idx.list.transactions">
-                <source>user.idx.list.transactions</source>
-                <target>Transacciones</target>
+            <trans-unit id="user.idx.list.apis">
+                <source>user.idx.list.apis</source>
+                <target>Apis</target>
             </trans-unit>
             <trans-unit id="user.idx.edit.btn">
                 <source>user.idx.edit.btn</source>
