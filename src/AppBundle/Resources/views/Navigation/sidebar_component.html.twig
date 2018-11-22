@@ -9,21 +9,24 @@
         </a>
     </li>
     <li class="{{ currentItem == 'transactions' ? 'active' }}">
-        <a href="{{ path('app_bc_transaction_my', { id: app.user.id }) }}">
+        {% set bctUrl = is_granted('ROLE_ADMIN') ? path('app_bc_transaction_index') : path('app_bc_transaction_my', { id: app.user.id }) %}
+        <a href="{{ bctUrl }}">
             <i class="fa fa-history"></i>
-            <span>{{ 'app.sb.menu.transactions'|trans }}</span>
+            <span>{{ is_granted('ROLE_ADMIN') ? 'app.sb.menu.admin.bc_transactions'|trans : 'app.sb.menu.transactions'|trans }}</span>
         </a>
     </li>
     <li class="{{ currentItem == 'wallet' ? 'active' }}">
-        <a href="{{ path('app_wallet_my', { id: app.user.id }) }}">
+        {% set walletUrl = is_granted('ROLE_ADMIN') ? path('app_wallet_index') : path('app_wallet_my', { id: app.user.id }) %}
+        <a href="{{ walletUrl }}">
             <i class="fa fa-wallet"></i>
-            <span>{{ 'app.sb.menu.my_wallets'|trans }}</span>
+            <span>{{ is_granted('ROLE_ADMIN') ? 'app.sb.menu.admin.wallets'|trans : 'app.sb.menu.my_wallets'|trans }}</span>
         </a>
     </li>
     <li class="{{ currentItem == 'api_end_point' ? 'active' }}">
-        <a href="{{ path('app_api_management_my', { id: app.user.id }) }}">
+        {% set aepUrl = is_granted('ROLE_ADMIN') ? path('app_api_management_index') : path('app_api_management_my', { id: app.user.id }) %}
+        <a href="{{ aepUrl }}">
             <i class="fa fa-link"></i>
-            <span>{{ 'app.sb.menu.aep'|trans }}</span>
+            <span>{{ is_granted('ROLE_ADMIN') ? 'app.sb.menu.admin.aep'|trans : 'app.sb.menu.aep'|trans }}</span>
         </a>
     </li>
     {% if is_granted('ROLE_ADMIN') %}
@@ -39,15 +42,6 @@
             </li>
             <li class="{{ isAdmin and 'users' in currentItem ? 'active' }}">
                 <a href="{{ path('app_user_index') }}">{{ 'app.sb.menu.admin.users'|trans }}</a>
-            </li>
-            <li class="{{ isAdmin and 'wallet' in currentItem ? 'active' }}">
-                <a href="{{ path('app_wallet_index') }}">{{ 'app.sb.menu.admin.wallets'|trans }}</a>
-            </li>
-            <li class="{{ isAdmin and 'api_end_point' in currentItem ? 'active' }}">
-                <a href="{{ path('app_api_management_index') }}">{{ 'app.sb.menu.admin.aep'|trans }}</a>
-            </li>
-            <li class="{{ isAdmin and 'bc_transaction' in currentItem ? 'active' }}">
-                <a href="{{ path('app_bc_transaction_index') }}">{{ 'app.sb.menu.admin.bc_transactions'|trans }}</a>
             </li>
         </ul>
     </li>

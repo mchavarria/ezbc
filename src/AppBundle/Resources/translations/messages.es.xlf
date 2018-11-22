@@ -40,7 +40,7 @@
             </trans-unit>
             <trans-unit id="app.sb.menu.admin_options">
                 <source>app.sb.menu.admin_options</source>
-                <target>Opciones Admin</target>
+                <target>Más Opciones Admin</target>
             </trans-unit>
             <trans-unit id="app.sb.menu.admin.block_chains">
                 <source>app.sb.menu.admin.block_chains</source>
@@ -85,6 +85,10 @@
             <trans-unit id="db.idx.stats.total.transactions">
                 <source>db.idx.stats.total.transactions</source>
                 <target>Transacciones totales</target>
+            </trans-unit>
+            <trans-unit id="db.idx.stats.total.users">
+                <source>db.idx.stats.total.users</source>
+                <target>Usuarios totales</target>
             </trans-unit>
             <trans-unit id="db.idx.stats.view.details">
                 <source>db.idx.stats.view.details</source>
