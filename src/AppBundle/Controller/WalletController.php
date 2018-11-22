@@ -230,15 +230,20 @@ class WalletController extends Controller
         $resp = Unirest\Request::get($url);
         $info = json_decode(json_encode($resp->body), true);
 
-        //TODO improve code with HTTP response codes.
-        //https://www.restapitutorial.com/httpstatuscodes.html
-        $hasError = !(is_array($info)) && ($resp->code == 200);
+        $hasError = !(is_array($info));
+        $code = (int) $resp->code;
+
+        if ($code == 200 && !$hasError) {
+            $balance = (float) $info['balance'];
+        } else {
+            $balance = 0;
+        }
 
         $parameters = [
             'wallet' => $wallet,
             'bcTransactions' => $bcTransactions,
             'apiEndPoints' => $apiEndPoints,
-            'info' => $info,
+            'balance' => $balance,
             'hasError' => $hasError
         ];
 

@@ -18,7 +18,7 @@
                 <div class="stats-icon"><i class="fa fa-dollar-sign"></i></div>
                 <div class="stats-info">
                     <h4>{{ 'wallet.info.balance.title'|trans|upper }}</h4>
-                    <p>{{ (hasError) ? info : info.balance }}</p>
+                    <p>{{ balance }}</p>
                 </div>
                 <div class="stats-link">
                     <a href="{{ getWalletMoreInfoLink(wallet) }}">{{ 'db.idx.stats.view.details'|trans }} <i class="fa fa-arrow-alt-circle-right"></i></a>

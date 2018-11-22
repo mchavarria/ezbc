@@ -694,6 +694,10 @@
                 <source>click.here</source>
                 <target>Click aquí</target>
             </trans-unit>
+            <trans-unit id="bct.idx.panel.list.no.bct">
+                <source>bct.idx.panel.list.no.bct</source>
+                <target>No hay transacciones aún</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
