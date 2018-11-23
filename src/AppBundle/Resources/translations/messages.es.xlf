@@ -4,7 +4,7 @@
         <body>
             <trans-unit id="ez.bc">
                 <source>ez.bc</source>
-                <target>E-Z Block Chain</target>
+                <target>E-Z Blockchain</target>
             </trans-unit>
             <trans-unit id="app.sb.hd.edit.profile">
                 <source>app.sb.hd.edit.profile</source>
@@ -44,7 +44,7 @@
             </trans-unit>
             <trans-unit id="app.sb.menu.admin.block_chains">
                 <source>app.sb.menu.admin.block_chains</source>
-                <target>Block Chains</target>
+                <target>Blockchains</target>
             </trans-unit>
             <trans-unit id="app.sb.menu.admin.users">
                 <source>app.sb.menu.admin.users</source>
@@ -104,7 +104,7 @@
             </trans-unit>
             <trans-unit id="db.idx.stats.block.chain">
                 <source>db.idx.stats.block.chain</source>
-                <target>Block Chains</target>
+                <target>Blockchains</target>
             </trans-unit>
             <trans-unit id="db.idx.stats.balance.ethereum">
                 <source>db.idx.stats.balance.ethereum</source>
@@ -404,11 +404,11 @@
             </trans-unit>
             <trans-unit id="bc.idx.title">
                 <source>bc.idx.title</source>
-                <target>Block Chain</target>
+                <target>Blockchain</target>
             </trans-unit>
             <trans-unit id="bc.idx.header.title">
                 <source>bc.idx.header.title</source>
-                <target>Block Chains</target>
+                <target>Blockchains</target>
             </trans-unit>
             <trans-unit id="bc.idx.header.subtitle">
                 <source>bc.idx.header.subtitle</source>
@@ -420,7 +420,7 @@
             </trans-unit>
             <trans-unit id="bc.idx.list.no.description">
                 <source>bc.idx.list.no.description</source>
-                <target>No hay block chains aún</target>
+                <target>No hay Blockchains aún</target>
             </trans-unit>
             <trans-unit id="bc.idx.edit.btn">
                 <source>bc.idx.edit.btn</source>
@@ -428,11 +428,11 @@
             </trans-unit>
             <trans-unit id="bc.new.title">
                 <source>bc.new.title</source>
-                <target>Nueva Block Chain</target>
+                <target>Nueva Blockchain</target>
             </trans-unit>
             <trans-unit id="bc.new.header.title">
                 <source>bc.new.header.title</source>
-                <target>Crear Block Chain</target>
+                <target>Crear Blockchain</target>
             </trans-unit>
             <trans-unit id="bc.new.header.subtitle">
                 <source>bc.new.header.subtitle</source>
@@ -440,15 +440,15 @@
             </trans-unit>
             <trans-unit id="bc.new.form.title">
                 <source>bc.new.form.title</source>
-                <target>Block Chain</target>
+                <target>Blockchain</target>
             </trans-unit>
             <trans-unit id="bc.edit.title">
                 <source>bc.edit.title</source>
-                <target>Editar Block Chain</target>
+                <target>Editar Blockchain</target>
             </trans-unit>
             <trans-unit id="bc.edit.header.title">
                 <source>bc.edit.header.title</source>
-                <target>Editar Block Chain</target>
+                <target>Editar Blockchain</target>
             </trans-unit>
             <trans-unit id="bc.edit.header.subtitle">
                 <source>bc.edit.header.subtitle</source>
@@ -456,7 +456,7 @@
             </trans-unit>
             <trans-unit id="bc.edit.form.title">
                 <source>bc.edit.form.title</source>
-                <target>Block Chain</target>
+                <target>Blockchain</target>
             </trans-unit>
             <trans-unit id="bc.form.subtitle">
                 <source>bc.form.subtitle</source>
@@ -612,7 +612,7 @@
             </trans-unit>
             <trans-unit id="bct.idx.header.title">
                 <source>bct.idx.header.title</source>
-                <target>Transacciones en Block Chain</target>
+                <target>Transacciones en Blockchain</target>
             </trans-unit>
             <trans-unit id="bct.idx.header.subtitle">
                 <source>bct.idx.header.subtitle</source>

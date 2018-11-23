@@ -42,14 +42,14 @@ class WalletType extends AbstractType
             'bcType',
             EntityType::class,
             [
-                'label' => 'Block Chain',
+                'label' => 'Blockchain',
                 'class' => BlockChain::class,
                 'query_builder' => function (BlockChainRepository $bcr) {
                     return $bcr->createQueryBuilder('bc')
                         ->orderBy('bc.name', 'ASC');
                 },
                 'choice_label' => 'name',
-                'placeholder' => '-- Choose a Block Chain --'
+                'placeholder' => '-- Choose a Blockchain --'
             ]
         );
 
@@ -66,7 +66,7 @@ class WalletType extends AbstractType
             ];
         }
         $builder->add('bcMode', ChoiceType::class, [
-            'label' => 'Block Chain Mode',
+            'label' => 'Blockchain Mode',
             'choices' => $choices,
             'placeholder' => '-- Choose an option --',
             'required' => true

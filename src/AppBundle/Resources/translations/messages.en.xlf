@@ -28,7 +28,7 @@
             </trans-unit>
             <trans-unit id="app.sb.menu.admin.block_chains">
                 <source>app.sb.menu.admin.block_chains</source>
-                <target>Block Chains</target>
+                <target>Blockchains</target>
             </trans-unit>
             <trans-unit id="app.sb.menu.admin.users">
                 <source>app.sb.menu.admin.users</source>
