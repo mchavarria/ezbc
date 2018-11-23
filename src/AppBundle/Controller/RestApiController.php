@@ -191,10 +191,9 @@ class RestApiController extends Controller
         $resp = Unirest\Request::get($url);
         $info = json_decode(json_encode($resp->body), true);
 
-        $hasError = !(is_array($info));
         $code = (int) $resp->code;
 
-        if ($code == 200 && !$hasError) {
+        if ($code != 200) {
             return false;
         }
 

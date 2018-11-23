@@ -230,10 +230,10 @@ class WalletController extends Controller
         $resp = Unirest\Request::get($url);
         $info = json_decode(json_encode($resp->body), true);
 
-        $hasError = !(is_array($info));
         $code = (int) $resp->code;
+        $hasError = ($code != 200);
 
-        if ($code == 200 && !$hasError) {
+        if ($code == 200) {
             $balance = (float) $info['balance'];
         } else {
             $balance = 0;
